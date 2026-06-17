@@ -138,45 +138,45 @@
     "2026": {
       "resumo": {
         "receita_total": 107269774.43,
-        "despesa_total": 113965758.45,
-        "indice_medio": 106.24,
-        "saldo_total": -6695984.02
+        "despesa_total": 109974436.61,
+        "indice_medio": 102.52,
+        "saldo_total": -2704662.18
       },
       "mensal": [
         {
           "mes_num": 1,
           "mes_nome": "Janeiro",
           "receita": 9383668.31,
-          "despesa": 8906888.71,
-          "indice": 94.92
+          "despesa": 5071085.80,
+          "indice": 54.04
         },
         {
           "mes_num": 2,
           "mes_nome": "Fevereiro",
           "receita": 7255894.64,
-          "despesa": 9095938.73,
-          "indice": 125.36
+          "despesa": 7105120.84,
+          "indice": 97.92
         },
         {
           "mes_num": 3,
           "mes_nome": "Março",
           "receita": 8556606.24,
-          "despesa": 9098654.84,
-          "indice": 106.33
+          "despesa": 7950263.38,
+          "indice": 92.91
         },
         {
           "mes_num": 4,
           "mes_nome": "Abril",
           "receita": 8078266.83,
-          "despesa": 9073848.96,
-          "indice": 112.32
+          "despesa": 8427237.33,
+          "indice": 104.32
         },
         {
           "mes_num": 5,
           "mes_nome": "Maio",
           "receita": 8647043.46,
-          "despesa": 9454164.2,
-          "indice": 109.33
+          "despesa": 8358520.09,
+          "indice": 96.66
         },
         {
           "mes_num": 6,

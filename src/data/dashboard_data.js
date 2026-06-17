@@ -137,45 +137,45 @@ const dashboardData = {
     "2026": {
       "resumo": {
         "receita_total": 101020135.26,
-        "despesa_total": 110314871.86,
-        "indice_medio": 109.2,
-        "saldo_total": -9294736.6
+        "despesa_total": 106210209.64,
+        "indice_medio": 105.14,
+        "saldo_total": -5190074.38
       },
       "mensal": [
         {
           "mes_num": 1,
           "mes_nome": "Janeiro",
           "receita": 9383668.31,
-          "despesa": 9014657.42,
-          "indice": 96.07
+          "despesa": 5071085.80,
+          "indice": 54.04
         },
         {
           "mes_num": 2,
           "mes_nome": "Fevereiro",
           "receita": 7255894.64,
-          "despesa": 9203707.44,
-          "indice": 126.84
+          "despesa": 7105120.84,
+          "indice": 97.92
         },
         {
           "mes_num": 3,
           "mes_nome": "Março",
           "receita": 8556606.24,
-          "despesa": 9226423.55,
-          "indice": 107.83
+          "despesa": 7950263.38,
+          "indice": 92.91
         },
         {
           "mes_num": 4,
           "mes_nome": "Abril",
           "receita": 8347481.47,
-          "despesa": 9201617.67,
-          "indice": 110.23
+          "despesa": 8427237.33,
+          "indice": 100.96
         },
         {
           "mes_num": 5,
           "mes_nome": "Maio",
           "receita": 8031549.23,
-          "despesa": 9236750.07,
-          "indice": 115.01
+          "despesa": 8358520.09,
+          "indice": 104.07
         },
         {
           "mes_num": 6,
