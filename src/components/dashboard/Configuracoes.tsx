@@ -17,7 +17,8 @@ import {
   Info,
   Calendar,
   Key,
-  UserPlus
+  UserPlus,
+  Globe
 } from "lucide-react";
 
 interface PendingUser {
@@ -46,15 +47,59 @@ export function Configuracoes({ user }: { user: UserProfile | null }) {
   const [newUserApproved, setNewUserApproved] = useState(true);
   const [createUserLoading, setCreateUserLoading] = useState(false);
 
+  // Fiorilli API states
+  const [fiorilliUrl, setFiorilliUrl] = useState("");
+  const [fiorilliLoading, setFiorilliLoading] = useState(true);
+  const [fiorilliSaveLoading, setFiorilliSaveLoading] = useState(false);
+
   const isAdmin = user?.email === "contabilidade@pradopolis.sp.gov.br";
 
   useEffect(() => {
+    fetchFiorilliUrl();
     if (isAdmin) {
       fetchPendingUsers();
     } else {
       setLoading(false);
     }
   }, [isAdmin]);
+
+  const fetchFiorilliUrl = async () => {
+    try {
+      setFiorilliLoading(true);
+      const res = await fetch("/api/settings/fiorilli");
+      if (res.ok) {
+        const data = await res.json();
+        setFiorilliUrl(data.fiorilli_api_url || "");
+      }
+    } catch (err) {
+      console.error("Error fetching fiorilli setting:", err);
+    } finally {
+      setFiorilliLoading(false);
+    }
+  };
+
+  const handleUpdateFiorilliUrl = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!isAdmin) return;
+    setFiorilliSaveLoading(true);
+    setNotification(null);
+    try {
+      const res = await fetch("/api/settings/fiorilli", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fiorilli_api_url: fiorilliUrl }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Erro ao salvar URL.");
+      }
+      setNotification({ message: "URL do Portal Fiorilli salva com sucesso!", type: "success" });
+    } catch (err: any) {
+      setNotification({ message: err.message || "Erro de conexão.", type: "error" });
+    } finally {
+      setFiorilliSaveLoading(false);
+    }
+  };
 
   // Auto-dispensa a notificação após alguns segundos (mantém o botão de ação livre de ruído visual)
   useEffect(() => {
@@ -277,6 +322,50 @@ export function Configuracoes({ user }: { user: UserProfile | null }) {
               <Info className="w-3.5 h-3.5" />
               <span>Versão <span className="font-mono tabular">2.1.0</span> • Pradópolis/SP</span>
             </div>
+          </Card>
+
+          <Card className="p-6">
+            <h3 className="text-sm font-bold text-ink uppercase tracking-[0.06em] mb-3 flex items-center gap-2">
+              <Globe className="w-4 h-4 text-ink-2" />
+              API Portal Fiorilli
+            </h3>
+            {fiorilliLoading ? (
+              <div className="py-4 text-center">
+                <Spinner className="h-5 w-5 text-brand mx-auto animate-spin" />
+              </div>
+            ) : (
+              <form onSubmit={handleUpdateFiorilliUrl} className="space-y-3.5">
+                <div className="flex flex-col gap-1.5">
+                  <label htmlFor="fiorilliUrlInput" className="text-[10px] font-semibold text-ink-2 uppercase tracking-[0.08em]">
+                    URL Base Fiorilli JSON
+                  </label>
+                  <input
+                    id="fiorilliUrlInput"
+                    type="text"
+                    value={fiorilliUrl}
+                    onChange={(e) => setFiorilliUrl(e.target.value)}
+                    disabled={!isAdmin || fiorilliSaveLoading}
+                    placeholder="http://siteDaEntidade.uf.gov.br/Transparencia/"
+                    className="bg-surface border border-line focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30 outline-none rounded-md px-3 py-2 text-xs font-mono text-ink placeholder-muted disabled:opacity-60 transition-colors"
+                  />
+                  {!isAdmin && (
+                    <span className="text-[9px] font-semibold text-muted leading-tight">
+                      Apenas administradores podem atualizar a URL da API.
+                    </span>
+                  )}
+                </div>
+                {isAdmin && (
+                  <button
+                    type="submit"
+                    disabled={fiorilliSaveLoading}
+                    className="w-full py-2 bg-brand hover:bg-brand-ink text-white font-bold text-xs rounded-md focus-visible:outline-none disabled:opacity-50 transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                  >
+                    {fiorilliSaveLoading ? <Spinner className="h-3.5 w-3.5" /> : null}
+                    Salvar API URL
+                  </button>
+                )}
+              </form>
+            )}
           </Card>
         </div>
 

@@ -39,6 +39,26 @@ if (!globalThis.sqliteDb) {
       )
     `);
 
+    globalThis.sqliteDb.exec(`
+      CREATE TABLE IF NOT EXISTS settings (
+        key TEXT PRIMARY KEY,
+        value TEXT NOT NULL
+      )
+    `);
+
+    // Seed default settings if not exists
+    try {
+      const checkSetting = globalThis.sqliteDb.prepare("SELECT value FROM settings WHERE key = ?");
+      const urlSetting = checkSetting.get("fiorilli_api_url") as { value: string } | undefined;
+      if (!urlSetting || urlSetting.value === "http://siteDaEntidade.uf.gov.br/Transparencia/") {
+        const insertSetting = globalThis.sqliteDb.prepare("INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)");
+        insertSetting.run("fiorilli_api_url", "http://pradopolis.ddns.net:5656/transparencia/");
+      }
+    } catch (e) {
+      console.error("Failed to seed default settings:", e);
+    }
+
+
     // Migration to add 'approved' column in case the database existed before
     try {
       globalThis.sqliteDb.exec("ALTER TABLE users ADD COLUMN approved INTEGER NOT NULL DEFAULT 0");

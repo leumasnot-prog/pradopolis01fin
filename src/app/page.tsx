@@ -8,6 +8,7 @@ import { DashboardOverview } from "@/components/dashboard/DashboardOverview";
 import { PrevisaoReceita } from "@/components/dashboard/PrevisaoReceita";
 import { OrcamentoDashboard } from "@/components/dashboard/OrcamentoDashboard";
 import { DespesasFixas } from "@/components/dashboard/DespesasFixas";
+import { ConsultaFiorilli } from "@/components/dashboard/ConsultaFiorilli";
 import { DocumentosViewer } from "@/components/dashboard/DocumentosViewer";
 import { Configuracoes } from "@/components/dashboard/Configuracoes";
 import { Planejamento2027 } from "@/components/dashboard/Planejamento2027";
@@ -106,11 +107,12 @@ export default function Home() {
         {activeTab === "home" && <DashboardOverview onNavigate={setActiveTab} />}
         {activeTab === "receita" && <PrevisaoReceita />}
         {activeTab === "despesas" && <DespesasFixas />}
+        {activeTab === "fiorilli" && <ConsultaFiorilli />}
         {activeTab === "orcamento" && <OrcamentoDashboard />}
         {activeTab === "planejamento" && <Planejamento2027 />}
         {activeTab === "documentos" && <DocumentosViewer onBack={() => setActiveTab("home")} />}
         {activeTab === "settings" && <Configuracoes user={user} />}
-        {activeTab !== "home" && activeTab !== "receita" && activeTab !== "despesas" && activeTab !== "orcamento" && activeTab !== "planejamento" && activeTab !== "documentos" && activeTab !== "settings" && (
+        {activeTab !== "home" && activeTab !== "receita" && activeTab !== "despesas" && activeTab !== "fiorilli" && activeTab !== "orcamento" && activeTab !== "planejamento" && activeTab !== "documentos" && activeTab !== "settings" && (
           <div className="w-full h-[70vh] flex items-center justify-center px-6">
             <div className="text-center max-w-sm">
               <h2 className="font-display text-2xl font-bold text-ink tracking-tight">Módulo em construção</h2>
