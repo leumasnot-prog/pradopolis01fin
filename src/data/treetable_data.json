@@ -1,0 +1,407 @@
+[
+  {
+    "id": "01",
+    "name": "Recurso Próprio (Tesouro)",
+    "value": 107269774.43,
+    "type": "root",
+    "children": [
+      {
+        "id": "17",
+        "name": "Transferências Correntes",
+        "value": 96906852.31,
+        "type": "node",
+        "children": [
+          {
+            "id": "1721.50.0.0.00.00",
+            "name": "Cota-Parte Do ICMS",
+            "siglas": "ICMS",
+            "value": 48572072.2,
+            "type": "leaf"
+          },
+          {
+            "id": "1711.51.0.0.00.00",
+            "name": "Cota-Parte Do Fundo De Participação Dos Municípios – FPM",
+            "siglas": "FPM",
+            "value": 38653135.0,
+            "type": "leaf"
+          },
+          {
+            "id": "1721.51.0.0.00.00",
+            "name": "Cota-Parte Do IPVA",
+            "siglas": "IPVA",
+            "value": 6348225.68,
+            "type": "leaf"
+          },
+          {
+            "id": "1711.52.0.0.00.00",
+            "name": "Cota-Parte Do Imposto Sobre A Propriedade Territorial Rural",
+            "siglas": "ITR",
+            "value": 2747308.63,
+            "type": "leaf"
+          },
+          {
+            "id": "1721.52.0.0.00.00",
+            "name": "Cota-Parte Do IPI – Municípios",
+            "siglas": "IPI",
+            "value": 285868.16,
+            "type": "leaf"
+          },
+          {
+            "id": "1719.58.0.0.00.00",
+            "name": "Transferência Obrigatória Decorrente Da Lei Complementar Nº",
+            "siglas": "LEI KANDIR - LC 176",
+            "value": 156497.13,
+            "type": "leaf"
+          },
+          {
+            "id": "1712.52.1.0.00.00",
+            "name": "Cota-Parte Da Compensação Financeira Pela Produção De Petról",
+            "siglas": "ROYALTIES PETROLEO",
+            "value": 143745.51,
+            "type": "leaf"
+          }
+        ]
+      },
+      {
+        "id": "11",
+        "name": "Impostos, Taxas E Contribuições De Melhoria",
+        "value": 22333730.11,
+        "type": "node",
+        "children": [
+          {
+            "id": "1114.51.1.0.00.00",
+            "name": "Imposto Sobre Serviços De Qualquer Natureza – ISSQN",
+            "siglas": "ISS",
+            "value": 9529558.08,
+            "type": "leaf"
+          },
+          {
+            "id": "1112.50.0.0.00.00",
+            "name": "Imposto Sobre A Propriedade Predial E Territorial Urbana",
+            "siglas": "ITR",
+            "value": 5747067.5,
+            "type": "leaf"
+          },
+          {
+            "id": "1113.03.1.1.00.00",
+            "name": "Imposto Sobre A Renda – Retido Na Fonte – Trabalho – Princip",
+            "siglas": "IRRF",
+            "value": 4314075.12,
+            "type": "leaf"
+          },
+          {
+            "id": "1122.01.0.0.00.00",
+            "name": "Taxas Pela Prestação De Serviços Em Geral",
+            "siglas": null,
+            "value": 1003900.11,
+            "type": "leaf"
+          },
+          {
+            "id": "1119.99.0.0.00.00",
+            "name": "Outros Impostos",
+            "siglas": "OUTROS",
+            "value": 868268.62,
+            "type": "leaf"
+          },
+          {
+            "id": "1112.53.0.0.00.00",
+            "name": "Impostos Sobre Transmissão \"Inter Vivos\" De Bens Imóveis E D",
+            "siglas": "ITBI",
+            "value": 480860.68,
+            "type": "leaf"
+          },
+          {
+            "id": "1113.03.4.0.00.00",
+            "name": "Imposto Sobre A Renda – Retido Na Fonte – Outros Rendimentos",
+            "siglas": "IRPJ",
+            "value": 390000.0,
+            "type": "leaf"
+          }
+        ]
+      },
+      {
+        "id": "16",
+        "name": "Receita De Serviços",
+        "value": 3330323.09,
+        "type": "node",
+        "children": [
+          {
+            "id": "1699.50.1.0.00.00",
+            "name": "Serviços De Saneamento Básico – Abastecimento De Água.",
+            "siglas": "TAXA AGUA",
+            "value": 2268206.1,
+            "type": "leaf"
+          },
+          {
+            "id": "1699.50.2.0.00.00",
+            "name": "Serviços De Saneamento Básico – Esgotamento Sanitário.",
+            "siglas": "TAXA ESGOTO",
+            "value": 876638.91,
+            "type": "leaf"
+          },
+          {
+            "id": "1699.99.0.0.00.00",
+            "name": "Outros Serviços",
+            "siglas": "OUTROS SERVIÇOS",
+            "value": 185478.08,
+            "type": "leaf"
+          }
+        ]
+      },
+      {
+        "id": "12",
+        "name": "Contribuições",
+        "value": 1796818.9,
+        "type": "node",
+        "children": [
+          {
+            "id": "1241.50.0.0.00.00",
+            "name": "Contribuição Para O Custeio Do Serviço De Iluminação Pública",
+            "siglas": "CIP",
+            "value": 1738857.0,
+            "type": "leaf"
+          },
+          {
+            "id": "1215.01.2.0.00.00",
+            "name": "Contribuição Do Servidor Civil Inativo",
+            "siglas": "RPPS",
+            "value": 57961.9,
+            "type": "leaf"
+          }
+        ]
+      },
+      {
+        "id": "13",
+        "name": "Receita Patrimonial",
+        "value": 1065918.39,
+        "type": "node",
+        "children": [
+          {
+            "id": "1399.99.0.0.00.00",
+            "name": "Outras Receitas Patrimoniais",
+            "siglas": "OUTRAS RECEITAS PATRIMONIAIS",
+            "value": 695542.8,
+            "type": "leaf"
+          },
+          {
+            "id": "1321.01.1.0.00.00",
+            "name": "Remuneração De Depósitos Bancários - Geral",
+            "siglas": "RDB",
+            "value": 322846.82,
+            "type": "leaf"
+          },
+          {
+            "id": "1311.01.1.0.00.00",
+            "name": "Aluguéis E Arrendamentos",
+            "siglas": "TAXAS DE ALUGUEL",
+            "value": 44630.67,
+            "type": "leaf"
+          },
+          {
+            "id": "1322.01.0.0.00.00",
+            "name": "Dividendos",
+            "siglas": "DIVIDENDOS",
+            "value": 2898.1,
+            "type": "leaf"
+          }
+        ]
+      },
+      {
+        "id": "19",
+        "name": "Outras Receitas Correntes",
+        "value": 590283.99,
+        "type": "node",
+        "children": [
+          {
+            "id": "1922.00.0.0.00.00",
+            "name": "Restituições",
+            "siglas": "RESTITUIÇÕES",
+            "value": 528612.53,
+            "type": "leaf"
+          },
+          {
+            "id": "1911.01.0.0.00.00",
+            "name": "Multas Previstas Em Legislação Específica",
+            "siglas": "MULTAS",
+            "value": 52165.71,
+            "type": "leaf"
+          },
+          {
+            "id": "1999.99.2.0.00.00",
+            "name": "Outras Receitas Não Arrecadadas E Não Projetadas Pela RFB –",
+            "siglas": "OUTRAS RECEITAS",
+            "value": 9505.75,
+            "type": "leaf"
+          }
+        ]
+      },
+      {
+        "id": "29",
+        "name": "Outras Receitas De Capital",
+        "value": 46369.52,
+        "type": "node",
+        "children": [
+          {
+            "id": "2999.99.0.0.00.00",
+            "name": "Outras Receitas De Capital",
+            "siglas": "OUTRAS RECEITAS",
+            "value": 46369.52,
+            "type": "leaf"
+          }
+        ]
+      },
+      {
+        "id": "22",
+        "name": "Alienação De Bens",
+        "value": 40573.33,
+        "type": "node",
+        "children": [
+          {
+            "id": "2213.00.0.0.00.00",
+            "name": "Alienação De Bens Móveis E Semoventes",
+            "siglas": "ALIENAÇÃO",
+            "value": 40573.33,
+            "type": "leaf"
+          }
+        ]
+      },
+      {
+        "id": "90",
+        "name": "(-) Dedução Da Receita (FUNDEB)",
+        "value": -18841095.21,
+        "type": "node",
+        "children": [
+          {
+            "id": "9000.00.0.0.00.00",
+            "name": "(-) Dedução da Receita para Formação do Fundeb",
+            "siglas": "DEDUÇÃO FUNDEB",
+            "value": -18841095.21,
+            "type": "leaf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "02",
+    "name": "Recursos Vinculados (União / Estado / Emendas)",
+    "value": 34097770.88,
+    "type": "root",
+    "children": [
+      {
+        "id": "17",
+        "name": "Transferências Correntes",
+        "value": 30750990.08,
+        "type": "node",
+        "children": [
+          {
+            "id": "1751.00.0.0.00.00",
+            "name": "Transferências De Recursos Do Fundo De Manutenção E Desenvol",
+            "siglas": "FUNDEB",
+            "value": 24395948.19,
+            "type": "leaf"
+          },
+          {
+            "id": "1713.00.0.0.00.00",
+            "name": "Transferências De Recursos Do Sistema Único De Saúde – SUS",
+            "siglas": "SUS",
+            "value": 3326628.0,
+            "type": "leaf"
+          },
+          {
+            "id": "1714.50.0.0.00.00",
+            "name": "Transferências Do Salário-Educação",
+            "siglas": "QESE",
+            "value": 1628526.94,
+            "type": "leaf"
+          },
+          {
+            "id": "1714.52.0.0.00.00",
+            "name": "Transferências Referentes Ao Programa Nacional De Alimentaçã",
+            "siglas": "PNAE",
+            "value": 531103.02,
+            "type": "leaf"
+          },
+          {
+            "id": "1724.00.0.0.00.00",
+            "name": "Transferências De Convênios Dos Estados E DF E De Suas Entid",
+            "siglas": "CONVENIOS",
+            "value": 498472.34,
+            "type": "leaf"
+          },
+          {
+            "id": "1719.60.0.0.00.00",
+            "name": "Transferências Da Política Nacional Aldir Blanc De Fomento À",
+            "siglas": "AUDIR BLANC",
+            "value": 181900.0,
+            "type": "leaf"
+          },
+          {
+            "id": "1716.50.0.0.00.00",
+            "name": "Transferências De Recursos Do Fundo Nacional De Assistência",
+            "siglas": "FNAS-SUAS",
+            "value": 139224.12,
+            "type": "leaf"
+          },
+          {
+            "id": "1714.53.0.0.00.00",
+            "name": "Transferências Referentes Ao Programa Nacional De Apoio Ao T",
+            "siglas": "PNAT",
+            "value": 28900.81,
+            "type": "leaf"
+          },
+          {
+            "id": "1721.53.0.0.00.00",
+            "name": "Cota-Parte Da Contribuição De Intervenção No Domínio Econômi",
+            "siglas": "CIDE",
+            "value": 11592.38,
+            "type": "leaf"
+          },
+          {
+            "id": "1722.51.0.0.00.00",
+            "name": "Cota-Parte Da Compensação Financeira De Recursos Minerais –",
+            "siglas": "CFEM",
+            "value": 8694.28,
+            "type": "leaf"
+          }
+        ]
+      },
+      {
+        "id": "24",
+        "name": "Transferências De Capital",
+        "value": 3346780.8,
+        "type": "node",
+        "children": [
+          {
+            "id": "2429.99.0.0.00.00",
+            "name": "Outras Transferências De Recursos Dos Estados",
+            "siglas": "OUTRAS EMENDAS",
+            "value": 1854780.8,
+            "type": "leaf"
+          },
+          {
+            "id": "2422.00.0.0.00.00",
+            "name": "Transferências De Convênios Dos Estados E DF E De Suas Entid",
+            "siglas": "OUTRAS EMENDAS",
+            "value": 700000.0,
+            "type": "leaf"
+          },
+          {
+            "id": "2411.99.0.0.00.00",
+            "name": "Outras Transferências De Recursos Do Sistema Único De Saúde",
+            "siglas": "SUS EMENDAS",
+            "value": 396000.0,
+            "type": "leaf"
+          },
+          {
+            "id": "2412.50.9.0.00.00",
+            "name": "Outras Transferências Destinadas A Programas De Educação",
+            "siglas": "EDUCAÇÃO EMENDAS",
+            "value": 396000.0,
+            "type": "leaf"
+          }
+        ]
+      }
+    ]
+  }
+]

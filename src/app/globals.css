@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────────────────────
+   Design tokens — Pradópolis · Secretaria de Finanças
+   Direção "Cívico Moderno": superfícies claras e frias (concreto),
+   bordas reais (sem glass/blur), azul institucional como marca e
+   semânticas sóbrias de demonstrativo (crédito / débito / atenção).
+   ────────────────────────────────────────────────────────────── */
+:root {
+  /* Superfícies */
+  --bg: #ebeef1;          /* fundo concreto frio do app */
+  --surface: #ffffff;     /* cartões / painéis */
+  --surface-2: #f4f6f8;   /* faixas zebradas, insets, cabeçalhos de tabela */
+
+  /* Tinta */
+  --ink: #101826;         /* texto principal (quase-preto frio) */
+  --ink-2: #475467;       /* texto secundário */
+  --muted: #8a94a6;       /* texto terciário / placeholders */
+
+  /* Linhas */
+  --line: #d7dce3;        /* hairline padrão */
+  --line-strong: #c2c9d2; /* divisórias / hover de borda */
+
+  /* Marca — azul institucional */
+  --brand: #1b3a6b;
+  --brand-ink: #122a4f;   /* hover / estados ativos */
+  --brand-50: #eaf0f8;    /* tinta de fundo suave da marca */
+
+  /* Semânticas (tons institucionais, não "candy") */
+  --pos: #1f7a4d;         /* crédito / saudável */
+  --pos-50: #e7f2ec;
+  --neg: #b3261e;         /* débito / déficit / crítico */
+  --neg-50: #fbeae9;
+  --warn: #9a6700;        /* atenção / limite */
+  --warn-50: #fbf1dd;
+
+  --focus: var(--brand);
+}
+
+/* Mapeia os tokens para utilitários do Tailwind v4.
+   Habilita classes como bg-surface, text-ink, border-line, text-brand,
+   bg-neg-50, font-display, font-mono — o vocabulário compartilhado do app. */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+
+  --color-brand: var(--brand);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-50: var(--brand-50);
+
+  --color-pos: var(--pos);
+  --color-pos-50: var(--pos-50);
+  --color-neg: var(--neg);
+  --color-neg-50: var(--neg-50);
+  --color-warn: var(--warn);
+  --color-warn-50: var(--warn-50);
+
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+/* Tema sempre claro — evita que o user-agent force cores escuras. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, -apple-system, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Cifras e dados tabulares usam alinhamento de dígitos consistente. */
+.tabular,
+.font-mono {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--brand) 18%, transparent);
+  color: var(--ink);
+}
+
+/* Foco visível consistente para navegação por teclado. */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Utilitários compartilhados
+   ────────────────────────────────────────────────────────────── */
+
+/* Esconde a barra de rolagem horizontal mantendo o scroll por toque/trackpad. */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Pistas de que há conteúdo rolável nas laterais (nav mobile). */
+.scroll-fade-x {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 12px,
+    #000 calc(100% - 12px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 12px,
+    #000 calc(100% - 12px),
+    transparent 100%
+  );
+}
+
+/* Régua dupla fina — moldura "documento oficial" do herói. */
+.rule-double {
+  border-top: 1px solid var(--line-strong);
+  box-shadow: 0 3px 0 -2px var(--line);
+}
+
+/* Grade discreta de "papel quadriculado" para planos de fundo. */
+.bg-blueprint {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--brand) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--brand) 6%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Animações
+   ────────────────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out both;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Acessibilidade — respeitar prefers-reduced-motion
+   ────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
