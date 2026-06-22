@@ -17,6 +17,7 @@ import {
   Settings,
   Calendar,
   Search,
+  Activity,
 } from "lucide-react";
 import { cn } from "@/components/ui/primitives";
 
@@ -34,6 +35,7 @@ export const navItems: NavItem[] = [
   { id: "despesas", name: "Despesas Fixas", icon: TrendingDown, activeClass: "text-brand" },
   { id: "fiorilli", name: "Consulta Fiorilli", icon: Search, activeClass: "text-brand" },
   { id: "orcamento", name: "Orçamento", icon: PieChart, activeClass: "text-brand" },
+  { id: "saude", name: "Saúde", icon: Activity, activeClass: "text-brand" },
   { id: "planejamento", name: "Planejamento 2027", icon: Calendar, activeClass: "text-brand" },
   { id: "documentos", name: "Documentos", icon: FileText, activeClass: "text-brand" },
   { id: "settings", name: "Configurações", icon: Settings, activeClass: "text-brand" },
