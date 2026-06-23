@@ -7,7 +7,7 @@ import { TopNav } from "@/components/ui/TopNav";
 import { DashboardOverview } from "@/components/dashboard/DashboardOverview";
 import { PrevisaoReceita } from "@/components/dashboard/PrevisaoReceita";
 import { OrcamentoDashboard } from "@/components/dashboard/OrcamentoDashboard";
-import { ExecucaoSaude } from "@/components/dashboard/ExecucaoSaude";
+import { ExecucaoSetorial } from "@/components/dashboard/ExecucaoSetorial";
 import { DespesasFixas } from "@/components/dashboard/DespesasFixas";
 import { ConsultaFiorilli } from "@/components/dashboard/ConsultaFiorilli";
 import { DocumentosViewer } from "@/components/dashboard/DocumentosViewer";
@@ -110,11 +110,11 @@ export default function Home() {
         {activeTab === "despesas" && <DespesasFixas />}
         {activeTab === "fiorilli" && <ConsultaFiorilli />}
         {activeTab === "orcamento" && <OrcamentoDashboard />}
-        {activeTab === "saude" && <ExecucaoSaude />}
-        {activeTab === "planejamento" && <Planejamento2027 />}
+        {activeTab === "execucao-setorial" && <ExecucaoSetorial />}
+        {activeTab === "planejamento" && <Planejamento2027 user={user} />}
         {activeTab === "documentos" && <DocumentosViewer onBack={() => setActiveTab("home")} />}
         {activeTab === "settings" && <Configuracoes user={user} />}
-        {activeTab !== "home" && activeTab !== "receita" && activeTab !== "despesas" && activeTab !== "fiorilli" && activeTab !== "orcamento" && activeTab !== "saude" && activeTab !== "planejamento" && activeTab !== "documentos" && activeTab !== "settings" && (
+        {activeTab !== "home" && activeTab !== "receita" && activeTab !== "despesas" && activeTab !== "fiorilli" && activeTab !== "orcamento" && activeTab !== "execucao-setorial" && activeTab !== "planejamento" && activeTab !== "documentos" && activeTab !== "settings" && (
           <div className="w-full h-[70vh] flex items-center justify-center px-6">
             <div className="text-center max-w-sm">
               <h2 className="font-display text-2xl font-bold text-ink tracking-tight">Módulo em construção</h2>

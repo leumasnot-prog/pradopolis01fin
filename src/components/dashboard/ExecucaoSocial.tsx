@@ -1,10 +1,10 @@
 "use client";
 
-// Execução do Orçamento da Saúde.
-// Tela dedicada ao setor da Saúde: cumprimento do piso constitucional de 15%,
+// Execução do Orçamento da Promoção Social.
+// Tela dedicada ao setor de Promoção Social: cumprimento da meta sugerida de 80% de execução,
 // comparativo anual de execução (2025 × 2026, até o mês fechado) por fonte de
 // recurso e por função/subfunção, e os contratos/despesas fixas do
-// Departamento Municipal de Saúde (incluindo o convênio INGESP Innovare).
+// Departamento Municipal de Assistência e Promoção Social.
 
 import { useState, useMemo, useEffect } from "react";
 import {
@@ -18,7 +18,7 @@ import {
   CartesianGrid,
 } from "recharts";
 import {
-  Activity,
+  HeartHandshake,
   DollarSign,
   CheckCircle2,
   AlertTriangle,
@@ -61,7 +61,7 @@ interface ComparativoFuncao {
   a2026: MetricSet;
   varLiquidado: number | null;
 }
-interface SaudeExecucaoData {
+interface SocialExecucaoData {
   resumo: {
     a2025: MetricSet & { numEmpenhos: number };
     a2026: MetricSet & { numEmpenhos: number };
@@ -94,22 +94,7 @@ interface Contrato {
 
 const despesasFixasData = despesasFixasDataRaw as { contratos: Contrato[] };
 
-const SETOR_SAUDE = "DEPARTAMENTO MUNICIPAL DE SAÚDE";
-
-// Convênio permanente — informado manualmente (não consta no relatório de empenhos).
-const CONTRATO_INGESP: Contrato = {
-  empenho: "—",
-  contrato: "Convênio INGESP",
-  fornecedor: "INGESP INNOVARE",
-  historico:
-    "Pagamento permanente de convênio e prestação de serviços com valor fixado em R$ 500.000,00 mensais.",
-  setor: SETOR_SAUDE,
-  categoria: "CONVÊNIO / PRESTAÇÃO DE SERVIÇOS",
-  ficha: "—",
-  valor_mensal: 500000,
-  valor_anual: 6000000,
-  cronograma: Array(12).fill(500000),
-};
+const SETOR_SOCIAL = "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL";
 
 const COLORS = {
   brand: "#1B3A6B",
@@ -135,28 +120,28 @@ const TOOLTIP_STYLE = {
 type Metric = "empenhado" | "liquidado" | "pago";
 type GroupMode = "fonte" | "funcao";
 
-export function ExecucaoSaude() {
+export function ExecucaoSocial() {
   const prefersReducedMotion = useReducedMotion();
 
-  const [data, setData] = useState<SaudeExecucaoData | null>(null);
+  const [data, setData] = useState<SocialExecucaoData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
     let active = true;
     setLoading(true);
-    fetch("/api/saude/execucao")
+    fetch("/api/social/execucao")
       .then((r) => {
         if (!r.ok) throw new Error("Falha ao carregar dados");
         return r.json();
       })
-      .then((d: SaudeExecucaoData) => {
+      .then((d: SocialExecucaoData) => {
         if (active) {
           setData(d);
           setError("");
         }
       })
-      .catch(() => active && setError("Não foi possível processar os relatórios de execução da Saúde."))
+      .catch(() => active && setError("Não foi possível processar os relatórios de execução da Promoção Social."))
       .finally(() => active && setLoading(false));
     return () => {
       active = false;
@@ -172,22 +157,23 @@ export function ExecucaoSaude() {
   const [contractPage, setContractPage] = useState(1);
   const contractsPerPage = 8;
 
-  // Contratos do Departamento Municipal de Saúde + INGESP
-  const healthContracts = useMemo(() => {
-    const base = despesasFixasData.contratos.filter((c) => c.setor === SETOR_SAUDE);
-    return [CONTRATO_INGESP, ...base].sort((a, b) => b.valor_anual - a.valor_anual);
+  // Contratos do Departamento Municipal de Assistência e Promoção Social
+  const socialContracts = useMemo(() => {
+    return despesasFixasData.contratos
+      .filter((c) => c.setor === SETOR_SOCIAL)
+      .sort((a, b) => b.valor_anual - a.valor_anual);
   }, []);
 
   const filteredContracts = useMemo(() => {
     const q = contractSearch.toLowerCase();
-    return healthContracts.filter(
+    return socialContracts.filter(
       (c) =>
         c.fornecedor.toLowerCase().includes(q) ||
         c.historico.toLowerCase().includes(q) ||
         c.categoria.toLowerCase().includes(q) ||
         c.empenho.toLowerCase().includes(q),
     );
-  }, [healthContracts, contractSearch]);
+  }, [socialContracts, contractSearch]);
 
   const contractTotals = useMemo(
     () =>
@@ -295,7 +281,7 @@ export function ExecucaoSaude() {
       <div className="w-full h-[70vh] flex items-center justify-center px-6">
         <div className="flex flex-col items-center gap-3 text-ink-2">
           <RefreshCw className="w-7 h-7 animate-spin text-brand" />
-          <span className="text-sm font-semibold">Processando relatórios de execução da Saúde…</span>
+          <span className="text-sm font-semibold">Processando relatórios de execução da Promoção Social…</span>
         </div>
       </div>
     );
@@ -318,8 +304,8 @@ export function ExecucaoSaude() {
       ? ((resumo.a2026.liquidado - resumo.a2025.liquidado) / resumo.a2025.liquidado) * 100
       : null;
 
-  // Anel do gauge: cheio quando o aplicado atinge o piso de 15%.
-  const ringFraction = limite.minimo2026 > 0 ? Math.min(limite.aplicadoLiquidado2026 / limite.minimo2026, 1) : 0;
+  // Anel do gauge: cheio quando o aplicado atinge a meta sugerida de 80%.
+  const ringFraction = limite.baseReceita2026 > 0 ? Math.min(limite.aplicadoLiquidado2026 / limite.baseReceita2026, 1) : 0;
   const RING_LEN = 477.5;
 
   return (
@@ -332,13 +318,13 @@ export function ExecucaoSaude() {
       {/* Header */}
       <motion.div variants={itemVariants} className="mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <SectionHeader
-          title="Execução do Orçamento — Saúde"
-          subtitle="Cumprimento do piso constitucional de 15%, comparativo anual da execução (até o mês fechado) e contratos fixos do Departamento Municipal de Saúde"
+          title="Execução do Orçamento — Promoção Social"
+          subtitle="Acompanhamento orçamentário da Assistência Social, comparativo anual da execução (2025 × 2026) e contratos fixos do setor"
           badge={
-            <StatusBadge tone={limite.atingiu ? "healthy" : "critical"}>
+            <StatusBadge tone={limite.atingiu ? "healthy" : "attention"}>
               <span className="flex items-center gap-1">
                 {limite.atingiu ? <CheckCircle2 className="w-3 h-3" /> : <AlertTriangle className="w-3 h-3" />}
-                {formatPercent(limite.percentualAplicado2026)} {limite.atingiu ? "· LIMITE ATINGIDO" : "· ABAIXO DO PISO"}
+                {formatPercent(limite.percentualAplicado2026)} {limite.atingiu ? "· META ATINGIDA" : "· ABAIXO DA META"}
               </span>
             </StatusBadge>
           }
@@ -357,7 +343,7 @@ export function ExecucaoSaude() {
         <StatCard
           title="Empenhado · 2026"
           value={<AnimatedNumber value={resumo.a2026.empenhado} />}
-          subtitle={`${resumo.a2026.numEmpenhos.toLocaleString("pt-BR")} empenhos (até mai/05)`}
+          subtitle={`${resumo.a2026.numEmpenhos.toLocaleString("pt-BR")} empenhos alocados`}
           icon={TrendingUp}
           iconBgClass="bg-warn-50/80 border border-warn-200/50 shadow-sm"
           iconColorClass="text-warn font-semibold"
@@ -379,13 +365,13 @@ export function ExecucaoSaude() {
           iconColorClass="text-brand"
         />
         <StatCard
-          title="Aplicação em Saúde"
+          title="Taxa de Execução"
           value={<AnimatedNumber value={limite.percentualAplicado2026} type="percent" />}
-          subtitle={`Mínimo constitucional: ${formatPercent(limite.percentualMinimo)}`}
+          subtitle={`Meta sugerida do setor: ${formatPercent(limite.percentualMinimo)}`}
           icon={ShieldCheck}
-          iconBgClass={limite.atingiu ? "bg-pos-50/80 border border-pos-200/50 shadow-sm" : "bg-neg-50/80 border border-neg-200/50 shadow-sm"}
-          iconColorClass={limite.atingiu ? "text-pos" : "text-neg"}
-          valueColorClass={limite.atingiu ? "text-pos" : "text-neg"}
+          iconBgClass={limite.atingiu ? "bg-pos-50/80 border border-pos-200/50 shadow-sm" : "bg-warn-50/80 border border-warn-200/50 shadow-sm"}
+          iconColorClass={limite.atingiu ? "text-pos" : "text-warn"}
+          valueColorClass={limite.atingiu ? "text-pos" : "text-warn"}
         />
         <StatCard
           title="Variação Liquidado"
@@ -408,42 +394,37 @@ export function ExecucaoSaude() {
 
       {/* Charts grid com gradientes */}
       <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-12 gap-6 print:grid-cols-12 print:gap-4">
-        {/* Gauge: piso constitucional com glow e gradiente */}
+        {/* Gauge: Eficiência de Execução */}
         <Card className="lg:col-span-4 p-6 flex flex-col justify-between min-h-[390px] shadow-sm relative overflow-hidden group hover:shadow-md transition-all duration-300 print:col-span-4 print:break-inside-avoid">
           <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-gradient-to-br from-brand/5 to-transparent rounded-full blur-xl pointer-events-none" />
           
           <div>
             <span className="text-[11px] font-semibold text-muted uppercase tracking-[0.14em] block">
-              Piso Constitucional · 2026
+              Eficiência de Execução · 2026
             </span>
             <h4 className="font-display text-lg font-bold text-ink tracking-tight mt-1">
-              Aplicação em Saúde (EC 29 / LC 141)
+              Liquidação Orçamentária
             </h4>
             <p className="text-xs font-medium text-ink-2 mt-0.5">
-              Liquidado da função Saúde sobre a receita de impostos e transferências
+              Percentual do orçamento empenhado que já foi liquidado e atestado
             </p>
           </div>
 
           <div className="flex flex-col items-center justify-center py-4 relative">
             <div className="relative w-44 h-44 flex items-center justify-center">
-              {/* Glow filter definition */}
               <svg className="w-full h-full transform -rotate-90">
                 <defs>
-                  <linearGradient id="gaugeGradient" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor={limite.atingiu ? "#34D399" : "#F87171"} />
-                    <stop offset="100%" stopColor={limite.atingiu ? "#059669" : "#DC2626"} />
+                  <linearGradient id="gaugeGradientSocial" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor={limite.atingiu ? "#34D399" : "#FBBF24"} />
+                    <stop offset="100%" stopColor={limite.atingiu ? "#059669" : "#D97706"} />
                   </linearGradient>
-                  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="3" result="blur" />
-                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                  </filter>
                 </defs>
                 <circle cx="88" cy="88" r="76" className="stroke-line" strokeWidth="13" fill="transparent" />
                 <motion.circle
                   cx="88"
                   cy="88"
                   r="76"
-                  stroke="url(#gaugeGradient)"
+                  stroke="url(#gaugeGradientSocial)"
                   strokeWidth="13"
                   fill="transparent"
                   strokeDasharray={RING_LEN}
@@ -460,27 +441,27 @@ export function ExecucaoSaude() {
                 </span>
                 <span
                   className={`text-[10px] font-bold uppercase tracking-[0.12em] mt-1.5 ${
-                    limite.atingiu ? "text-pos" : "text-neg"
+                    limite.atingiu ? "text-pos" : "text-warn"
                   }`}
                 >
-                  {limite.atingiu ? "Limite atingido" : "Abaixo do piso"}
+                  {limite.atingiu ? "Meta atingida" : "Abaixo da meta"}
                 </span>
-                <span className="text-[10px] font-semibold text-muted mt-0.5">mínimo 15%</span>
+                <span className="text-[10px] font-semibold text-muted mt-0.5">sugerido 80%</span>
               </div>
             </div>
           </div>
 
           <div className="bg-surface-2 rounded-lg p-4 border border-line text-center space-y-1 mt-2">
             <span className="text-xs font-medium text-ink-2 block">
-              Aplicado{" "}
-              <strong className="font-mono tabular text-ink">{formatBRL(limite.aplicadoLiquidado2026)}</strong> de uma
-              base de <strong className="font-mono tabular text-ink">{formatBRL(limite.baseReceita2026)}</strong>.
+              Liquidado{" "}
+              <strong className="font-mono tabular text-ink">{formatBRL(limite.aplicadoLiquidado2026)}</strong> de um
+              base empenhada de <strong className="font-mono tabular text-ink">{formatBRL(limite.baseReceita2026)}</strong>.
             </span>
             <span className="text-[11px] font-medium text-muted block">
-              Piso de 15%: <strong className="font-mono tabular text-warn">{formatBRL(limite.minimo2026)}</strong>
+              Meta de 80%: <strong className="font-mono tabular text-brand">{formatBRL(limite.minimo2026)}</strong>
               {" · "}
-              {limite.folgaValor >= 0 ? "Acima do piso em " : "Faltam "}
-              <strong className={`font-mono tabular ${limite.folgaValor >= 0 ? "text-pos" : "text-neg"}`}>
+              {limite.folgaValor >= 0 ? "Faltam liquidar " : "Meta superada por "}
+              <strong className={`font-mono tabular ${limite.folgaValor >= 0 ? "text-warn" : "text-pos"}`}>
                 {formatBRL(Math.abs(limite.folgaValor))}
               </strong>
             </span>
@@ -521,7 +502,7 @@ export function ExecucaoSaude() {
                   tick={{ fill: COLORS.axisMuted, fontSize: 10 }}
                   axisLine={false}
                   tickLine={false}
-                  tickFormatter={(v) => `R$ ${(v / 1000000).toFixed(1)}M`}
+                  tickFormatter={(v) => `R$ ${(v / 1000).toFixed(0)} mil`}
                   width={70}
                 />
                 <Tooltip
@@ -552,7 +533,7 @@ export function ExecucaoSaude() {
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={topSubfuncoes} layout="vertical" margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
                   <defs>
-                    <linearGradient id="gradientLiq" x1="0" y1="0" x2="1" y2="0">
+                    <linearGradient id="gradientLiqSocial" x1="0" y1="0" x2="1" y2="0">
                       <stop offset="0%" stopColor="#34D399" stopOpacity={0.9} />
                       <stop offset="100%" stopColor="#059669" stopOpacity={0.65} />
                     </linearGradient>
@@ -563,7 +544,7 @@ export function ExecucaoSaude() {
                     tick={{ fill: COLORS.axisMuted, fontSize: 9 }}
                     axisLine={false}
                     tickLine={false}
-                    tickFormatter={(v) => `R$ ${(v / 1000000).toFixed(1)}M`}
+                    tickFormatter={(v) => `R$ ${(v / 1000).toFixed(0)} mil`}
                   />
                   <YAxis
                     type="category"
@@ -578,7 +559,7 @@ export function ExecucaoSaude() {
                     contentStyle={TOOLTIP_STYLE}
                     cursor={{ fill: "rgba(31,122,77,0.04)" }}
                   />
-                  <Bar dataKey="Liquidado" fill="url(#gradientLiq)" radius={[0, 4, 4, 0]} barSize={14} />
+                  <Bar dataKey="Liquidado" fill="url(#gradientLiqSocial)" radius={[0, 4, 4, 0]} barSize={14} />
                 </BarChart>
               </ResponsiveContainer>
             ) : (
@@ -597,7 +578,7 @@ export function ExecucaoSaude() {
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-surface-2 text-ink-2 border border-line shadow-inner">
-                <Activity className="w-5 h-5 text-brand" />
+                <HeartHandshake className="w-5 h-5 text-brand" />
               </div>
               <div>
                 <h4 className="font-display text-lg font-bold text-ink tracking-tight">
@@ -753,7 +734,7 @@ export function ExecucaoSaude() {
         </Card>
       </motion.div>
 
-      {/* Contratos e despesas fixas da Saúde */}
+      {/* Contratos e despesas fixas da Promoção Social */}
       <motion.div variants={itemVariants}>
         <Card className="p-6 shadow-sm hover:shadow-md transition-all duration-300">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
@@ -763,10 +744,10 @@ export function ExecucaoSaude() {
               </div>
               <div>
                 <h4 className="font-display text-lg font-bold text-ink tracking-tight">
-                  Contratos e Despesas Fixas — Saúde
+                  Contratos e Despesas Fixas — Promoção Social
                 </h4>
                 <p className="text-xs font-medium text-ink-2">
-                  Departamento Municipal de Saúde · inclui o convênio INGESP Innovare ·{" "}
+                  Departamento Municipal de Assistência e Promoção Social ·{" "}
                   <span className="font-mono tabular text-brand font-bold">{filteredContracts.length}</span> registros
                 </p>
               </div>
@@ -807,12 +788,11 @@ export function ExecucaoSaude() {
               </thead>
               <tbody className="divide-y divide-line">
                 {filteredContracts.map((c, index) => {
-                  const isIngesp = c.fornecedor === CONTRATO_INGESP.fornecedor;
                   const isPaged = index >= (contractPage - 1) * contractsPerPage && index < contractPage * contractsPerPage;
                   return (
                     <tr
                       key={`${c.empenho}-${c.fornecedor}`}
-                      className={`hover:bg-surface-2/70 transition-colors ${isIngesp ? "bg-pos-50/20" : ""} ${
+                      className={`hover:bg-surface-2/70 transition-colors ${
                         isPaged ? "" : "hidden print-show-all-rows"
                       }`}
                     >
@@ -823,8 +803,7 @@ export function ExecucaoSaude() {
                       </td>
                       <td className="py-3 px-4">
                         <div className="flex flex-col">
-                          <span className="text-sm font-semibold text-ink line-clamp-1 flex items-center gap-1.5">
-                            {isIngesp && <ShieldCheck className="w-3.5 h-3.5 text-pos shrink-0" />}
+                          <span className="text-sm font-semibold text-ink line-clamp-1">
                             {c.fornecedor}
                           </span>
                           <span className="text-[10px] font-medium text-muted mt-0.5 line-clamp-1">{c.historico}</span>

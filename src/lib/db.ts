@@ -58,6 +58,54 @@ if (!globalThis.sqliteDb) {
       console.error("Failed to seed default settings:", e);
     }
 
+    // Drop table is no longer needed since schema has migrated to the modern JSON-based documents field
+    // try {
+    //   globalThis.sqliteDb.exec("DROP TABLE IF EXISTS planning_tasks");
+    // } catch (_) {}
+
+    // Create planning_tasks table if not exists
+    globalThis.sqliteDb.exec(`
+      CREATE TABLE IF NOT EXISTS planning_tasks (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        type TEXT NOT NULL,
+        periodo TEXT NOT NULL,
+        etapa TEXT NOT NULL,
+        atividade TEXT NOT NULL,
+        responsavel TEXT NOT NULL,
+        status TEXT NOT NULL DEFAULT 'aguardando',
+        data_reuniao TEXT,
+        documents TEXT
+      )
+    `);
+
+    // Seed default planning tasks
+    try {
+      const checkTasks = globalThis.sqliteDb.prepare("SELECT count(*) as count FROM planning_tasks");
+      const taskCount = checkTasks.get() as { count: number } | undefined;
+      if (!taskCount || taskCount.count === 0) {
+        const insertTask = globalThis.sqliteDb.prepare(
+          "INSERT INTO planning_tasks (type, periodo, etapa, atividade, responsavel, status) VALUES (?, ?, ?, ?, ?, ?)"
+        );
+
+        // LDO
+        insertTask.run("ldo", "Maio", "Alinhamento pós-PPA", "Análise da LDO anterior e definição das metas fiscais do exercício", "ALEX MORONTA , SAMUEL PULCINI", "aguardando");
+        insertTask.run("ldo", "Junho", "Proposta técnica inicial", "Elaboração da minuta da LDO com base no PPA e nas prioridades da gestão", "ALEX MORONTA , SAMUEL PULCINI", "aguardando");
+        insertTask.run("ldo", "Julho", "Revisão e complementação", "Ajustes técnicos e integração com os setores", "ALEX MORONTA , SAMUEL PULCINI", "aguardando");
+        insertTask.run("ldo", "Até 10 de Agosto", "Audiência pública", "Realização da audiência pública sobre a LDO", "ALEX MORONTA , SAMUEL PULCINI", "aguardando");
+        insertTask.run("ldo", "Até 20 de Agosto", "Entrega à Câmara", "Protocolo do Projeto de Lei do LDO na Câmara Municipal", "Diretor de Finanças", "aguardando");
+
+        // LOA
+        insertTask.run("loa", "Julho", "Coleta de dados e estimativas", "Levantamento das receitas, despesas, emendas e demandas por unidade orçamentária", "ALEX MORONTA , SAMUEL PULCINI", "aguardando");
+        insertTask.run("loa", "Agosto", "Elaboração da proposta", "Redação técnica da LOA e organização dos anexos e quadros", "ALEX MORONTA , SAMUEL PULCINI", "aguardando");
+        insertTask.run("loa", "Até 10 de Setembro", "Audiência pública", "Realização da audiência pública sobre a proposta orçamentária", "ALEX MORONTA , SAMUEL PULCINI", "aguardando");
+        insertTask.run("loa", "Até 20 de Setembro", "Entrega à Câmara", "Protocolo do Projeto de Lei da LOA na Câmara Municipal", "Diretor de Finanças", "aguardando");
+
+        console.log("Migration: Seeding initial planning tasks for 2027.");
+      }
+    } catch (e) {
+      console.error("Failed to seed default planning tasks:", e);
+    }
+
 
     // Migration to add 'approved' column in case the database existed before
     try {

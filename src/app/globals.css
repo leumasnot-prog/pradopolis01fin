@@ -192,3 +192,63 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* ──────────────────────────────────────────────────────────────
+   Print Stylesheet — Relatório PDF
+   ────────────────────────────────────────────────────────────── */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #101826 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Oculta navegações, botões e elementos de controle */
+  header,
+  nav,
+  .print\:hidden,
+  button,
+  input,
+  .sticky,
+  .fixed {
+    display: none !important;
+  }
+
+  /* Ajusta container principal para usar todo o papel A4 */
+  main {
+    padding-top: 0 !important;
+  }
+
+  .max-w-screen-2xl {
+    max-w: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Remove sombras e adiciona borda sutil para cartões na impressão */
+  .shadow-sm,
+  .shadow-md,
+  .shadow,
+  .shadow-inner {
+    box-shadow: none !important;
+    border: 1px solid #d7dce3 !important;
+  }
+
+  /* Evita quebra de cartões no meio de uma página */
+  .print\:break-inside-avoid {
+    break-inside: avoid-page !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Força cores de fundo e gradientes nos navegadores (WebKit/Firefox) */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Exibir todas as linhas de tabelas paginadas ao imprimir */
+  .print-show-all-rows {
+    display: table-row !important;
+  }
+}
