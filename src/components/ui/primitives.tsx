@@ -95,14 +95,15 @@ export function StatCard({
 }: StatCardProps) {
   return (
     <motion.div
-      whileHover={onClick ? { y: -2 } : undefined}
-      whileTap={onClick ? { scale: 0.99 } : undefined}
+      whileHover={{ y: -4 }}
+      whileTap={{ scale: 0.985 }}
       onClick={onClick}
-      transition={{ type: "spring", stiffness: 300, damping: 24 }}
+      transition={{ type: "spring", stiffness: 350, damping: 25 }}
       className={cn(
         glassCard,
-        "p-5 flex flex-col justify-between gap-4 transition-colors",
-        onClick && "cursor-pointer hover:border-brand/40",
+        "p-4 sm:p-5 flex flex-col justify-between gap-4 transition-all duration-300",
+        "hover:shadow-[0_8px_20px_rgba(16,24,38,0.06)] hover:border-brand/20",
+        onClick ? "cursor-pointer hover:border-brand/40" : "",
       )}
     >
       <div className="flex items-center gap-2.5">
@@ -111,17 +112,17 @@ export function StatCard({
         </div>
         <span className="text-[11px] font-semibold text-ink-2 uppercase tracking-[0.08em]">{title}</span>
       </div>
-      <div>
+      <div className="overflow-hidden">
         <h4
           className={cn(
-            // clamp para caber cifras de 9 dígitos em colunas estreitas e crescer no desktop
-            "font-mono text-[clamp(1.05rem,2vw,1.6rem)] leading-none font-semibold tracking-tight tabular whitespace-nowrap",
+            // clamp para caber cifras de 9 dígitos em colunas estreitas sem transbordar, crescendo no desktop
+            "font-mono text-[clamp(0.85rem,1.5vw,1.2rem)] xl:text-[clamp(1.05rem,1.6vw,1.45rem)] leading-none font-semibold tracking-tight tabular whitespace-nowrap overflow-hidden text-ellipsis",
             valueColorClass,
           )}
         >
           {value}
         </h4>
-        {subtitle && <span className="mt-1.5 block text-xs font-medium text-muted">{subtitle}</span>}
+        {subtitle && <span className="mt-1.5 block text-xs font-medium text-muted truncate">{subtitle}</span>}
       </div>
     </motion.div>
   );
