@@ -5,7 +5,7 @@
 // azul institucional como marca, cifras em monoespaçada tabular (demonstrativo).
 // A API pública é estável — telas que importam estes componentes herdam o novo visual.
 
-import { useEffect, useRef, useState, useId } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, useId } from "react";
 import { motion, useMotionValue, animate, useReducedMotion } from "framer-motion";
 import { Eye, EyeOff, Loader2 } from "lucide-react";
 import { formatBRL, formatPercent } from "@/lib/format";
@@ -71,6 +71,101 @@ export function SectionHeader({ title, subtitle, badge, className }: SectionHead
   );
 }
 
+// useLayoutEffect dispara antes da pintura (evita "salto" de tamanho), mas
+// avisa no SSR — no servidor caímos para useEffect, que lá é no-op.
+const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
+interface FitValueProps {
+  children: React.ReactNode;
+  /** Tamanho máximo da fonte (px) quando há espaço de sobra. */
+  max?: number;
+  /** Piso da fonte (px); abaixo disso quebra linha em vez de cortar. */
+  min?: number;
+  className?: string;
+}
+
+/**
+ * Ajusta o tamanho da fonte do conteúdo (tipicamente uma cifra) para caber por
+ * INTEIRO na largura do container — sem cortar, sem reticências. O dimensionamento
+ * é por LARGURA REAL do card (não por breakpoint de viewport), então funciona em
+ * qualquer grade/dispositivo. Mede o container (ResizeObserver) e o conteúdo
+ * (MutationObserver — cobre valores de <AnimatedNumber> que mudam via ref) e reduz
+ * a fonte só o necessário, de `max` até `min`. Se nem em `min` couber (container
+ * minúsculo), permite quebra de linha — nunca trunca.
+ */
+export function FitValue({ children, max = 22, min = 13, className }: FitValueProps) {
+  const outerRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLSpanElement>(null);
+
+  useIsoLayoutEffect(() => {
+    const outer = outerRef.current;
+    const inner = innerRef.current;
+    if (!outer || !inner) return;
+
+    let lastWidth = -1;
+    // Síncrono (sem rAF): funciona mesmo com a aba em background. Mede sempre a
+    // partir do máximo para obter a largura natural e encolhe só o necessário.
+    const apply = () => {
+      inner.style.whiteSpace = "nowrap";
+      inner.style.fontSize = `${max}px`;
+      const available = outer.clientWidth;
+      const needed = inner.scrollWidth;
+      if (available && needed && needed > available) {
+        const fitted = Math.floor(max * (available / needed));
+        if (fitted >= min) {
+          inner.style.fontSize = `${fitted}px`;
+        } else {
+          // Container estreito demais: usa o piso e quebra linha (jamais corta).
+          inner.style.fontSize = `${min}px`;
+          inner.style.whiteSpace = "normal";
+        }
+      }
+      lastWidth = available;
+    };
+
+    apply(); // antes da pintura → sem "salto" visual
+
+    // Largura do card mudou (responsivo) → re-ajusta. Notificações causadas só
+    // por mudança de ALTURA (a própria fonte altera a altura) são ignoradas para
+    // não criar laço de ResizeObserver.
+    const ro = new ResizeObserver(() => {
+      if (outer.clientWidth !== lastWidth) apply();
+    });
+    ro.observe(outer);
+
+    // Conteúdo mudou (ex.: <AnimatedNumber> contando de 0 ao valor) → re-ajusta.
+    const mo = new MutationObserver(apply);
+    mo.observe(inner, { childList: true, characterData: true, subtree: true });
+
+    // Métricas das fontes web podem mudar após o carregamento assíncrono.
+    if (typeof document !== "undefined" && document.fonts?.ready) {
+      document.fonts.ready.then(apply).catch(() => {});
+    }
+
+    return () => {
+      ro.disconnect();
+      mo.disconnect();
+    };
+  }, [max, min]);
+
+  return (
+    <div ref={outerRef} className={className} style={{ minWidth: 0 }}>
+      <span
+        ref={innerRef}
+        style={{
+          display: "inline-block",
+          fontSize: `${max}px`,
+          lineHeight: 1.05,
+          whiteSpace: "nowrap",
+          overflowWrap: "anywhere",
+        }}
+      >
+        {children}
+      </span>
+    </div>
+  );
+}
+
 interface StatCardProps {
   title: string;
   value: React.ReactNode;
@@ -112,17 +207,12 @@ export function StatCard({
         </div>
         <span className="text-[11px] font-semibold text-ink-2 uppercase tracking-[0.08em]">{title}</span>
       </div>
-      <div className="overflow-hidden">
-        <h4
-          className={cn(
-            // clamp para caber cifras de 9 dígitos em colunas estreitas sem transbordar, crescendo no desktop
-            "font-mono text-[clamp(0.85rem,1.5vw,1.2rem)] xl:text-[clamp(1.05rem,1.6vw,1.45rem)] leading-none font-semibold tracking-tight tabular whitespace-nowrap overflow-hidden text-ellipsis",
-            valueColorClass,
-          )}
-        >
+      <div className="min-w-0">
+        {/* Cifra com auto-fit por largura do card: sempre inteira, sem corte. */}
+        <FitValue max={22} min={13} className={cn("font-mono font-semibold tracking-tight tabular", valueColorClass)}>
           {value}
-        </h4>
-        {subtitle && <span className="mt-1.5 block text-xs font-medium text-muted truncate">{subtitle}</span>}
+        </FitValue>
+        {subtitle && <span className="mt-1.5 block text-xs font-medium text-muted">{subtitle}</span>}
       </div>
     </motion.div>
   );

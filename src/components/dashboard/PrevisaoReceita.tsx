@@ -60,29 +60,27 @@ const CustomizedContent = (props: any) => {
         rx={8}
         ry={8}
       />
-      {width > 120 && height > 60 ? (
-        <>
-          <text
-            x={x + 16}
-            y={y + 36}
-            fill="#ffffff"
-            fontSize={width > 250 ? 18 : 14}
-            fontWeight={700}
-          >
-            {displayName}
-          </text>
-          <text
-            x={x + 16}
-            y={y + 60}
-            fill="#ffffff"
-            fontSize={width > 250 ? 16 : 13}
-            fontWeight={500}
-            opacity={0.9}
-          >
-            {formatBRL(displayValue)}
-          </text>
-        </>
-      ) : null}
+      {width > 120 && height > 60 ? (() => {
+        const nameFs = width > 250 ? 18 : 14;
+        const valueFs = width > 250 ? 16 : 13;
+        const avail = width - 32;
+        // Condensa o texto (textLength) só quando ele não caberia no tile, para
+        // nunca vazar a borda — mostra o rótulo inteiro, sem corte e sem reticências.
+        const fit = (text: string, size: number) =>
+          text.length * size * 0.58 > avail
+            ? { textLength: Math.max(1, avail), lengthAdjust: "spacingAndGlyphs" as const }
+            : {};
+        return (
+          <>
+            <text x={x + 16} y={y + 36} fill="#ffffff" fontSize={nameFs} fontWeight={700} {...fit(displayName, nameFs)}>
+              {displayName}
+            </text>
+            <text x={x + 16} y={y + 60} fill="#ffffff" fontSize={valueFs} fontWeight={500} opacity={0.9} {...fit(formatBRL(displayValue), valueFs)}>
+              {formatBRL(displayValue)}
+            </text>
+          </>
+        );
+      })() : null}
     </g>
   );
 };

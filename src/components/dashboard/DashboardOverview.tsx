@@ -18,7 +18,7 @@ import { TrendingUp, Receipt, Wallet, AlertCircle, Calculator, X, Landmark, PieC
 import dbDataRaw from "@/data/dashboard_data.json";
 import { formatBRL } from "@/lib/format";
 import { getFiscalStatus, type FiscalLevel } from "@/lib/fiscal";
-import { AnimatedNumber, SectionHeader, cn } from "@/components/ui/primitives";
+import { AnimatedNumber, SectionHeader, cn, FitValue } from "@/components/ui/primitives";
 
 // Type assertions for imported JSON to ensure TypeScript is happy
 const dbData = dbDataRaw as any;
@@ -236,14 +236,16 @@ export function DashboardOverview({ onNavigate, user }: { onNavigate?: (tab: str
                     {currentSaldo < 0 ? "Déficit projetado" : "Superávit projetado"}
                     {activeYear === "2026" && (viewMode === "real" ? " · Jan–Mai" : " · Anual")}
                   </span>
-                  <div
+                  <FitValue
+                    max={26}
+                    min={14}
                     className={cn(
-                      "font-mono font-bold tracking-tight leading-none mt-1.5 text-xl sm:text-2xl tabular whitespace-nowrap",
+                      "font-mono font-bold tracking-tight mt-1.5 tabular",
                       currentSaldo < 0 ? "text-neg" : "text-pos",
                     )}
                   >
                     {currentSaldo < 0 ? "−" : "+"} {formatBRL(Math.abs(currentSaldo))}
-                  </div>
+                  </FitValue>
                   {activeYear === "2026" && (
                     <p className="text-[11px] font-medium text-ink-2 mt-2 leading-relaxed">
                       Acumulado real (Jan–Mai):{" "}

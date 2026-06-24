@@ -40,7 +40,7 @@ import {
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import orcamentoDataRaw from "@/data/orcamento_data.json";
 import { formatBRL, formatPercent, shortenSetor } from "@/lib/format";
-import { StatCard, StatusBadge, SectionHeader } from "@/components/ui/primitives";
+import { StatCard, StatusBadge, SectionHeader, FitValue } from "@/components/ui/primitives";
 
 // Type assertions for TypeScript
 const orcamentoData = orcamentoDataRaw as {
@@ -478,14 +478,14 @@ export function OrcamentoDashboard() {
               ) : liveLoaded ? (
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-pos animate-pulse shrink-0" />
-                  <span className="font-mono text-[clamp(1.05rem,2vw,1.5rem)] leading-none font-semibold tracking-tight tabular text-ink">
+                  <FitValue max={22} min={13} className="flex-1 font-mono font-semibold tracking-tight tabular text-ink">
                     {formatBRL(liveTotals.empenhadoLive)}
-                  </span>
+                  </FitValue>
                 </div>
               ) : (
-                <span className="font-mono text-[clamp(1.05rem,2vw,1.6rem)] leading-none font-semibold tracking-tight tabular text-ink">
+                <FitValue max={22} min={13} className="font-mono font-semibold tracking-tight tabular text-ink">
                   {formatBRL(resumo_geral.empenhado_total)}
-                </span>
+                </FitValue>
               )}
             </div>
             {/* JSON reference */}
@@ -541,18 +541,18 @@ export function OrcamentoDashboard() {
               ) : liveLoaded ? (
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-pos animate-pulse shrink-0" />
-                  <span className={`font-mono text-[clamp(1.05rem,2vw,1.5rem)] leading-none font-semibold tracking-tight tabular ${
+                  <FitValue max={22} min={13} className={`flex-1 font-mono font-semibold tracking-tight tabular ${
                     liveTotals.saldoLive < 0 ? "text-neg" : "text-ink"
                   }`}>
                     {formatBRL(liveTotals.saldoLive)}
-                  </span>
+                  </FitValue>
                 </div>
               ) : (
-                <span className={`font-mono text-[clamp(1.05rem,2vw,1.6rem)] leading-none font-semibold tracking-tight tabular ${
+                <FitValue max={22} min={13} className={`font-mono font-semibold tracking-tight tabular ${
                   resumo_geral.saldo_total < 0 ? "text-neg" : "text-ink"
                 }`}>
                   {formatBRL(resumo_geral.saldo_total)}
-                </span>
+                </FitValue>
               )}
             </div>
             {/* JSON reference */}
