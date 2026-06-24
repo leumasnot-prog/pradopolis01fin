@@ -27,7 +27,8 @@ function translateQuery(sql: string): { sql: string; isUpsertSettings: boolean; 
     translated = "INSERT INTO users (name, email, password_hash, approved) VALUES ($1, $2, $3, $4) ON CONFLICT (email) DO NOTHING";
     isInsertUserIgnore = true;
   } else if (/INSERT INTO users/i.test(cleanSql)) {
-    translated = cleanSql.replace(/\?/g, (val, index) => `$${index + 1}`);
+    let paramIndex = 1;
+    translated = cleanSql.replace(/\?/g, () => `$${paramIndex++}`);
     if (!/returning/i.test(translated)) {
       translated += " RETURNING id";
     }
