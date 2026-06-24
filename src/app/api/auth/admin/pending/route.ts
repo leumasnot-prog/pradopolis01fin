@@ -16,7 +16,7 @@ export async function GET() {
     }
 
     const stmt = db.prepare("SELECT id, name, email, created_at FROM users WHERE approved = 0 ORDER BY created_at DESC");
-    const pendingUsers = stmt.all() as any[];
+    const pendingUsers = await stmt.all() as any[];
 
     return NextResponse.json({ success: true, users: pendingUsers });
   } catch (err: any) {

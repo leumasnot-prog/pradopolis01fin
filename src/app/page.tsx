@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { TopNav } from "@/components/ui/TopNav";
+import { TopNav, navItems } from "@/components/ui/TopNav";
 import { DashboardOverview } from "@/components/dashboard/DashboardOverview";
 import { PrevisaoReceita } from "@/components/dashboard/PrevisaoReceita";
 import { OrcamentoDashboard } from "@/components/dashboard/OrcamentoDashboard";
@@ -16,10 +16,17 @@ import { Planejamento2027 } from "@/components/dashboard/Planejamento2027";
 import { AmbientBackground } from "@/components/ui/primitives";
 import { LogOut } from "lucide-react";
 
+interface UserProfile {
+  id: number;
+  name: string;
+  email: string;
+  allowed_screens?: string | null;
+}
+
 export default function Home() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("home");
-  const [user, setUser] = useState<{ name: string; email: string } | null>(null);
+  const [user, setUser] = useState<UserProfile | null>(null);
 
   useEffect(() => {
     fetch("/api/auth/me")
@@ -47,6 +54,25 @@ export default function Home() {
     }
   };
 
+  // Filter tabs based on user permissions
+  const allowedTabs = navItems.filter((item) => {
+    if (!user) return false;
+    if (user.email === "contabilidade@pradopolis.sp.gov.br") return true;
+    if (!user.allowed_screens) return true; // Default to all if not set
+    const allowedList = user.allowed_screens.split(",").map((s) => s.trim());
+    return allowedList.includes(item.id);
+  });
+
+  // Redirect if current activeTab is not allowed
+  useEffect(() => {
+    if (user && allowedTabs.length > 0) {
+      const isAllowed = allowedTabs.some((tab) => tab.id === activeTab);
+      if (!isAllowed) {
+        setActiveTab(allowedTabs[0].id);
+      }
+    }
+  }, [user, activeTab, allowedTabs]);
+
   return (
     <main className="min-h-screen bg-bg text-ink relative overflow-x-hidden">
 
@@ -62,11 +88,11 @@ export default function Home() {
               <div className="relative h-11 w-11 bg-white p-1 rounded-lg border border-line flex items-center justify-center shadow-[0_1px_2px_rgba(0,0,0,0.05)] shrink-0">
                 <div className="relative w-full h-full">
                   <Image
-                    src="/logo.png"
-                    alt="Brasão de Pradópolis"
-                    fill
-                    className="object-contain"
-                    priority
+                     src="/logo.png"
+                     alt="Brasão de Pradópolis"
+                     fill
+                     className="object-contain"
+                     priority
                   />
                 </div>
               </div>
@@ -97,7 +123,7 @@ export default function Home() {
           {/* Linha 2: navegação principal com rótulos */}
           {user && (
             <div className="pb-px">
-              <TopNav activeTab={activeTab} onTabChange={setActiveTab} />
+              <TopNav activeTab={activeTab} onTabChange={setActiveTab} items={allowedTabs} />
             </div>
           )}
         </div>
@@ -105,7 +131,7 @@ export default function Home() {
 
       {/* Conteúdo do painel */}
       <div className="relative z-10">
-        {activeTab === "home" && <DashboardOverview onNavigate={setActiveTab} />}
+        {activeTab === "home" && <DashboardOverview onNavigate={setActiveTab} user={user} />}
         {activeTab === "receita" && <PrevisaoReceita />}
         {activeTab === "despesas" && <DespesasFixas />}
         {activeTab === "fiorilli" && <ConsultaFiorilli />}

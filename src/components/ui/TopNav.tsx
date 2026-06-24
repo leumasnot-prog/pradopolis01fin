@@ -44,9 +44,11 @@ export const navItems: NavItem[] = [
 export function TopNav({
   activeTab,
   onTabChange,
+  items = navItems,
 }: {
   activeTab: string;
   onTabChange: (id: string) => void;
+  items?: NavItem[];
 }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const activeRef = useRef<HTMLButtonElement>(null);
@@ -66,8 +68,8 @@ export function TopNav({
     if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
     e.preventDefault();
     const dir = e.key === "ArrowRight" ? 1 : -1;
-    const next = (index + dir + navItems.length) % navItems.length;
-    onTabChange(navItems[next].id);
+    const next = (index + dir + items.length) % items.length;
+    onTabChange(items[next].id);
   };
 
   return (
@@ -76,7 +78,7 @@ export function TopNav({
       aria-label="Navegação principal"
       className="scrollbar-none scroll-fade-x -mb-px flex items-stretch gap-1 overflow-x-auto"
     >
-      {navItems.map((item, index) => {
+      {items.map((item, index) => {
         const isActive = activeTab === item.id;
         const Icon = item.icon;
         return (

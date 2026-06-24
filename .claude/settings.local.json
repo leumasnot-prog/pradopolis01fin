@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "PowerShell(claude plugin install frontend-design@claude-plugins-official)"
+      "PowerShell(claude plugin install frontend-design@claude-plugins-official)",
+      "Bash(node -e \"const d=require\\('./src/data/despesas_fixas_data.json'\\); const s=new Set\\(d.contratos.map\\(c=>c.setor\\)\\); console.log\\([...s].join\\('\\\\n'\\)\\);\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('src/data/despesas_fixas_data.json'\\)\\); print\\('\\\\n'.join\\(sorted\\(set\\(c['setor'] for c in d['contratos']\\)\\)\\)\\)\")"
     ]
   }
 }

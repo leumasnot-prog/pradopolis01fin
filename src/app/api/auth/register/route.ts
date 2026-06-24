@@ -26,7 +26,7 @@ export async function POST(request: Request) {
 
     // Check if user exists
     const stmtCheck = db.prepare("SELECT * FROM users WHERE email = ?");
-    const existing = stmtCheck.get(emailClean) as any;
+    const existing = await stmtCheck.get(emailClean) as any;
 
     if (existing) {
       return NextResponse.json(
@@ -42,7 +42,7 @@ export async function POST(request: Request) {
     const insert = db.prepare(
       "INSERT INTO users (name, email, password_hash) VALUES (?, ?, ?)"
     );
-    const result = insert.run(name, emailClean, passwordHash) as any;
+    const result = await insert.run(name, emailClean, passwordHash) as any;
     const userId = result.lastInsertRowid;
 
     return NextResponse.json({ 

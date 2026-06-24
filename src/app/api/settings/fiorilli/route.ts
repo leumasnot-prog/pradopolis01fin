@@ -14,7 +14,7 @@ export async function GET() {
     }
 
     const stmt = db.prepare("SELECT value FROM settings WHERE key = ?");
-    const row = stmt.get("fiorilli_api_url") as { value: string } | undefined;
+    const row = await stmt.get("fiorilli_api_url") as { value: string } | undefined;
     
     return NextResponse.json({
       fiorilli_api_url: row?.value || "http://siteDaEntidade.uf.gov.br/Transparencia/"
@@ -69,7 +69,7 @@ export async function POST(request: Request) {
     const stmt = db.prepare(
       "INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)"
     );
-    stmt.run("fiorilli_api_url", normalizedUrl);
+    await stmt.run("fiorilli_api_url", normalizedUrl);
 
     return NextResponse.json({
       message: "Configuração atualizada com sucesso!",

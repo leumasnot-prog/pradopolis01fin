@@ -7,7 +7,7 @@ import { db } from "@/lib/db";
 export async function GET() {
   try {
     const checkTasks = db.prepare("SELECT * FROM planning_tasks ORDER BY id ASC");
-    const tasks = checkTasks.all() as any[];
+    const tasks = await checkTasks.all() as any[];
 
     // Converte os valores ou formata para o formato esperado pelo front
     const formattedTasks = tasks.map((t) => {
@@ -78,7 +78,7 @@ export async function POST(request: Request) {
       WHERE id = ?
     `);
 
-    updateStmt.run(status, data_reuniao || null, docsJsonStr, id);
+    await updateStmt.run(status, data_reuniao || null, docsJsonStr, id);
 
     return NextResponse.json({ success: true });
   } catch (err: any) {

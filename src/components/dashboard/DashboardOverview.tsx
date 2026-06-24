@@ -50,7 +50,7 @@ const LEVEL_DOT: Record<FiscalLevel, string> = {
   critical: "bg-neg",
 };
 
-export function DashboardOverview({ onNavigate }: { onNavigate?: (tab: string) => void }) {
+export function DashboardOverview({ onNavigate, user }: { onNavigate?: (tab: string) => void; user?: { email: string; allowed_screens?: string | null } | null }) {
   const activeYear = "2026";
   const prefersReducedMotion = useReducedMotion();
   const [receitaAjuste, setReceitaAjuste] = useState(0); // em percentual (0 a 15)
@@ -657,62 +657,74 @@ export function DashboardOverview({ onNavigate }: { onNavigate?: (tab: string) =
       </div>
 
       {/* Navegação rápida para os demais módulos — orienta o usuário a partir da visão geral */}
-      {onNavigate && (
-        <div className="mt-8">
-          <h3 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted mb-4">Explore os detalhes</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              {
-                tab: "receita",
-                title: "Arrecadação",
-                desc: "Estrutura completa da previsão de receita por fonte de recurso.",
-                icon: Landmark,
-                iconBg: "bg-pos-50",
-                iconColor: "text-pos",
-              },
-              {
-                tab: "despesas",
-                title: "Despesas Fixas",
-                desc: "Detalhamento dos gastos recorrentes e contratos do Tesouro.",
-                icon: TrendingDown,
-                iconBg: "bg-neg-50",
-                iconColor: "text-neg",
-              },
-              {
-                tab: "orcamento",
-                title: "Orçamento",
-                desc: "Dotação autorizada e execução orçamentária por ficha e setor.",
-                icon: PieIcon,
-                iconBg: "bg-brand-50",
-                iconColor: "text-brand",
-              },
-            ].map((item) => {
-              const Icon = item.icon;
-              return (
-                <motion.button
-                  key={item.tab}
-                  onClick={() => onNavigate(item.tab)}
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.99 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 24 }}
-                  className="group text-left rounded-xl bg-surface border border-line shadow-[0_1px_2px_rgba(16,24,38,0.04)] p-6 flex flex-col gap-3 cursor-pointer transition-colors hover:border-brand/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
-                >
-                  <div className="flex items-center justify-between">
-                    <div className={cn("flex h-10 w-10 items-center justify-center rounded-lg", item.iconBg, item.iconColor)}>
-                      <Icon className="w-5 h-5" />
+      {onNavigate && (() => {
+        const allowedShortcuts = [
+          {
+            tab: "receita",
+            title: "Arrecadação",
+            desc: "Estrutura completa da previsão de receita por fonte de recurso.",
+            icon: Landmark,
+            iconBg: "bg-pos-50",
+            iconColor: "text-pos",
+          },
+          {
+            tab: "despesas",
+            title: "Despesas Fixas",
+            desc: "Detalhamento dos gastos recorrentes e contratos do Tesouro.",
+            icon: TrendingDown,
+            iconBg: "bg-neg-50",
+            iconColor: "text-neg",
+          },
+          {
+            tab: "orcamento",
+            title: "Orçamento",
+            desc: "Dotação autorizada e execução orçamentária por ficha e setor.",
+            icon: PieIcon,
+            iconBg: "bg-brand-50",
+            iconColor: "text-brand",
+          },
+        ].filter(item => {
+          if (!user) return true;
+          if (user.email === "contabilidade@pradopolis.sp.gov.br") return true;
+          if (!user.allowed_screens) return true;
+          const allowedList = user.allowed_screens.split(",").map(s => s.trim());
+          return allowedList.includes(item.tab);
+        });
+
+        if (allowedShortcuts.length === 0) return null;
+
+        return (
+          <div className="mt-8">
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted mb-4">Explore os detalhes</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {allowedShortcuts.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <motion.button
+                    key={item.tab}
+                    onClick={() => onNavigate(item.tab)}
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.99 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 24 }}
+                    className="group text-left rounded-xl bg-surface border border-line shadow-[0_1px_2px_rgba(16,24,38,0.04)] p-6 flex flex-col gap-3 cursor-pointer transition-colors hover:border-brand/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className={cn("flex h-10 w-10 items-center justify-center rounded-lg", item.iconBg, item.iconColor)}>
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-muted group-hover:text-brand group-hover:translate-x-0.5 transition-all" />
                     </div>
-                    <ArrowRight className="w-4 h-4 text-muted group-hover:text-brand group-hover:translate-x-0.5 transition-all" />
-                  </div>
-                  <div>
-                    <h4 className="font-display text-base font-bold text-ink tracking-tight">{item.title}</h4>
-                    <p className="text-xs font-medium text-ink-2 mt-1 leading-relaxed">{item.desc}</p>
-                  </div>
-                </motion.button>
-              );
-            })}
+                    <div>
+                      <h4 className="font-display text-base font-bold text-ink tracking-tight">{item.title}</h4>
+                      <p className="text-xs font-medium text-ink-2 mt-1 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </motion.button>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
 
       {/* Inadimplencia Detail Modal */}
       <AnimatePresence>

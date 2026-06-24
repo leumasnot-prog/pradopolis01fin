@@ -171,7 +171,7 @@ export async function GET(request: Request) {
 
     // 3. Obter URL do portal Fiorilli do banco de dados
     const stmt = db.prepare("SELECT value FROM settings WHERE key = ?");
-    const row = stmt.get("fiorilli_api_url") as { value: string } | undefined;
+    const row = await stmt.get("fiorilli_api_url") as { value: string } | undefined;
     const fiorilliApiUrl = row?.value || "http://siteDaEntidade.uf.gov.br/Transparencia/";
 
     const isPlaceholder = fiorilliApiUrl.includes("siteDaEntidade.uf.gov.br");

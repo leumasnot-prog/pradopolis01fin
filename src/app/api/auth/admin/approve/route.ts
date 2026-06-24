@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     }
 
     const stmt = db.prepare("UPDATE users SET approved = 1 WHERE id = ?");
-    const result = stmt.run(userId) as any;
+    const result = await stmt.run(userId) as any;
 
     if (result.changes === 0) {
       return NextResponse.json({ error: "Usuário não encontrado." }, { status: 44 });

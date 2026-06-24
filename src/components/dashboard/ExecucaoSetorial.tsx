@@ -1,12 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { Activity, HeartHandshake } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Activity, HeartHandshake, Bus } from "lucide-react";
+import { motion } from "framer-motion";
 import { ExecucaoSaude } from "./ExecucaoSaude";
 import { ExecucaoSocial } from "./ExecucaoSocial";
+import { ExecucaoTransporte } from "./ExecucaoTransporte";
 
-type Sector = "saude" | "social";
+type Sector = "saude" | "social" | "transporte";
+
+const SECTORS: { id: Sector; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
+  { id: "saude", label: "Saúde Pública", icon: Activity },
+  { id: "social", label: "Promoção Social", icon: HeartHandshake },
+  { id: "transporte", label: "Transportes e Trânsito", icon: Bus },
+];
 
 export function ExecucaoSetorial() {
   const [activeSector, setActiveSector] = useState<Sector>("saude");
@@ -27,68 +34,41 @@ export function ExecucaoSetorial() {
 
           {/* Switcher Segmentado com LayoutId Animado */}
           <div className="inline-flex rounded-lg border border-line bg-surface p-1 shadow-sm relative">
-            <button
-              onClick={() => setActiveSector("saude")}
-              className={`relative z-10 flex items-center gap-2 px-4 py-1.5 text-xs font-semibold rounded-md transition-colors cursor-pointer focus:outline-none ${
-                activeSector === "saude" ? "text-white" : "text-ink-2 hover:text-ink"
-              }`}
-            >
-              {activeSector === "saude" && (
-                <motion.span
-                  layoutId="activeSectorBg"
-                  className="absolute inset-0 bg-brand rounded-md shadow-sm -z-10"
-                  transition={{ type: "spring", stiffness: 350, damping: 28 }}
-                />
-              )}
-              <Activity className="w-4.5 h-4.5" />
-              <span>Saúde Pública</span>
-            </button>
-
-            <button
-              onClick={() => setActiveSector("social")}
-              className={`relative z-10 flex items-center gap-2 px-4 py-1.5 text-xs font-semibold rounded-md transition-colors cursor-pointer focus:outline-none ${
-                activeSector === "social" ? "text-white" : "text-ink-2 hover:text-ink"
-              }`}
-            >
-              {activeSector === "social" && (
-                <motion.span
-                  layoutId="activeSectorBg"
-                  className="absolute inset-0 bg-brand rounded-md shadow-sm -z-10"
-                  transition={{ type: "spring", stiffness: 350, damping: 28 }}
-                />
-              )}
-              <HeartHandshake className="w-4.5 h-4.5" />
-              <span>Promoção Social</span>
-            </button>
+            {SECTORS.map(({ id, label, icon: Icon }) => (
+              <button
+                key={id}
+                onClick={() => setActiveSector(id)}
+                className={`relative z-10 flex items-center gap-2 px-4 py-1.5 text-xs font-semibold rounded-md transition-colors cursor-pointer focus:outline-none ${
+                  activeSector === id ? "text-white" : "text-ink-2 hover:text-ink"
+                }`}
+              >
+                {activeSector === id && (
+                  <motion.span
+                    layoutId="activeSectorBg"
+                    className="absolute inset-0 bg-brand rounded-md shadow-sm -z-10"
+                    transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                  />
+                )}
+                <Icon className="w-4.5 h-4.5" />
+                <span>{label}</span>
+              </button>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Conteúdo Dinâmico com Transição Suave */}
+      {/* Conteúdo Dinâmico com Transição de Entrada (remontado por setor via key) */}
       <main className="relative z-10">
-        <AnimatePresence mode="wait">
-          {activeSector === "saude" ? (
-            <motion.div
-              key="saude"
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.25, ease: "easeInOut" }}
-            >
-              <ExecucaoSaude />
-            </motion.div>
-          ) : (
-            <motion.div
-              key="social"
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.25, ease: "easeInOut" }}
-            >
-              <ExecucaoSocial />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <motion.div
+          key={activeSector}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.25, ease: "easeInOut" }}
+        >
+          {activeSector === "saude" && <ExecucaoSaude />}
+          {activeSector === "social" && <ExecucaoSocial />}
+          {activeSector === "transporte" && <ExecucaoTransporte />}
+        </motion.div>
       </main>
     </div>
   );

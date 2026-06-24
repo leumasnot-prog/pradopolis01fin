@@ -18,13 +18,24 @@ import {
   Calendar,
   Key,
   UserPlus,
-  Globe
+  Globe,
+  ChevronDown,
+  ChevronUp,
+  Search,
+  Home,
+  TrendingDown,
+  PieChart,
+  DollarSign,
+  FileText,
+  Landmark
 } from "lucide-react";
 
-interface PendingUser {
+interface SystemUser {
   id: number;
   name: string;
   email: string;
+  approved: number;
+  allowed_screens: string | null;
   created_at: string;
 }
 
@@ -33,12 +44,28 @@ interface UserProfile {
   email: string;
 }
 
+const AVAILABLE_SCREENS = [
+  { id: "home", name: "Visão Geral", icon: Home },
+  { id: "receita", name: "Arrecadação", icon: Landmark },
+  { id: "despesas", name: "Despesas Fixas", icon: TrendingDown },
+  { id: "fiorilli", name: "Consulta Fiorilli", icon: Search },
+  { id: "orcamento", name: "Orçamento", icon: PieChart },
+  { id: "execucao-setorial", name: "Execução Setorial", icon: DollarSign },
+  { id: "planejamento", name: "Planejamento 2027", icon: Calendar },
+  { id: "documentos", name: "Documentos", icon: FileText },
+  { id: "settings", name: "Configurações", icon: Settings },
+];
+
 export function Configuracoes({ user }: { user: UserProfile | null }) {
-  const [pendingUsers, setPendingUsers] = useState<PendingUser[]>([]);
+  const [systemUsers, setSystemUsers] = useState<SystemUser[]>([]);
   const [loading, setLoading] = useState(true);
   const [actionLoading, setActionLoading] = useState<number | null>(null);
   const [error, setError] = useState("");
   const [notification, setNotification] = useState<{ message: string; type: "success" | "error" } | null>(null);
+
+  // Search & Expansion States
+  const [searchTerm, setSearchTerm] = useState("");
+  const [expandedUserId, setExpandedUserId] = useState<number | null>(null);
 
   // Form states for creating a new user
   const [newUserName, setNewUserName] = useState("");
@@ -57,7 +84,7 @@ export function Configuracoes({ user }: { user: UserProfile | null }) {
   useEffect(() => {
     fetchFiorilliUrl();
     if (isAdmin) {
-      fetchPendingUsers();
+      fetchSystemUsers();
     } else {
       setLoading(false);
     }
@@ -101,23 +128,23 @@ export function Configuracoes({ user }: { user: UserProfile | null }) {
     }
   };
 
-  // Auto-dispensa a notificação após alguns segundos (mantém o botão de ação livre de ruído visual)
+  // Auto-dispensa a notificação após alguns segundos
   useEffect(() => {
     if (!notification) return;
     const timer = setTimeout(() => setNotification(null), 5000);
     return () => clearTimeout(timer);
   }, [notification]);
 
-  const fetchPendingUsers = async () => {
+  const fetchSystemUsers = async () => {
     try {
       setLoading(true);
       setError("");
-      const res = await fetch("/api/auth/admin/pending");
+      const res = await fetch("/api/auth/admin/users");
       const data = await res.json();
       if (!res.ok) {
-        throw new Error(data.error || "Erro ao buscar usuários pendentes.");
+        throw new Error(data.error || "Erro ao buscar servidores.");
       }
-      setPendingUsers(data.users || []);
+      setSystemUsers(data.users || []);
     } catch (err: any) {
       setError(err.message || "Erro de conexão ao buscar cadastros.");
     } finally {
@@ -125,22 +152,65 @@ export function Configuracoes({ user }: { user: UserProfile | null }) {
     }
   };
 
-  const handleApprove = async (userId: number) => {
+  const handleToggleScreen = (userId: number, screenId: string) => {
+    setSystemUsers((prev) =>
+      prev.map((u) => {
+        if (u.id !== userId) return u;
+        if (u.email === "contabilidade@pradopolis.sp.gov.br") return u; // Admin locks
+
+        const currentScreens = u.allowed_screens
+          ? u.allowed_screens.split(",").map((s) => s.trim())
+          : AVAILABLE_SCREENS.map((s) => s.id);
+
+        let newScreens;
+        if (currentScreens.includes(screenId)) {
+          newScreens = currentScreens.filter((s) => s !== screenId);
+        } else {
+          newScreens = [...currentScreens, screenId];
+        }
+
+        return {
+          ...u,
+          allowed_screens: newScreens.join(","),
+        };
+      })
+    );
+  };
+
+  const handleToggleApprovalState = (userId: number) => {
+    setSystemUsers((prev) =>
+      prev.map((u) => {
+        if (u.id !== userId) return u;
+        if (u.email === "contabilidade@pradopolis.sp.gov.br") return u;
+        return {
+          ...u,
+          approved: u.approved === 1 ? 0 : 1,
+        };
+      })
+    );
+  };
+
+  const handleSaveUser = async (userId: number) => {
+    const userToSave = systemUsers.find((u) => u.id === userId);
+    if (!userToSave) return;
+
     setActionLoading(userId);
     setNotification(null);
     try {
-      const res = await fetch("/api/auth/admin/approve", {
+      const res = await fetch("/api/auth/admin/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userId }),
+        body: JSON.stringify({
+          userId,
+          approved: userToSave.approved === 1,
+          allowed_screens: userToSave.allowed_screens,
+        }),
       });
       const data = await res.json();
       if (!res.ok) {
-        throw new Error(data.error || "Erro ao aprovar usuário.");
+        throw new Error(data.error || "Erro ao atualizar permissões.");
       }
-      
-      setPendingUsers((prev) => prev.filter((u) => u.id !== userId));
-      setNotification({ message: "Servidor aprovado com sucesso!", type: "success" });
+      setNotification({ message: `Configurações de ${userToSave.name} salvas com sucesso!`, type: "success" });
     } catch (err: any) {
       setNotification({ message: err.message || "Erro de conexão.", type: "error" });
     } finally {
@@ -148,8 +218,8 @@ export function Configuracoes({ user }: { user: UserProfile | null }) {
     }
   };
 
-  const handleReject = async (userId: number) => {
-    if (!confirm("Tem certeza que deseja recusar e excluir este cadastro?")) {
+  const handleDeleteUser = async (userId: number, userName: string) => {
+    if (!confirm(`Tem certeza que deseja excluir permanentemente o cadastro de ${userName}?`)) {
       return;
     }
     setActionLoading(userId);
@@ -162,11 +232,14 @@ export function Configuracoes({ user }: { user: UserProfile | null }) {
       });
       const data = await res.json();
       if (!res.ok) {
-        throw new Error(data.error || "Erro ao recusar usuário.");
+        throw new Error(data.error || "Erro ao excluir usuário.");
       }
 
-      setPendingUsers((prev) => prev.filter((u) => u.id !== userId));
-      setNotification({ message: "Cadastro recusado e excluído do sistema.", type: "success" });
+      setSystemUsers((prev) => prev.filter((u) => u.id !== userId));
+      setNotification({ message: "Cadastro de servidor excluído com sucesso.", type: "success" });
+      if (expandedUserId === userId) {
+        setExpandedUserId(null);
+      }
     } catch (err: any) {
       setNotification({ message: err.message || "Erro de conexão.", type: "error" });
     } finally {
@@ -207,9 +280,9 @@ export function Configuracoes({ user }: { user: UserProfile | null }) {
       setNewUserName("");
       setNewUserEmail("");
       setNewUserPassword("");
-      if (!newUserApproved) {
-        fetchPendingUsers();
-      }
+      
+      // Refresh list to include new user
+      fetchSystemUsers();
     } catch (err: any) {
       setNotification({ message: err.message || "Erro de conexão.", type: "error" });
     } finally {
@@ -220,11 +293,27 @@ export function Configuracoes({ user }: { user: UserProfile | null }) {
   if (!user) {
     return (
       <div className="w-full max-w-4xl mx-auto px-6 py-12 text-center">
-        <Spinner className="h-10 w-10 text-brand mx-auto" />
+        <Spinner className="h-10 w-10 text-brand mx-auto animate-spin" />
         <p className="text-ink-2 mt-4 font-medium text-sm">Carregando dados da sessão...</p>
       </div>
     );
   }
+
+  // Filtered users list based on search bar
+  const filteredUsers = systemUsers.filter((u) =>
+    u.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    u.email.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const toggleExpand = (userId: number) => {
+    setExpandedUserId((prev) => (prev === userId ? null : userId));
+  };
+
+  const isScreenAllowed = (allowedScreens: string | null, screenId: string, email: string) => {
+    if (email === "contabilidade@pradopolis.sp.gov.br") return true;
+    if (!allowedScreens) return true; // Default to all if not set
+    return allowedScreens.split(",").map((s) => s.trim()).includes(screenId);
+  };
 
   return (
     <div className="w-full max-w-6xl mx-auto px-6 py-8 pb-32">
@@ -241,7 +330,7 @@ export function Configuracoes({ user }: { user: UserProfile | null }) {
         />
       </div>
 
-      {/* Região de notificação (anunciada por leitores de tela) */}
+      {/* Região de notificação */}
       <div aria-live="polite" role="status" className="empty:hidden">
         <AnimatePresence>
           {notification && (
@@ -273,7 +362,6 @@ export function Configuracoes({ user }: { user: UserProfile | null }) {
               Seu Perfil
             </h3>
 
-            {/* Profile Detail List */}
             <div className="space-y-4">
               <div className="bg-surface-2 border border-line rounded-lg p-4 flex items-start gap-3">
                 <div className="h-9 w-9 bg-surface rounded-lg flex items-center justify-center text-ink-2 border border-line shrink-0">
@@ -373,22 +461,41 @@ export function Configuracoes({ user }: { user: UserProfile | null }) {
         <div className="lg:col-span-2 space-y-6">
           {isAdmin ? (
             <>
-              {/* Cadastros de Servidores Aguardando Aprovação */}
-              <Card className="p-6 min-h-[300px] flex flex-col">
-                <div className="flex justify-between items-center mb-6 border-b border-line pb-4">
-                  <h3 className="text-sm font-bold text-ink uppercase tracking-[0.06em] flex items-center gap-2">
-                    <Users className="w-5 h-5 text-brand" />
-                    Cadastros de Servidores Aguardando Aprovação
-                  </h3>
-                  <span className="bg-brand-50 text-brand border border-brand/20 text-xs font-semibold px-2.5 py-1 rounded-md">
-                    <span className="font-mono tabular">{pendingUsers.length}</span> {pendingUsers.length === 1 ? "pendente" : "pendentes"}
+              {/* Gerenciamento de Usuários */}
+              <Card className="p-6 min-h-[400px] flex flex-col">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 border-b border-line pb-4">
+                  <div>
+                    <h3 className="text-sm font-bold text-ink uppercase tracking-[0.06em] flex items-center gap-2">
+                      <Users className="w-5 h-5 text-brand" />
+                      Gerenciamento de Servidores e Permissões
+                    </h3>
+                    <p className="text-ink-2 text-xs font-medium mt-1">
+                      Visualize todos os cadastros, controle aprovações e configure permissões de telas para cada servidor.
+                    </p>
+                  </div>
+                  <span className="bg-brand-50 text-brand border border-brand/20 text-xs font-semibold px-2.5 py-1 rounded-md shrink-0">
+                    <span className="font-mono tabular">{systemUsers.length}</span> {systemUsers.length === 1 ? "usuário" : "usuários"}
                   </span>
+                </div>
+
+                {/* Filtro de Busca */}
+                <div className="relative mb-6">
+                  <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-muted">
+                    <Search className="h-4 w-4" />
+                  </span>
+                  <input
+                    type="text"
+                    placeholder="Buscar servidor por nome ou e-mail..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-10 pr-4 py-2.5 border border-line rounded-lg bg-surface text-ink text-xs font-medium focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30 outline-none transition-colors"
+                  />
                 </div>
 
                 {loading ? (
                   <div className="flex-1 flex flex-col items-center justify-center py-12">
-                    <Spinner className="h-8 w-8 text-brand" />
-                    <span className="text-ink-2 text-xs font-semibold mt-3">Carregando solicitações...</span>
+                    <Spinner className="h-8 w-8 text-brand animate-spin" />
+                    <span className="text-ink-2 text-xs font-semibold mt-3">Carregando cadastros...</span>
                   </div>
                 ) : error ? (
                   <div className="flex-1 flex flex-col items-center justify-center text-center py-12">
@@ -396,97 +503,212 @@ export function Configuracoes({ user }: { user: UserProfile | null }) {
                     <h4 className="text-sm font-bold text-ink">Falha ao buscar usuários</h4>
                     <p className="text-ink-2 text-xs font-medium max-w-md mt-1">{error}</p>
                     <button
-                      onClick={fetchPendingUsers}
+                      onClick={fetchSystemUsers}
                       className="mt-4 px-4 py-2 bg-brand text-white text-xs font-bold rounded-lg hover:bg-brand-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 transition-colors cursor-pointer"
                     >
                       Tentar Novamente
                     </button>
                   </div>
-                ) : pendingUsers.length === 0 ? (
+                ) : filteredUsers.length === 0 ? (
                   <div className="flex-1 flex flex-col items-center justify-center text-center py-16 bg-surface-2 border border-dashed border-line rounded-lg">
                     <Clock className="w-12 h-12 text-muted mb-3" />
-                    <h4 className="text-sm font-bold text-ink">Nenhum cadastro pendente</h4>
+                    <h4 className="text-sm font-bold text-ink">Nenhum servidor encontrado</h4>
                     <p className="text-ink-2 text-xs font-medium max-w-sm mt-1 px-4">
-                      Todas as solicitações de registro de servidores municipais foram processadas e liberadas.
+                      {searchTerm ? "Tente buscar usando outro termo." : "Não há cadastros no sistema."}
                     </p>
                   </div>
                 ) : (
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-left border-collapse">
-                      <thead>
-                        <tr className="border-b border-line bg-surface-2">
-                          <th className="px-3 py-3 text-[10px] font-semibold text-ink-2 uppercase tracking-[0.08em]">Servidor / E-mail</th>
-                          <th className="px-3 py-3 text-[10px] font-semibold text-ink-2 uppercase tracking-[0.08em] hidden sm:table-cell">Data de Registro</th>
-                          <th className="px-3 py-3 text-[10px] font-semibold text-ink-2 uppercase tracking-[0.08em] text-right">Ações</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-line">
-                        <AnimatePresence>
-                          {pendingUsers.map((pUser) => (
-                            <motion.tr
-                              key={pUser.id}
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: "auto" }}
-                              exit={{ opacity: 0, x: -50 }}
-                              transition={{ duration: 0.2 }}
-                              className="group hover:bg-surface-2 transition-colors"
-                            >
-                              <td className="py-4 px-3">
-                                <div className="flex items-center gap-3">
-                                  <div className="h-9 w-9 bg-surface-2 border border-line rounded-lg flex items-center justify-center text-ink-2 shrink-0 font-semibold text-xs uppercase">
-                                    {pUser.name.substring(0, 2)}
+                  <div className="space-y-3.5">
+                    {filteredUsers.map((pUser) => {
+                      const isExpanded = expandedUserId === pUser.id;
+                      const isUserAdmin = pUser.email === "contabilidade@pradopolis.sp.gov.br";
+                      
+                      // Process which screens are allowed
+                      const userScreens = pUser.allowed_screens
+                        ? pUser.allowed_screens.split(",").map((s) => s.trim())
+                        : AVAILABLE_SCREENS.map((s) => s.id);
+
+                      return (
+                        <div
+                          key={pUser.id}
+                          className={`border rounded-lg transition-all overflow-hidden bg-surface ${
+                            isExpanded ? "border-brand/40 shadow-sm" : "border-line hover:border-line-strong"
+                          }`}
+                        >
+                          {/* Row Header */}
+                          <div
+                            onClick={() => toggleExpand(pUser.id)}
+                            className="flex flex-wrap items-center justify-between gap-4 p-4 cursor-pointer select-none"
+                          >
+                            <div className="flex items-center gap-3.5 min-w-0">
+                              <div className={`h-9 w-9 border rounded-lg flex items-center justify-center shrink-0 font-semibold text-xs uppercase ${
+                                isUserAdmin ? "bg-brand-50 text-brand border-brand/20" : "bg-surface-2 text-ink-2 border-line"
+                              }`}>
+                                {pUser.name.substring(0, 2)}
+                              </div>
+                              <div className="min-w-0">
+                                <div className="flex items-center gap-2 flex-wrap">
+                                  <span className="text-xs font-semibold text-ink block truncate">{pUser.name}</span>
+                                  {isUserAdmin && (
+                                    <span className="bg-brand-50 text-brand border border-brand/20 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">
+                                      Admin
+                                    </span>
+                                  )}
+                                  {pUser.approved === 1 ? (
+                                    <span className="bg-pos-50 text-pos border border-pos/20 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase">
+                                      Aprovado
+                                    </span>
+                                  ) : (
+                                    <span className="bg-warn-50 text-warn border border-warn/20 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase flex items-center gap-1">
+                                      <Clock className="w-2.5 h-2.5" /> Pendente
+                                    </span>
+                                  )}
+                                </div>
+                                <span className="text-[10px] font-medium text-muted block truncate font-mono tabular mt-0.5">{pUser.email}</span>
+                              </div>
+                            </div>
+
+                            <div className="flex items-center gap-3">
+                              <span className="hidden sm:inline text-[10px] font-semibold text-muted uppercase tracking-[0.06em]">
+                                {new Date(pUser.created_at).toLocaleDateString("pt-BR")}
+                              </span>
+                              {isExpanded ? <ChevronUp className="w-4 h-4 text-ink-2" /> : <ChevronDown className="w-4 h-4 text-ink-2" />}
+                            </div>
+                          </div>
+
+                          {/* Expandable permission panel */}
+                          <AnimatePresence initial={false}>
+                            {isExpanded && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="border-t border-line bg-surface-2 overflow-hidden"
+                              >
+                                <div className="p-4 sm:p-5 space-y-4">
+                                  
+                                  {/* Grid controls */}
+                                  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                                    {/* Column 1: Approval Status */}
+                                    <div className="space-y-2">
+                                      <span className="text-[10px] font-bold text-ink-2 uppercase tracking-[0.08em] block">
+                                        Status de Homologação
+                                      </span>
+                                      <div className="flex bg-surface rounded-lg p-0.5 border border-line w-full">
+                                        <button
+                                          type="button"
+                                          disabled={isUserAdmin || actionLoading === pUser.id}
+                                          onClick={() => handleToggleApprovalState(pUser.id)}
+                                          className={`flex-1 py-1.5 rounded-md text-xs font-bold transition-all text-center cursor-pointer ${
+                                            pUser.approved === 1
+                                              ? "bg-pos text-white shadow-sm"
+                                              : "text-muted hover:text-ink-2"
+                                          } disabled:opacity-50`}
+                                        >
+                                          Aprovado
+                                        </button>
+                                        <button
+                                          type="button"
+                                          disabled={isUserAdmin || actionLoading === pUser.id}
+                                          onClick={() => handleToggleApprovalState(pUser.id)}
+                                          className={`flex-1 py-1.5 rounded-md text-xs font-bold transition-all text-center cursor-pointer ${
+                                            pUser.approved !== 1
+                                              ? "bg-warn text-white shadow-sm"
+                                              : "text-muted hover:text-ink-2"
+                                          } disabled:opacity-50`}
+                                        >
+                                          Pendente
+                                        </button>
+                                      </div>
+                                      {isUserAdmin && (
+                                        <span className="text-[9px] font-semibold text-muted block leading-tight mt-1">
+                                          O acesso do administrador principal é sempre aprovado.
+                                        </span>
+                                      )}
+                                    </div>
+
+                                    {/* Column 2 & 3: Allowed Screens Selection */}
+                                    <div className="md:col-span-2 space-y-2">
+                                      <span className="text-[10px] font-bold text-ink-2 uppercase tracking-[0.08em] block">
+                                        Módulos Autorizados
+                                      </span>
+
+                                      <div className="flex flex-wrap gap-1.5">
+                                        {AVAILABLE_SCREENS.map((screen) => {
+                                          const ScreenIcon = screen.icon;
+                                          const isAllowed = isScreenAllowed(pUser.allowed_screens, screen.id, pUser.email);
+                                          return (
+                                            <button
+                                              key={screen.id}
+                                              type="button"
+                                              disabled={isUserAdmin || actionLoading === pUser.id}
+                                              onClick={() => handleToggleScreen(pUser.id, screen.id)}
+                                              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold border transition-all cursor-pointer ${
+                                                isAllowed
+                                                  ? "bg-brand-50 border-brand/35 text-brand shadow-[0_1px_1px_rgba(0,0,0,0.02)]"
+                                                  : "bg-surface border-line text-ink-2 hover:border-line-strong hover:text-ink"
+                                              } disabled:opacity-60 disabled:cursor-not-allowed`}
+                                            >
+                                              <ScreenIcon className="w-3.5 h-3.5" />
+                                              <span>{screen.name}</span>
+                                              {isAllowed && <Check className="w-3 h-3 text-brand" />}
+                                            </button>
+                                          );
+                                        })}
+                                      </div>
+                                    </div>
                                   </div>
-                                  <div className="min-w-0">
-                                    <span className="text-xs font-semibold text-ink block truncate">{pUser.name}</span>
-                                    <span className="text-[10px] font-medium text-muted block truncate font-mono tabular">{pUser.email}</span>
+
+                                  {/* Actions Footer */}
+                                  <div className="pt-3 border-t border-line flex flex-wrap justify-between items-center gap-3">
+                                    <div>
+                                      {isUserAdmin ? (
+                                        <span className="text-[10px] text-muted font-semibold flex items-center gap-1.5">
+                                          <Shield className="w-3.5 h-3.5 text-brand" /> Administrador de Sistema
+                                        </span>
+                                      ) : null}
+                                    </div>
+                                    
+                                    <div className="flex items-center gap-2">
+                                      {!isUserAdmin && (
+                                        <button
+                                          type="button"
+                                          disabled={actionLoading !== null}
+                                          onClick={() => handleDeleteUser(pUser.id, pUser.name)}
+                                          className="h-8 px-3 rounded-lg border border-line hover:border-neg/50 hover:bg-neg-50 hover:text-neg text-ink-2 font-bold text-xs transition-colors flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
+                                        >
+                                          <X className="w-3.5 h-3.5" />
+                                          <span>Excluir</span>
+                                        </button>
+                                      )}
+                                      
+                                      {!isUserAdmin && (
+                                        <button
+                                          type="button"
+                                          disabled={actionLoading !== null}
+                                          onClick={() => handleSaveUser(pUser.id)}
+                                          className="h-8 px-3 rounded-lg bg-brand hover:bg-brand-ink text-white font-bold text-xs transition-colors flex items-center gap-1.5 cursor-pointer disabled:opacity-50 shadow-[0_1px_2px_rgba(0,0,0,0.05)]"
+                                        >
+                                          {actionLoading === pUser.id ? (
+                                            <Spinner className="h-3.5 w-3.5" />
+                                          ) : (
+                                            <Check className="w-3.5 h-3.5" />
+                                          )}
+                                          <span>Salvar Permissões</span>
+                                        </button>
+                                      )}
+                                    </div>
                                   </div>
+
                                 </div>
-                              </td>
-                              <td className="py-4 px-3 hidden sm:table-cell">
-                                <div className="flex items-center gap-1.5 text-ink-2 text-xs font-semibold">
-                                  <Calendar className="w-3.5 h-3.5 text-muted" />
-                                  <span className="font-mono tabular">
-                                    {new Date(pUser.created_at).toLocaleDateString("pt-BR", {
-                                      day: "2-digit",
-                                      month: "2-digit",
-                                      year: "numeric",
-                                      hour: "2-digit",
-                                      minute: "2-digit"
-                                    })}
-                                  </span>
-                                </div>
-                              </td>
-                              <td className="py-4 px-3 text-right">
-                                <div className="flex items-center justify-end gap-2">
-                                  <button
-                                    onClick={() => handleApprove(pUser.id)}
-                                    disabled={actionLoading !== null}
-                                    aria-label={`Aprovar cadastro de ${pUser.name}`}
-                                    className="h-8 px-3 rounded-lg bg-pos hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pos/40 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold text-xs flex items-center gap-1 transition-opacity cursor-pointer"
-                                  >
-                                    {actionLoading === pUser.id ? (
-                                      <Spinner className="h-3.5 w-3.5" />
-                                    ) : (
-                                      <Check className="w-3.5 h-3.5" />
-                                    )}
-                                    <span className="hidden xs:inline">Aprovar</span>
-                                  </button>
-                                  <button
-                                    onClick={() => handleReject(pUser.id)}
-                                    disabled={actionLoading !== null}
-                                    aria-label={`Recusar cadastro de ${pUser.name}`}
-                                    className="h-8 px-3 rounded-lg bg-neg hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neg/40 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold text-xs flex items-center gap-1 transition-opacity cursor-pointer"
-                                  >
-                                    <X className="w-3.5 h-3.5" />
-                                    <span className="hidden xs:inline">Rejeitar</span>
-                                  </button>
-                                </div>
-                              </td>
-                            </motion.tr>
-                          ))}
-                        </AnimatePresence>
-                      </tbody>
-                    </table>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+
+                        </div>
+                      );
+                    })}
                   </div>
                 )}
               </Card>
@@ -569,7 +791,7 @@ export function Configuracoes({ user }: { user: UserProfile | null }) {
                       className="px-5 py-2.5 bg-brand hover:bg-brand-ink text-white font-bold text-xs rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer flex items-center gap-2"
                     >
                       {createUserLoading ? (
-                        <Spinner className="h-4 w-4" />
+                        <Spinner className="h-4 w-4 animate-spin" />
                       ) : (
                         <Check className="w-4 h-4" />
                       )}
