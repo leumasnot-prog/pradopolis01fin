@@ -333,12 +333,12 @@ export function ExecucaoSaude() {
       <motion.div variants={itemVariants} className="mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <SectionHeader
           title="Execução do Orçamento — Saúde"
-          subtitle="Cumprimento do piso constitucional de 15%, comparativo anual da execução (até o mês fechado) e contratos fixos do Departamento Municipal de Saúde"
+          subtitle="Cumprimento do limite constitucional de 15%, comparativo anual da execução (até o mês fechado de Maio/05) e contratos fixos do Departamento Municipal de Saúde"
           badge={
             <StatusBadge tone={limite.atingiu ? "healthy" : "critical"}>
               <span className="flex items-center gap-1">
                 {limite.atingiu ? <CheckCircle2 className="w-3 h-3" /> : <AlertTriangle className="w-3 h-3" />}
-                {formatPercent(limite.percentualAplicado2026)} {limite.atingiu ? "· LIMITE ATINGIDO" : "· ABAIXO DO PISO"}
+                {formatPercent(limite.percentualAplicado2026)} {limite.atingiu ? "· LIMITE ATINGIDO" : "· ABAIXO DO LIMITE"}
               </span>
             </StatusBadge>
           }
@@ -414,7 +414,7 @@ export function ExecucaoSaude() {
           
           <div>
             <span className="text-[11px] font-semibold text-muted uppercase tracking-[0.14em] block">
-              Piso Constitucional · 2026
+              Limite Constitucional · 2026
             </span>
             <h4 className="font-display text-lg font-bold text-ink tracking-tight mt-1">
               Aplicação em Saúde (EC 29 / LC 141)
@@ -463,7 +463,7 @@ export function ExecucaoSaude() {
                     limite.atingiu ? "text-pos" : "text-neg"
                   }`}
                 >
-                  {limite.atingiu ? "Limite atingido" : "Abaixo do piso"}
+                  {limite.atingiu ? "Limite atingido" : "Abaixo do limite"}
                 </span>
                 <span className="text-[10px] font-semibold text-muted mt-0.5">mínimo 15%</span>
               </div>
@@ -477,9 +477,9 @@ export function ExecucaoSaude() {
               base de <strong className="font-mono tabular text-ink">{formatBRL(limite.baseReceita2026)}</strong>.
             </span>
             <span className="text-[11px] font-medium text-muted block">
-              Piso de 15%: <strong className="font-mono tabular text-warn">{formatBRL(limite.minimo2026)}</strong>
+              Limite de 15%: <strong className="font-mono tabular text-warn">{formatBRL(limite.minimo2026)}</strong>
               {" · "}
-              {limite.folgaValor >= 0 ? "Acima do piso em " : "Faltam "}
+              {limite.folgaValor >= 0 ? "Acima do limite em " : "Faltam "}
               <strong className={`font-mono tabular ${limite.folgaValor >= 0 ? "text-pos" : "text-neg"}`}>
                 {formatBRL(Math.abs(limite.folgaValor))}
               </strong>
@@ -491,7 +491,7 @@ export function ExecucaoSaude() {
         <Card className="lg:col-span-4 p-6 flex flex-col justify-between min-h-[390px] shadow-sm hover:shadow-md transition-all duration-300 print:col-span-4 print:break-inside-avoid">
           <div>
             <span className="text-[11px] font-semibold text-muted uppercase tracking-[0.14em] block">
-              Comparativo · até o mês fechado
+              Comparativo · até o mês fechado de Maio/05
             </span>
             <h4 className="font-display text-lg font-bold text-ink tracking-tight mt-1">Execução 2025 × 2026</h4>
             <p className="text-xs font-medium text-ink-2 mt-0.5">Empenhado, liquidado e pago no mesmo período</p>
@@ -604,7 +604,7 @@ export function ExecucaoSaude() {
                   Comparativo de Execução — 2025 × 2026
                 </h4>
                 <p className="text-xs font-medium text-ink-2">
-                  Agrupado por {groupMode === "fonte" ? "fonte de recurso" : "função / subfunção"} ·{" "}
+                  Agrupado por {groupMode === "fonte" ? "fonte de recurso" : "função / subfunção"} (dados até Maio/05) ·{" "}
                   <span className="font-mono tabular text-brand font-bold">{comparativoRows.length}</span> linhas
                 </p>
               </div>
