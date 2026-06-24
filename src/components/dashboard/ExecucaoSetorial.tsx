@@ -1,18 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import { Activity, HeartHandshake, Bus } from "lucide-react";
+import { Activity, HeartHandshake, Bus, Building2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { ExecucaoSaude } from "./ExecucaoSaude";
 import { ExecucaoSocial } from "./ExecucaoSocial";
 import { ExecucaoTransporte } from "./ExecucaoTransporte";
+import { ExecucaoUrban } from "./ExecucaoUrban";
 
-type Sector = "saude" | "social" | "transporte";
+type Sector = "saude" | "social" | "transporte" | "urban";
 
 const SECTORS: { id: Sector; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
   { id: "saude", label: "Saúde Pública", icon: Activity },
   { id: "social", label: "Promoção Social", icon: HeartHandshake },
   { id: "transporte", label: "Transportes e Trânsito", icon: Bus },
+  { id: "urban", label: "Serviços Urbanos", icon: Building2 },
 ];
 
 export function ExecucaoSetorial() {
@@ -68,6 +70,7 @@ export function ExecucaoSetorial() {
           {activeSector === "saude" && <ExecucaoSaude />}
           {activeSector === "social" && <ExecucaoSocial />}
           {activeSector === "transporte" && <ExecucaoTransporte />}
+          {activeSector === "urban" && <ExecucaoUrban />}
         </motion.div>
       </main>
     </div>
