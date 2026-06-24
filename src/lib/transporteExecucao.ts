@@ -81,6 +81,7 @@ function aggregateYear(file: string): YearAgg {
   header.forEach((h, i) => (idx[h.trim()] = i));
 
   const col = {
+    fonGrupo: idx["FONGRUPO"],
     fonGrupoNome: idx["FONGRUPONOME"],
     fonCodigoNome: idx["FONCODIGONOME"],
     funcaoNome: idx["FUNCAONOME"],
@@ -115,12 +116,32 @@ function aggregateYear(file: string): YearAgg {
     agg.numEmpenhos++;
 
     // Agrupamento por Fonte de Recurso
-    const fonteNome = (f[col.fonCodigoNome] || "").trim() || "Não informado";
-    const grupoNome = (f[col.fonGrupoNome] || "").trim() || "—";
-    let fr = agg.porFonte.get(fonteNome);
+    const rawFonGrupo = (f[col.fonGrupo] || "").trim();
+    let label = "";
+    let sub = "";
+
+    if (rawFonGrupo === "01") {
+      label = "01 - TESOURO";
+      sub = "TESOURO";
+    } else if (rawFonGrupo === "02") {
+      label = "02 - TRANSF. ESTADUAL";
+      sub = "TRANSFERÊNCIAS ESTADUAIS";
+    } else if (rawFonGrupo === "05") {
+      label = "05 - TRANSF. FEDERAL";
+      sub = "TRANSFERÊNCIAS FEDERAIS";
+    } else if (rawFonGrupo === "08") {
+      label = "08 - EMENDAS PARLAMENTARES";
+      sub = "EMENDAS PARLAMENTARES";
+    } else {
+      const gNome = (f[col.fonGrupoNome] || "").trim() || "Outros";
+      label = rawFonGrupo ? `${rawFonGrupo} - ${gNome}` : gNome;
+      sub = gNome;
+    }
+
+    let fr = agg.porFonte.get(label);
     if (!fr) {
-      fr = { fonte: fonteNome, grupo: grupoNome, ...emptyMetric() };
-      agg.porFonte.set(fonteNome, fr);
+      fr = { fonte: label, grupo: sub, ...emptyMetric() };
+      agg.porFonte.set(label, fr);
     }
     fr.empenhado += empenhado;
     fr.liquidado += liquidado;

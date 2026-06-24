@@ -127,7 +127,7 @@ function aggregateYear(file: string): YearAgg {
       label = "01 - TESOURO";
       sub = "TESOURO";
     } else if (rawFonGrupo === "02") {
-      label = "02 - TRASNF. ESTADUAL";
+      label = "02 - TRANSF. ESTADUAL";
       sub = "TRANSFERÊNCIAS ESTADUAIS";
     } else if (rawFonGrupo === "05") {
       label = "05 - TRANSF. FEDERAL";

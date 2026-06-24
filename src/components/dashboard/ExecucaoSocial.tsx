@@ -472,7 +472,7 @@ export function ExecucaoSocial() {
         <Card className="lg:col-span-4 p-6 flex flex-col justify-between min-h-[390px] shadow-sm hover:shadow-md transition-all duration-300 print:col-span-4 print:break-inside-avoid">
           <div>
             <span className="text-[11px] font-semibold text-muted uppercase tracking-[0.14em] block">
-              Comparativo · até o mês fechado
+              Comparativo · até o mês fechado de Maio/05
             </span>
             <h4 className="font-display text-lg font-bold text-ink tracking-tight mt-1">Execução 2025 × 2026</h4>
             <p className="text-xs font-medium text-ink-2 mt-0.5">Empenhado, liquidado e pago no mesmo período</p>
@@ -585,7 +585,7 @@ export function ExecucaoSocial() {
                   Comparativo de Execução — 2025 × 2026
                 </h4>
                 <p className="text-xs font-medium text-ink-2">
-                  Agrupado por {groupMode === "fonte" ? "fonte de recurso" : "função / subfunção"} ·{" "}
+                  Agrupado por {groupMode === "fonte" ? "fonte de recurso" : "função / subfunção"} (dados até Maio/05) ·{" "}
                   <span className="font-mono tabular text-brand font-bold">{comparativoRows.length}</span> linhas
                 </p>
               </div>
