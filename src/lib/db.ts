@@ -3,6 +3,7 @@ import { DatabaseSync } from "node:sqlite";
 import path from "path";
 import fs from "fs";
 import { createPool } from "@vercel/postgres";
+import { hashPassword } from "./crypto";
 
 declare global {
   var sqliteDb: any;
@@ -175,10 +176,7 @@ if (isPg) {
           // 4. Seed default admin
           const checkAdmin = await client.query("SELECT * FROM users WHERE email = $1", ["contabilidade@pradopolis.sp.gov.br"]);
           if (checkAdmin.rows.length === 0) {
-            const cryptoModule = require("node:crypto");
-            const salt = cryptoModule.randomBytes(16).toString("hex");
-            const hash = cryptoModule.scryptSync("pradofin123456", salt, 64).toString("hex");
-            const passwordHash = `${salt}:${hash}`;
+            const passwordHash = hashPassword("pradofin123456");
             await client.query(
               "INSERT INTO users (name, email, password_hash, approved) VALUES ($1, $2, $3, 1)",
               ["Contabilidade", "contabilidade@pradopolis.sp.gov.br", passwordHash]
@@ -305,11 +303,7 @@ if (isPg) {
       // Seed admin user
       const checkAdmin = globalThis.sqliteDb.prepare("SELECT * FROM users WHERE email = ?");
       if (!checkAdmin.get("contabilidade@pradopolis.sp.gov.br")) {
-        const cryptoModule = require("node:crypto");
-        const salt = cryptoModule.randomBytes(16).toString("hex");
-        const hash = cryptoModule.scryptSync("pradofin123456", salt, 64).toString("hex");
-        const passwordHash = `${salt}:${hash}`;
-        
+        const passwordHash = hashPassword("pradofin123456");
         const insert = globalThis.sqliteDb.prepare(
           "INSERT OR IGNORE INTO users (name, email, password_hash, approved) VALUES (?, ?, ?, 1)"
         );
