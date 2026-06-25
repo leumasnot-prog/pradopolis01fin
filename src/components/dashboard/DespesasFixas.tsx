@@ -53,6 +53,7 @@ interface Contract {
   setor: string;
   categoria: string;
   ficha: string;
+  fonte_recurso: string;
   valor_anual: number;
   valor_mensal: number;
   cronograma: number[];
@@ -121,6 +122,7 @@ export function DespesasFixas() {
   const [selectedCategoria, setSelectedCategoria] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedContract, setSelectedContract] = useState<Contract | null>(null);
+  const [showBreakdownDetails, setShowBreakdownDetails] = useState(false);
   const [sortConfig, setSortConfig] = useState<{ key: string; direction: 'asc' | 'desc' | null }>({
     key: "",
     direction: null
@@ -146,7 +148,8 @@ export function DespesasFixas() {
         c.fornecedor.toLowerCase().includes(searchTerm.toLowerCase()) || 
         c.contrato.toLowerCase().includes(searchTerm.toLowerCase()) || 
         c.empenho.toLowerCase().includes(searchTerm.toLowerCase()) || 
-        c.historico.toLowerCase().includes(searchTerm.toLowerCase());
+        c.historico.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (c.fonte_recurso && c.fonte_recurso.toLowerCase().includes(searchTerm.toLowerCase()));
       
       const matchesSetor = selectedSetor === "all" || c.setor === selectedSetor;
       const matchesCategoria = selectedCategoria === "all" || c.categoria === selectedCategoria;
@@ -357,6 +360,77 @@ export function DespesasFixas() {
           iconBgClass="bg-pos-50"
           iconColorClass="text-pos"
         />
+      </div>
+
+      {/* Info Callout about Resource Breakdown */}
+      <div className="flex flex-col gap-3 px-5 py-4 rounded-xl border border-brand/20 bg-brand-50/30 mb-8 text-xs text-ink-2 font-medium transition-all duration-300">
+        <div className="flex items-start sm:items-center gap-3">
+          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand border border-brand/10">
+            <Info className="w-4 h-4 shrink-0" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <span>
+              Do total de <strong>R$ 19.114.533,82</strong> em contratos de serviços municipais, 
+              cerca de <strong>R$ 17.047.136,02 (89,18%)</strong> são financiados por <strong>Recursos Próprios (Tesouro)</strong> 
+              e <strong>R$ 2.067.397,92 (10,82%)</strong> são provenientes de <strong>Recursos Vinculados (Transf. Federal/Estadual)</strong>.
+            </span>
+            <button 
+              onClick={() => setShowBreakdownDetails(!showBreakdownDetails)}
+              className="ml-2 inline-flex items-center gap-0.5 text-brand font-bold hover:underline cursor-pointer focus:outline-none"
+            >
+              {showBreakdownDetails ? "Ver menos" : "Saiba mais"}
+            </button>
+          </div>
+        </div>
+
+        {showBreakdownDetails && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="pt-3 border-t border-brand/10 text-ink-2 space-y-3"
+          >
+            <p className="text-[11px] leading-relaxed text-muted uppercase font-bold tracking-wider">
+              Detalhamento de Origem dos Recursos de Contratos
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-surface p-3.5 rounded-lg border border-line flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <span className="h-2 w-2 rounded-full bg-brand" />
+                    <span className="font-semibold text-ink">Recursos Próprios (Tesouro)</span>
+                  </div>
+                  <p className="text-[11px] text-ink-2 leading-relaxed">
+                    Recursos livres provenientes da arrecadação de impostos municipais (como IPTU, ISS) e repasses constitucionais gerais. Custeiam a maior parte dos contratos de prestação de serviços municipais ordinários.
+                  </p>
+                </div>
+                <div className="mt-3 pt-2.5 border-t border-line flex items-baseline justify-between">
+                  <span className="text-[10px] uppercase font-bold text-muted">Total Anual</span>
+                  <span className="font-mono font-bold text-sm text-brand">R$ 17.047.136,02</span>
+                </div>
+              </div>
+
+              <div className="bg-surface p-3.5 rounded-lg border border-line flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <span className="h-2 w-2 rounded-full bg-pos" />
+                    <span className="font-semibold text-ink">Recursos Vinculados</span>
+                  </div>
+                  <p className="text-[11px] text-ink-2 leading-relaxed">
+                    Verbas carimbadas provenientes de convênios, fundos setoriais ou transferências obrigatórias da União e do Estado. Destinadas exclusivamente para fins específicos, como transporte de alunos do ensino médio e vigilância sanitária.
+                  </p>
+                </div>
+                <div className="mt-3 pt-2.5 border-t border-line flex items-baseline justify-between">
+                  <span className="text-[10px] uppercase font-bold text-muted">Total Anual</span>
+                  <span className="font-mono font-bold text-sm text-pos">R$ 2.067.397,92</span>
+                </div>
+              </div>
+            </div>
+            <p className="text-[11px] text-muted italic leading-relaxed">
+              * Nota: Essa classificação garante que apenas os contratos custeados por Recursos Próprios (R$ 17,04 mi) sejam consolidados como despesas fixas do Tesouro no cálculo do superávit/déficit projetado na aba "Visão Geral", evitando distorções causadas por repasses vinculados temporários.
+            </p>
+          </motion.div>
+        )}
       </div>
 
       {/* Bento Grid: Charts & Explanations */}
@@ -626,6 +700,7 @@ export function DespesasFixas() {
                 {renderSortableHeader("Fornecedor / Contratado", "fornecedor", "left")}
                 {renderSortableHeader("Setor / Secretaria", "setor", "left")}
                 {renderSortableHeader("Tipo de Despesa", "categoria", "left")}
+                {renderSortableHeader("Fonte de Recurso", "fonte_recurso", "left")}
                 {renderSortableHeader("Valor Mensal", "valor_mensal", "right")}
                 {renderSortableHeader("Valor Anual", "valor_anual", "right")}
               </tr>
@@ -669,6 +744,11 @@ export function DespesasFixas() {
                             {c.categoria}
                           </span>
                         </td>
+                        <td className="py-3 px-4">
+                          <span className="text-xs font-medium text-ink-2 line-clamp-1">
+                            {c.fonte_recurso || "—"}
+                          </span>
+                        </td>
                         <td className="py-3 px-4 text-right font-mono tabular font-medium text-sm text-ink">
                           {formatBRL(c.valor_mensal)}
                         </td>
@@ -680,7 +760,7 @@ export function DespesasFixas() {
                   })
                 ) : (
                   <tr>
-                    <td colSpan={7} className="py-12 text-center text-muted font-medium text-sm">
+                    <td colSpan={8} className="py-12 text-center text-muted font-medium text-sm">
                       Nenhum contrato encontrado com os filtros selecionados.
                     </td>
                   </tr>
@@ -690,7 +770,7 @@ export function DespesasFixas() {
             {filteredContracts.length > 0 && (
               <tfoot>
                 <tr className="bg-surface-2 border-t-2 border-line-strong font-semibold text-ink">
-                  <td colSpan={5} className="py-3 px-4 text-[11px] font-bold uppercase text-ink-2 tracking-[0.08em]">
+                  <td colSpan={6} className="py-3 px-4 text-[11px] font-bold uppercase text-ink-2 tracking-[0.08em]">
                     Total Filtrado (<span className="font-mono tabular">{filteredContracts.length}</span> Contratos)
                   </td>
                   <td className="py-3 px-4 text-right font-mono tabular text-sm">
@@ -894,6 +974,12 @@ export function DespesasFixas() {
                   <div className="bg-surface-2 rounded-lg border border-line p-4">
                     <span className="text-[10px] font-bold text-muted uppercase tracking-[0.08em] block">Número do Contrato</span>
                     <span className="text-sm font-semibold text-ink font-mono tabular mt-1 block">{selectedContract.contrato}</span>
+                  </div>
+
+                  {/* Fonte de Recurso */}
+                  <div className="bg-surface-2 rounded-lg border border-line p-4">
+                    <span className="text-[10px] font-bold text-muted uppercase tracking-[0.08em] block">Fonte de Recurso</span>
+                    <span className="text-xs font-semibold text-ink mt-1 block leading-relaxed">{selectedContract.fonte_recurso || "—"}</span>
                   </div>
 
                   {/* Monthly Value */}

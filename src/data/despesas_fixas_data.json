@@ -1,143 +1,143 @@
 {
   "resumo_geral": {
-    "total_despesas_fixas_anual": 113965758.45,
-    "total_despesas_fixas_mensal": 9497146.54,
+    "total_despesas_fixas_anual": 116700836.33,
+    "total_despesas_fixas_mensal": 9725069.69,
     "folha_anual": 79212831.07,
-    "contratos_anual": 16379455.94,
+    "contratos_anual": 19114533.82,
     "auxilio_anual": 12373471.44,
     "ingesp_anual": 6000000.0,
-    "num_contratos_ativos": 211
+    "num_contratos_ativos": 216
   },
   "progressao_mensal": [
     {
       "mes_num": 1,
       "mes_nome": "Janeiro",
       "folha": 6120055.45,
-      "contratos": 1301684.26,
+      "contratos": 1403327.41,
       "auxilio": 985149.0,
       "ingesp": 500000.0,
-      "total": 8906888.71
+      "total": 9008531.86
     },
     {
       "mes_num": 2,
       "mes_nome": "Fevereiro",
       "folha": 6120055.45,
-      "contratos": 1490734.28,
+      "contratos": 1673972.99,
       "auxilio": 985149.0,
       "ingesp": 500000.0,
-      "total": 9095938.73
+      "total": 9279177.44
     },
     {
       "mes_num": 3,
       "mes_nome": "Março",
       "folha": 6120055.45,
-      "contratos": 1493450.39,
+      "contratos": 1717690.94,
       "auxilio": 985149.0,
       "ingesp": 500000.0,
-      "total": 9098654.84
+      "total": 9322895.39
     },
     {
       "mes_num": 4,
       "mes_nome": "Abril",
       "folha": 6120055.45,
-      "contratos": 1468644.51,
+      "contratos": 1692310.61,
       "auxilio": 985149.0,
       "ingesp": 500000.0,
-      "total": 9073848.96
+      "total": 9297515.06
     },
     {
       "mes_num": 5,
       "mes_nome": "Maio",
       "folha": 6386277.86,
-      "contratos": 1513776.91,
+      "contratos": 1770939.0,
       "auxilio": 1054109.43,
       "ingesp": 500000.0,
-      "total": 9454164.2
+      "total": 9711326.29
     },
     {
       "mes_num": 6,
       "mes_nome": "Junho",
       "folha": 6386277.86,
-      "contratos": 1510776.89,
+      "contratos": 1804313.57,
       "auxilio": 1054109.43,
       "ingesp": 500000.0,
-      "total": 9451164.18
+      "total": 9744700.86
     },
     {
       "mes_num": 7,
       "mes_nome": "Julho",
       "folha": 6386277.86,
-      "contratos": 1461391.82,
+      "contratos": 1708102.62,
       "auxilio": 1054109.43,
       "ingesp": 500000.0,
-      "total": 9401779.11
+      "total": 9648489.91
     },
     {
       "mes_num": 8,
       "mes_nome": "Agosto",
       "folha": 6386277.86,
-      "contratos": 1362553.62,
+      "contratos": 1611638.86,
       "auxilio": 1054109.43,
       "ingesp": 500000.0,
-      "total": 9302940.91
+      "total": 9552026.15
     },
     {
       "mes_num": 9,
       "mes_nome": "Setembro",
       "folha": 6386277.86,
-      "contratos": 1279549.71,
+      "contratos": 1507748.35,
       "auxilio": 1054109.43,
       "ingesp": 500000.0,
-      "total": 9219937.0
+      "total": 9448135.64
     },
     {
       "mes_num": 10,
       "mes_nome": "Outubro",
       "folha": 6386277.86,
-      "contratos": 1229764.63,
+      "contratos": 1459863.27,
       "auxilio": 1054109.43,
       "ingesp": 500000.0,
-      "total": 9170151.92
+      "total": 9400250.56
     },
     {
       "mes_num": 11,
       "mes_nome": "Novembro",
       "folha": 6386277.86,
-      "contratos": 1195008.57,
+      "contratos": 1444607.21,
       "auxilio": 1054109.43,
       "ingesp": 500000.0,
-      "total": 9135395.86
+      "total": 9384994.5
     },
     {
       "mes_num": 12,
       "mes_nome": "Dezembro",
       "folha": 10028664.25,
-      "contratos": 1072120.35,
+      "contratos": 1320018.99,
       "auxilio": 1054109.43,
       "ingesp": 500000.0,
-      "total": 12654894.03
+      "total": 12902792.67
     }
   ],
   "contratos_por_setor": [
     {
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
-      "valor": 5774015.43
-    },
-    {
-      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
-      "valor": 2928326.75
-    },
-    {
-      "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
-      "valor": 2434128.2
-    },
-    {
-      "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
-      "valor": 1761637.76
+      "valor": 7041183.92
     },
     {
       "setor": "DEPARTAMENTO MUNICIPAL DE TRANSPORTES E TRÂNSITO",
-      "valor": 1422001.0
+      "valor": 3062028.5
+    },
+    {
+      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
+      "valor": 2500052.08
+    },
+    {
+      "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
+      "valor": 2206714.1
+    },
+    {
+      "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
+      "valor": 1863528.14
     },
     {
       "setor": "DEPARTAMENTO MUNICIPAL DE ASSUNTOS JURÍDICOS",
@@ -145,19 +145,27 @@
     },
     {
       "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
-      "valor": 541178.79
+      "valor": 548939.19
+    },
+    {
+      "setor": "DEPARTAMENTO MUNICIPAL DE SEGURANÇA PÚBLICA",
+      "valor": 320320.0
     },
     {
       "setor": "DEPARTAMENTO MUNICIPAL DE ESPORTES E LAZER",
       "valor": 146010.08
     },
     {
+      "setor": "DEPARTAMENTO MUNICIPAL DE AGRICULTURA E MEIO AMBIENTE",
+      "valor": 64200.0
+    },
+    {
       "setor": "DEPARTAMENTO MUNICIPAL DE CULTURA E TURISMO",
       "valor": 51724.0
     },
     {
-      "setor": "DEPARTAMENTO MUNICIPAL DE AGRICULTURA E MEIO AMBIENTE",
-      "valor": 47000.0
+      "setor": "OUTROS SETORES",
+      "valor": 36400.0
     },
     {
       "setor": "DEPARTAMENTO DE SERVIÇOS PÚBLICOS",
@@ -174,48 +182,44 @@
   ],
   "contratos_por_categoria": [
     {
+      "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
+      "valor": 5509377.66
+    },
+    {
       "categoria": "TERMO DE COLABORAÇÃO",
       "valor": 3334999.99
     },
     {
-      "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
-      "valor": 2644422.75
-    },
-    {
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
-      "valor": 2493452.16
-    },
-    {
-      "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
-      "valor": 1582483.44
+      "valor": 2536552.16
     },
     {
       "categoria": "PRECATÓRIOS - ATIVO - PESSOAL CIVIL",
       "valor": 1229917.93
     },
     {
+      "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
+      "valor": 1115126.84
+    },
+    {
       "categoria": "ESTAGIÁRIOS",
-      "valor": 923532.98
-    },
-    {
-      "categoria": "LIMPEZA E CONSERVAÇÃO",
-      "valor": 869400.0
-    },
-    {
-      "categoria": "CONTRATO DE GESTÃO",
-      "valor": 502802.0
-    },
-    {
-      "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
-      "valor": 439670.11
+      "valor": 919991.31
     },
     {
       "categoria": "OUTRAS DESPESAS DE PESSOAL DECORRENTES DE CONTRATOS DE TERCE",
-      "valor": 420000.0
+      "valor": 770000.0
     },
     {
-      "categoria": "LOCAÇÃO BENS MÓVEIS DE OUTRAS NATUREZAS E INTANGÍVEIS",
-      "valor": 275764.0
+      "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
+      "valor": 748333.48
+    },
+    {
+      "categoria": "LIMPEZA E CONSERVAÇÃO",
+      "valor": 538408.39
+    },
+    {
+      "categoria": "CONTRATO DE GESTÃO",
+      "valor": 483632.0
     },
     {
       "categoria": "VIGILÂNCIA OSTENSIVA MONITORADA",
@@ -223,11 +227,15 @@
     },
     {
       "categoria": "SERVIÇO DE APOIO ADMINISTRATIVO, TÉCNICO E OPERACIONAL",
-      "valor": 247960.0
+      "valor": 240831.6
     },
     {
       "categoria": "JUROS",
       "valor": 236050.87
+    },
+    {
+      "categoria": "LOCAÇÃO BENS MÓVEIS DE OUTRAS NATUREZAS E INTANGÍVEIS",
+      "valor": 225176.0
     },
     {
       "categoria": "AMORTIZAÇÃO DA DÍVIDA CONTRATUAL",
@@ -235,19 +243,19 @@
     },
     {
       "categoria": "SERVIÇOS TÉCNICOS PROFISSIONAIS",
-      "valor": 179201.0
+      "valor": 179200.0
     },
     {
-      "categoria": "MATERIAL DESTINADO À ASSISTÊNCIA SOCIAL",
-      "valor": 125000.0
+      "categoria": "TERMO DE FOMENTO",
+      "valor": 125400.0
     },
     {
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "valor": 111120.0
     },
     {
-      "categoria": "TERMO DE FOMENTO",
-      "valor": 101400.0
+      "categoria": "MATERIAL DESTINADO À ASSISTÊNCIA SOCIAL",
+      "valor": 110000.0
     },
     {
       "categoria": "LOCAÇÃO DE IMÓVEIS",
@@ -262,12 +270,16 @@
       "valor": 36989.6
     },
     {
-      "categoria": "MANUTENÇÃO E CONSERVAÇÃO DE MÁQUINAS E EQUIPAMENTOS",
-      "valor": 34089.0
+      "categoria": "SERVIÇOS GERAIS",
+      "valor": 36400.0
     },
     {
       "categoria": "OUTROS SERVIÇOS DE PESSOA FÍSICA",
-      "valor": 13000.0
+      "valor": 26100.0
+    },
+    {
+      "categoria": "MANUTENÇÃO E CONSERVAÇÃO DE MÁQUINAS E EQUIPAMENTOS",
+      "valor": 22726.0
     }
   ],
   "contratos": [
@@ -279,6 +291,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "TERMO DE COLABORAÇÃO",
       "ficha": "63",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 3000000.0,
       "valor_mensal": 250000.0,
       "cronograma": [
@@ -297,28 +310,55 @@
       ]
     },
     {
-      "empenho": "181",
+      "empenho": "182",
       "contrato": "0183/22",
       "fornecedor": "VIACAO RIO GRANDE LTDA",
-      "historico": "EMPENHO ESTIMATIVO TRANSPORTE DE AUNOS DO ENSINO SUPERIOR E PROFISSIONALIZANTE DA CIDADE DE PRADÓPOLIS/SP PARA A CIDADE DE JABOTICABAL/SP, PERIODO DIURNO E NOTURNO. ** ATÉ O Mês (10/2026)",
+      "historico": "EMPENHO ESTIMATIVO TRANSPORTE DE AUNOS DO ENSINO SUPERIOR E PROFISSIONALIZANTE DA CIDADE DE PRADÓPOLIS/SP PARA A CIDADE DE RIBEIRÃO PRETO/SP, PERIODO DIURNO E NOTURNO. ** ATÉ O Mês (10/2026)",
       "setor": "DEPARTAMENTO MUNICIPAL DE TRANSPORTES E TRÂNSITO",
       "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
       "ficha": "296",
-      "valor_anual": 1350000.0,
-      "valor_mensal": 112500.0,
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 2383428.5,
+      "valor_mensal": 198619.04,
       "cronograma": [
-        112500.0,
-        112500.0,
-        112500.0,
-        112500.0,
-        112500.0,
-        112500.0,
-        112500.0,
-        112500.0,
-        112500.0,
-        112500.0,
-        112500.0,
-        112500.0
+        73429.42,
+        209999.92,
+        209999.92,
+        209999.92,
+        209999.92,
+        209999.92,
+        209999.92,
+        209999.92,
+        209999.92,
+        209999.92,
+        209999.92,
+        209999.88
+      ]
+    },
+    {
+      "empenho": "173",
+      "contrato": "0038/23",
+      "fornecedor": "VIACAO RIO GRANDE LTDA",
+      "historico": "EMPENHO ESTIMATIVO REFERENTE A PRESTAÇÃO DE SERVICO DE TRANSPORTE DE ALUNOS DO ENSINO FUNDAMENTAL DA ZONA RURAL E BAIRROS PERIFERICOS PARA AS ESCOLAS DO MUNICÍPIO RECURSO QESE **ATÉ O Mês (08/2026)",
+      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
+      "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
+      "ficha": "73",
+      "fonte_recurso": "05 - TRANSF. FEDERAL (EDUCAÇÃO-Convênios/entidades/fundos)",
+      "valor_anual": 1378897.92,
+      "valor_mensal": 114908.16,
+      "cronograma": [
+        113991.49,
+        114991.49,
+        114991.49,
+        114991.49,
+        114991.49,
+        114991.49,
+        114991.49,
+        114991.49,
+        114991.49,
+        114991.49,
+        114991.49,
+        114991.53
       ]
     },
     {
@@ -329,6 +369,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ASSUNTOS JURÍDICOS",
       "categoria": "PRECATÓRIOS - ATIVO - PESSOAL CIVIL",
       "ficha": "319",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 1229917.93,
       "valor_mensal": 102493.16,
       "cronograma": [
@@ -354,6 +395,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "277",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 600000.0,
       "valor_mensal": 50000.0,
       "cronograma": [
@@ -372,6 +414,32 @@
       ]
     },
     {
+      "empenho": "181",
+      "contrato": "0183/22",
+      "fornecedor": "VIACAO RIO GRANDE LTDA",
+      "historico": "EMPENHO ESTIMATIVO TRANSPORTE DE AUNOS DO ENSINO SUPERIOR E PROFISSIONALIZANTE DA CIDADE DE PRADÓPOLIS/SP PARA A CIDADE DE JABOTICABAL/SP, PERIODO DIURNO E NOTURNO. ** ATÉ O Mês (10/2026)",
+      "setor": "DEPARTAMENTO MUNICIPAL DE TRANSPORTES E TRÂNSITO",
+      "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
+      "ficha": "296",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 580000.0,
+      "valor_mensal": 48333.33,
+      "cronograma": [
+        48333.33,
+        48333.33,
+        48333.33,
+        48333.33,
+        48333.33,
+        48333.33,
+        48333.33,
+        48333.33,
+        48333.33,
+        48333.33,
+        48333.33,
+        48333.37
+      ]
+    },
+    {
       "empenho": "895",
       "contrato": "Empenho 895",
       "fornecedor": "ESTAGIARIOS - EDUCAÇÃO",
@@ -379,6 +447,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "ESTAGIÁRIOS",
       "ficha": "69",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 532800.0,
       "valor_mensal": 44400.0,
       "cronograma": [
@@ -397,56 +466,6 @@
       ]
     },
     {
-      "empenho": "136",
-      "contrato": "0010/25",
-      "fornecedor": "EVOLUTION BRASIL SERVICOS LTDA",
-      "historico": "EMPENHO ESTIMATIVO REFERENTE A CONTRATAÇÃO DE SERVIÇOS DE LIMPEZA PARA UNIDADES PÚBLICAS DE SAÚDE - P.A / CENTRO MEDICO MUNICIPAL / CENTRO ODONTOLOGICO / BASE DO SAMU / CENTRO DE FISIOTERAPIA / UBS LINEU ZACARIAS. **VIG. até mês 03/2026",
-      "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
-      "categoria": "LIMPEZA E CONSERVAÇÃO",
-      "ficha": "162",
-      "valor_anual": 504000.0,
-      "valor_mensal": 42000.0,
-      "cronograma": [
-        42000.0,
-        42000.0,
-        42000.0,
-        42000.0,
-        42000.0,
-        42000.0,
-        42000.0,
-        42000.0,
-        42000.0,
-        42000.0,
-        42000.0,
-        42000.0
-      ]
-    },
-    {
-      "empenho": "197",
-      "contrato": "0060/22",
-      "fornecedor": "HELIO RINALDI JUNIOR COMERCIO E SERVICOS EIRELI",
-      "historico": "EMPENHO ESTIMATIVO CONTRATAÇÃO DE EMPRESA PARA SERVIÇOS DE LEITURA DE CONSUMO, EMISSÃO E ENTREGAS DE FATURA DE AGUA DURANTE O EXERCICIO, CONFORME CONTRATO. **CONTRATO VALIDO ATE 05/2026",
-      "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
-      "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
-      "ficha": "277",
-      "valor_anual": 480000.0,
-      "valor_mensal": 40000.0,
-      "cronograma": [
-        40000.0,
-        40000.0,
-        40000.0,
-        40000.0,
-        40000.0,
-        40000.0,
-        40000.0,
-        40000.0,
-        40000.0,
-        40000.0,
-        40000.0,
-        40000.0
-      ]
-    },
-    {
       "empenho": "199",
       "contrato": "0031/25",
       "fornecedor": "G-ENERGY ENGENHARIA E SERVICOS LTDA",
@@ -454,6 +473,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 478995.0,
       "valor_mensal": 39916.25,
       "cronograma": [
@@ -479,6 +499,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
       "categoria": "OUTRAS DESPESAS DE PESSOAL DECORRENTES DE CONTRATOS DE TERCE",
       "ficha": "156",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
       "valor_anual": 420000.0,
       "valor_mensal": 35000.0,
       "cronograma": [
@@ -504,6 +525,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "LIMPEZA E CONSERVAÇÃO",
       "ficha": "271",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 350000.0,
       "valor_mensal": 29166.67,
       "cronograma": [
@@ -522,6 +544,32 @@
       ]
     },
     {
+      "empenho": "204",
+      "contrato": "0042/22",
+      "fornecedor": "T.E.M. EMERGENCIAS MEDICAS LTDA.",
+      "historico": "EMPENHO ESTIMATIVO REFERENTE A PRESTAÇÃO DE SERVIÇO DO SAMU - RECURSO FEDERAL",
+      "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
+      "categoria": "OUTRAS DESPESAS DE PESSOAL DECORRENTES DE CONTRATOS DE TERCE",
+      "ficha": "183",
+      "fonte_recurso": "05 - TRANSF. FEDERAL (SAÚDE-Convênios/entidades/fundos)",
+      "valor_anual": 350000.0,
+      "valor_mensal": 29166.67,
+      "cronograma": [
+        29166.67,
+        29166.67,
+        29166.67,
+        29166.67,
+        29166.67,
+        29166.67,
+        29166.67,
+        29166.67,
+        29166.67,
+        29166.67,
+        29166.67,
+        29166.63
+      ]
+    },
+    {
       "empenho": "2835",
       "contrato": "0013/22",
       "fornecedor": "ASSOCIACAO DE ASSISTENCIA E DESENVOLVIMENTO PROFIS",
@@ -529,6 +577,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "CONTRATO DE GESTÃO",
       "ficha": "64",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 333632.0,
       "valor_mensal": 27802.67,
       "cronograma": [
@@ -547,6 +596,32 @@
       ]
     },
     {
+      "empenho": "3474",
+      "contrato": "0010/25",
+      "fornecedor": "EVOLUTION BRASIL SERVICOS LTDA",
+      "historico": "EMPENHO ESTIMATIVO REFERENTE A CONTRATAÇÃO DE SERVIÇOS DE LIMPEZA PARA UNIDADES PÚBLICAS DE SAÚDE - P.A / CENTRO MEDICO MUNICIPAL / CENTRO ODONTOLOGICO / BASE DO SAMU / CENTRO DE FISIOTERAPIA / UBS LINEU ZACARIAS. **VIG. até mês 03/2027",
+      "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
+      "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
+      "ficha": "162",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
+      "valor_anual": 254000.0,
+      "valor_mensal": 21166.67,
+      "cronograma": [
+        0.0,
+        0.0,
+        0.0,
+        28222.22,
+        28222.22,
+        28222.22,
+        28222.22,
+        28222.22,
+        28222.22,
+        28222.22,
+        28222.22,
+        28222.24
+      ]
+    },
+    {
       "empenho": "223",
       "contrato": "Empenho 223",
       "fornecedor": "SECRET. DA SEGURANÇA PUBLICA - PM DO EST. S. PAULO",
@@ -554,6 +629,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "VIGILÂNCIA OSTENSIVA MONITORADA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 250000.0,
       "valor_mensal": 20833.33,
       "cronograma": [
@@ -579,6 +655,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
       "ficha": "71",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 245500.0,
       "valor_mensal": 20458.33,
       "cronograma": [
@@ -597,31 +674,6 @@
       ]
     },
     {
-      "empenho": "3474",
-      "contrato": "0010/25",
-      "fornecedor": "EVOLUTION BRASIL SERVICOS LTDA",
-      "historico": "EMPENHO ESTIMATIVO REFERENTE A CONTRATAÇÃO DE SERVIÇOS DE LIMPEZA PARA UNIDADES PÚBLICAS DE SAÚDE - P.A / CENTRO MEDICO MUNICIPAL / CENTRO ODONTOLOGICO / BASE DO SAMU / CENTRO DE FISIOTERAPIA / UBS LINEU ZACARIAS. **VIG. até mês 03/2027",
-      "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
-      "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
-      "ficha": "162",
-      "valor_anual": 240000.0,
-      "valor_mensal": 20000.0,
-      "cronograma": [
-        0.0,
-        0.0,
-        0.0,
-        26666.67,
-        26666.67,
-        26666.67,
-        26666.67,
-        26666.67,
-        26666.67,
-        26666.67,
-        26666.67,
-        26666.64
-      ]
-    },
-    {
       "empenho": "761",
       "contrato": "0050/23",
       "fornecedor": "VIACAO RIO GRANDE LTDA",
@@ -629,6 +681,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
       "ficha": "71",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 237500.0,
       "valor_mensal": 19791.67,
       "cronograma": [
@@ -654,6 +707,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "JUROS",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 236050.87,
       "valor_mensal": 19670.91,
       "cronograma": [
@@ -672,13 +726,40 @@
       ]
     },
     {
+      "empenho": "267",
+      "contrato": "0034/25",
+      "fornecedor": "AUTO POSTO MONTE SERENO EIRELI",
+      "historico": "EMPENHAMENTO ESTIMATIVO DO FORNECIMENTO DO COMBUSTÍVEL DIESEL REFERENTE AO ABASTECIMENTO DO ANO PARA O SETOR: OBRAS ENGENHARIA",
+      "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
+      "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
+      "ficha": "270",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 228400.0,
+      "valor_mensal": 19033.33,
+      "cronograma": [
+        26533.33,
+        26533.33,
+        26533.33,
+        26533.33,
+        26533.33,
+        26533.33,
+        26533.33,
+        26533.33,
+        4033.33,
+        4033.33,
+        4033.33,
+        4033.37
+      ]
+    },
+    {
       "empenho": "2660",
       "contrato": "0044/23",
       "fornecedor": "FIBRA OPTICA RIO PRETO EIRELI",
       "historico": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA PRESTAÇÃO DE SERVIÇOS MENSAL DE SISTEMA DE GESTÃO, ANALISE E INTELIGENCIA COM COLETA DE IMAGENS POR INTERMEDIO DE CAMERAS DE SEGURANÇA E DE SISTEMA DE VIDEO MONITORAMENTO NAS VIAS PUBLIUCAS MUNICIPAIS E NOS PREDIOS PUBLICOS. **CONTRATO VALIDO ATÉ O MES (06/2026)",
-      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
+      "setor": "DEPARTAMENTO MUNICIPAL DE SEGURANÇA PÚBLICA",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "46",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 206400.0,
       "valor_mensal": 17200.0,
       "cronograma": [
@@ -704,6 +785,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "AMORTIZAÇÃO DA DÍVIDA CONTRATUAL",
       "ficha": "38",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 201462.91,
       "valor_mensal": 16788.58,
       "cronograma": [
@@ -722,38 +804,14 @@
       ]
     },
     {
-      "empenho": "1792",
-      "contrato": "0038/23",
-      "fornecedor": "VIACAO RIO GRANDE LTDA",
-      "historico": "CONTRATAÇÃO DE EMPRESA PARA TRANSPORTE DE ALUNOS DO ENSINO MÉDIO DA ZONA RURAL PARA AS ESCOLAS DO MUNICIPIO.",
-      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
-      "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
-      "ficha": "71",
-      "valor_anual": 200000.0,
-      "valor_mensal": 16666.67,
-      "cronograma": [
-        20000.0,
-        20000.0,
-        20000.0,
-        20000.0,
-        20000.0,
-        20000.0,
-        20000.0,
-        20000.0,
-        20000.0,
-        20000.0,
-        0.0,
-        0.0
-      ]
-    },
-    {
-      "empenho": "28",
-      "contrato": "Empenho 28",
+      "empenho": "24",
+      "contrato": "Empenho 24",
       "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
-      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 30806232 POÇO ARTESIANO MONTE SERENO",
+      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 4002711220 / 36537315 / 4001570083 / 4003090709 / 4003059211 / 35637315 - RESERVA e POÇO ARTESIANO HORTO GUARANY e POÇO DO HORTO GUARANY RUA J",
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "277",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 200000.0,
       "valor_mensal": 16666.67,
       "cronograma": [
@@ -772,6 +830,84 @@
       ]
     },
     {
+      "empenho": "28",
+      "contrato": "Empenho 28",
+      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
+      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 30806232 POÇO ARTESIANO MONTE SERENO",
+      "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
+      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
+      "ficha": "277",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 200000.0,
+      "valor_mensal": 16666.67,
+      "cronograma": [
+        16666.67,
+        16666.67,
+        16666.67,
+        16666.67,
+        16666.67,
+        16666.67,
+        16666.67,
+        16666.67,
+        16666.67,
+        16666.67,
+        16666.67,
+        16666.63
+      ]
+    },
+    {
+      "empenho": "2096",
+      "contrato": "0038/23",
+      "fornecedor": "VIACAO RIO GRANDE LTDA",
+      "historico": "CORREÇÃO DO EMPENHO 1792 - CONTRATAÇÃO DE EMPRESA PARA TRANSPORTE DE ALUNOS DO ENSINO MÉDIO DA ZONA RURAL PARA AS ESCOLAS DO MUNICIPIO.",
+      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
+      "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
+      "ficha": "377",
+      "fonte_recurso": "02 - TRANSF. ESTADUAL (TRANSP. DE ALUNOS-ENSINO MÉDIO)",
+      "valor_anual": 200000.0,
+      "valor_mensal": 16666.67,
+      "cronograma": [
+        0.0,
+        0.0,
+        20000.0,
+        20000.0,
+        20000.0,
+        20000.0,
+        20000.0,
+        20000.0,
+        20000.0,
+        20000.0,
+        20000.0,
+        20000.0
+      ]
+    },
+    {
+      "empenho": "136",
+      "contrato": "0010/25",
+      "fornecedor": "EVOLUTION BRASIL SERVICOS LTDA",
+      "historico": "EMPENHO ESTIMATIVO REFERENTE A CONTRATAÇÃO DE SERVIÇOS DE LIMPEZA PARA UNIDADES PÚBLICAS DE SAÚDE - P.A / CENTRO MEDICO MUNICIPAL / CENTRO ODONTOLOGICO / BASE DO SAMU / CENTRO DE FISIOTERAPIA / UBS LINEU ZACARIAS. **VIG. até mês 03/2026",
+      "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
+      "categoria": "LIMPEZA E CONSERVAÇÃO",
+      "ficha": "162",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
+      "valor_anual": 173008.39,
+      "valor_mensal": 14417.37,
+      "cronograma": [
+        56429.95,
+        10500.0,
+        10607.84,
+        10607.84,
+        10607.84,
+        10607.84,
+        10607.84,
+        10607.84,
+        10607.84,
+        10607.84,
+        10607.84,
+        10607.88
+      ]
+    },
+    {
       "empenho": "215",
       "contrato": "0032/25",
       "fornecedor": "EGATI ENGENHARIA, TECNOLOGIA E NEGOCIOS LTDA",
@@ -779,6 +915,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS TÉCNICOS PROFISSIONAIS",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 172200.0,
       "valor_mensal": 14350.0,
       "cronograma": [
@@ -797,81 +934,6 @@
       ]
     },
     {
-      "empenho": "183",
-      "contrato": "0009/25",
-      "fornecedor": "PAULO SERGIO PONTES",
-      "historico": "EMPENHO POR ESTIMATIVA REFERENTE A SERVIÇOS DE TRANSPORTE DE ALUNOS DO ENSINO FUNDAMENTAL E MÉDIO DA ZONA RURAL E URBANA DE PRADÓPOLIS DURANTE O EXERCICIO DE 2026, CONFORME CONTRATO.",
-      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
-      "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
-      "ficha": "69",
-      "valor_anual": 170000.0,
-      "valor_mensal": 14166.67,
-      "cronograma": [
-        14166.67,
-        14166.67,
-        14166.67,
-        14166.67,
-        14166.67,
-        14166.67,
-        14166.67,
-        14166.67,
-        14166.67,
-        14166.67,
-        14166.67,
-        14166.63
-      ]
-    },
-    {
-      "empenho": "24",
-      "contrato": "Empenho 24",
-      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
-      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 4002711220 / 36537315 / 4001570083 / 4003090709 / 4003059211 / 35637315 - RESERVA e POÇO ARTESIANO HORTO GUARANY e POÇO DO HORTO GUARANY RUA J",
-      "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
-      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
-      "ficha": "277",
-      "valor_anual": 159000.0,
-      "valor_mensal": 13250.0,
-      "cronograma": [
-        13250.0,
-        13250.0,
-        13250.0,
-        13250.0,
-        13250.0,
-        13250.0,
-        13250.0,
-        13250.0,
-        13250.0,
-        13250.0,
-        13250.0,
-        13250.0
-      ]
-    },
-    {
-      "empenho": "210",
-      "contrato": "0044/23",
-      "fornecedor": "FIBRA OPTICA RIO PRETO EIRELI",
-      "historico": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA PRESTAÇÃO DE SERVIÇOS MENSAL DE SISTEMA DE GESTÃO, ANALISE E INTELIGENCIA COM COLETA DE IMAGENS POR INTERMEDIO DE CAMERAS DE SEGURANÇA E DE SISTEMA DE VIDEO MONITORAMENTO NAS VIAS PUBLIUCAS MUNICIPAIS E NOS PREDIOS PUBLICOS. **CONTRATO VALIDO ATÉ O MES (06/2026)",
-      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
-      "categoria": "LOCAÇÃO BENS MÓVEIS DE OUTRAS NATUREZAS E INTANGÍVEIS",
-      "ficha": "24",
-      "valor_anual": 151764.0,
-      "valor_mensal": 12647.0,
-      "cronograma": [
-        25294.0,
-        25294.0,
-        25294.0,
-        25294.0,
-        25294.0,
-        25294.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ]
-    },
-    {
       "empenho": "27",
       "contrato": "Empenho 27",
       "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
@@ -879,6 +941,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "277",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 150000.0,
       "valor_mensal": 12500.0,
       "cronograma": [
@@ -904,6 +967,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "162",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
       "valor_anual": 143000.0,
       "valor_mensal": 11916.67,
       "cronograma": [
@@ -922,31 +986,6 @@
       ]
     },
     {
-      "empenho": "143",
-      "contrato": "0013/22",
-      "fornecedor": "ASSOCIACAO DE ASSISTENCIA E DESENVOLVIMENTO PROFIS",
-      "historico": "EMPENHO POR ESTIMATIVA DO CONTRATO DE GESTÃO PARA MNUTENÇÃO DO CEMA DORIVAL ROSSI. EDUCACAO CONTRATO VALIDO ATE MARÇO (03/2026)",
-      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
-      "categoria": "CONTRATO DE GESTÃO",
-      "ficha": "64",
-      "valor_anual": 139170.0,
-      "valor_mensal": 11597.5,
-      "cronograma": [
-        40000.0,
-        40000.0,
-        40000.0,
-        2130.0,
-        2130.0,
-        2130.0,
-        2130.0,
-        2130.0,
-        2130.0,
-        2130.0,
-        2130.0,
-        2130.0
-      ]
-    },
-    {
       "empenho": "1813",
       "contrato": "0003/26",
       "fornecedor": "DESENVOLVE CONSULTORIA LTDA",
@@ -954,20 +993,21 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
       "categoria": "SERVIÇO DE APOIO ADMINISTRATIVO, TÉCNICO E OPERACIONAL",
       "ficha": "162",
-      "valor_anual": 127600.0,
-      "valor_mensal": 10633.33,
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
+      "valor_anual": 139700.0,
+      "valor_mensal": 11641.67,
       "cronograma": [
-        11500.0,
-        11500.0,
-        11500.0,
-        11500.0,
-        11500.0,
-        11500.0,
-        11500.0,
-        11500.0,
-        11500.0,
-        11500.0,
-        11500.0,
+        12600.0,
+        12600.0,
+        12600.0,
+        12600.0,
+        12600.0,
+        12600.0,
+        12600.0,
+        12600.0,
+        12600.0,
+        12600.0,
+        12600.0,
         1100.0
       ]
     },
@@ -979,6 +1019,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "LOCAÇÃO BENS MÓVEIS DE OUTRAS NATUREZAS E INTANGÍVEIS",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 124000.0,
       "valor_mensal": 10333.33,
       "cronograma": [
@@ -997,6 +1038,32 @@
       ]
     },
     {
+      "empenho": "143",
+      "contrato": "0013/22",
+      "fornecedor": "ASSOCIACAO DE ASSISTENCIA E DESENVOLVIMENTO PROFIS",
+      "historico": "EMPENHO POR ESTIMATIVA DO CONTRATO DE GESTÃO PARA MNUTENÇÃO DO CEMA DORIVAL ROSSI. EDUCACAO CONTRATO VALIDO ATE MARÇO (03/2026)",
+      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
+      "categoria": "CONTRATO DE GESTÃO",
+      "ficha": "64",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
+      "valor_anual": 120000.0,
+      "valor_mensal": 10000.0,
+      "cronograma": [
+        16570.0,
+        42130.0,
+        42130.0,
+        2130.0,
+        2130.0,
+        2130.0,
+        2130.0,
+        2130.0,
+        2130.0,
+        2130.0,
+        2130.0,
+        2130.0
+      ]
+    },
+    {
       "empenho": "3480",
       "contrato": "0009/25",
       "fornecedor": "PAULO SERGIO PONTES",
@@ -1004,6 +1071,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
       "ficha": "69",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 119000.0,
       "valor_mensal": 9916.67,
       "cronograma": [
@@ -1022,13 +1090,40 @@
       ]
     },
     {
+      "empenho": "262",
+      "contrato": "0034/25",
+      "fornecedor": "AUTO POSTO MONTE SERENO EIRELI",
+      "historico": "EMPENHAMENTO ESTIMATIVO DO FORNECIMENTO DO COMBUSTÍVEL DIESEL REFERENTE AO ABASTECIMENTO DO ANO PARA O SETOR: SAÚDE",
+      "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
+      "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
+      "ficha": "150",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
+      "valor_anual": 117532.2,
+      "valor_mensal": 9794.35,
+      "cronograma": [
+        21091.19,
+        7272.73,
+        7272.73,
+        7272.73,
+        14986.47,
+        23272.73,
+        7272.73,
+        7272.73,
+        7272.73,
+        7272.73,
+        7272.7,
+        0.0
+      ]
+    },
+    {
       "empenho": "3498",
       "contrato": "0005/26",
       "fornecedor": "DVS SERVICE LTDA",
       "historico": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA EM PRESTAÇÃO DE SERVIÇOS DE FORNECIMENTO DE MÃO DE OBRA PARA CONTROLE DE ACESSO, NO PERIODO DIURNO E NOTURNO COM FORNECIMENTO DE RADIOS DE COMUNICAÇÃO, DISPOSITIVO ELETRONICO PORTATIL COLETOR DE PERMANENCIA E ALERTA COM SOFTWARES DE GERENCIALMENTO ONLINE (do tipo coletor de ronda), GUARDA-CHUVA, CAPA DE CHUVA, UNIFORME COMPLETO, A FIM DE GARANTIR INTEGRIDADE DO ACERVO PATRIMONIAL DE SERVICOS E A INTEGRIDADE FISICA DOS COLABORADORES NAS DEPENDENCIAS DO ALMOXARIFADO MUNICIPAL, CONSISTENTE DA GARAGEM MUNICIPAL E SETOR ADMINISTRATIVO.",
-      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
+      "setor": "DEPARTAMENTO MUNICIPAL DE SEGURANÇA PÚBLICA",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "46",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 113920.0,
       "valor_mensal": 9493.33,
       "cronograma": [
@@ -1054,6 +1149,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
       "ficha": "71",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 110060.7,
       "valor_mensal": 9171.73,
       "cronograma": [
@@ -1072,38 +1168,14 @@
       ]
     },
     {
-      "empenho": "211",
-      "contrato": "0206/21",
-      "fornecedor": "FVA - SERVICOS DE ASSESSORIA LTDA",
-      "historico": "EMPENHO POR ESTIMATIVA REFERENTE AO CONTRATO DE PRESTAÇ]AO DE SERVIÇOS ESPECIALIZADA DE ASSESSORIA TECNICA DESTINADA A GESTÃO DE CONVENIOS E PRESTAÇÃO DE CONTAS DE INSTRUMENTOS CELEBRADOS PELO MUNICIPIO, DURANTE O EXERCICIO DE 2026. até o mês 11/2026",
-      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
-      "categoria": "SERVIÇO DE APOIO ADMINISTRATIVO, TÉCNICO E OPERACIONAL",
-      "ficha": "24",
-      "valor_anual": 102000.0,
-      "valor_mensal": 8500.0,
-      "cronograma": [
-        8500.0,
-        8500.0,
-        8500.0,
-        8500.0,
-        8500.0,
-        8500.0,
-        8500.0,
-        8500.0,
-        8500.0,
-        8500.0,
-        8500.0,
-        8500.0
-      ]
-    },
-    {
-      "empenho": "1826",
-      "contrato": "Empenho 1826",
+      "empenho": "2630",
+      "contrato": "Empenho 2630",
       "fornecedor": "INSTITUTO ACOLHER ASSISTENCIA SOCIAL",
-      "historico": "REFERENTE A REPASSE CONFORME TERMO DE FOMENTO 01/2023 EM SEU 3º ADITIVO, PARA O DESENVOLVIMENTO EM PRADOPOLIS DAS ATIVIDADES DO PROGRAMA PRIMEIRA INFANCIA NO SUAS/PROGRAMA CRIANCA IFELIZ.",
+      "historico": "1826 - CORREÇÃO DO EMPENHO => REFERENTE A REPASSE CONFORME TERMO DE FOMENTO 01/2023 EM SEU 3º ADITIVO, PARA O DESENVOLVIMENTO EM PRADOPOLIS DAS ATIVIDADES DO PROGRAMA PRIMEIRA INFANCIA NO SUAS/PROGRAMA CRIANCA FELIZ.",
       "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
       "categoria": "TERMO DE FOMENTO",
-      "ficha": "265",
+      "ficha": "378",
+      "fonte_recurso": "05 - TRANSF. FEDERAL (PROJETO CRIANÇA FELIZ)",
       "valor_anual": 101400.0,
       "valor_mensal": 8450.0,
       "cronograma": [
@@ -1122,6 +1194,32 @@
       ]
     },
     {
+      "empenho": "210",
+      "contrato": "0044/23",
+      "fornecedor": "FIBRA OPTICA RIO PRETO EIRELI",
+      "historico": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA PRESTAÇÃO DE SERVIÇOS MENSAL DE SISTEMA DE GESTÃO, ANALISE E INTELIGENCIA COM COLETA DE IMAGENS POR INTERMEDIO DE CAMERAS DE SEGURANÇA E DE SISTEMA DE VIDEO MONITORAMENTO NAS VIAS PUBLIUCAS MUNICIPAIS E NOS PREDIOS PUBLICOS. **CONTRATO VALIDO ATÉ O MES (06/2026)",
+      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
+      "categoria": "LOCAÇÃO BENS MÓVEIS DE OUTRAS NATUREZAS E INTANGÍVEIS",
+      "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 101176.0,
+      "valor_mensal": 8431.33,
+      "cronograma": [
+        0.0,
+        0.0,
+        25294.0,
+        25294.0,
+        25294.0,
+        25294.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
       "empenho": "2754",
       "contrato": "0007/25",
       "fornecedor": "ALESSANDRA FERREIRA DA SILVA BRAGUINI",
@@ -1129,6 +1227,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
       "ficha": "71",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 100000.0,
       "valor_mensal": 8333.33,
       "cronograma": [
@@ -1147,6 +1246,32 @@
       ]
     },
     {
+      "empenho": "265",
+      "contrato": "0034/25",
+      "fornecedor": "AUTO POSTO MONTE SERENO EIRELI",
+      "historico": "EMPENHAMENTO ESTIMATIVO DO FORNECIMENTO DO COMBUSTÍVEL DIESEL REFERENTE AO ABASTECIMENTO DO ANO PARA O SETOR: LIMPEZA PUBLICA",
+      "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
+      "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
+      "ficha": "270",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 97165.9,
+      "valor_mensal": 8097.16,
+      "cronograma": [
+        20314.55,
+        6529.09,
+        6529.09,
+        6529.09,
+        11463.63,
+        13154.99,
+        6529.09,
+        6529.09,
+        6529.09,
+        6529.09,
+        6529.1,
+        0.0
+      ]
+    },
+    {
       "empenho": "698",
       "contrato": "0031/23",
       "fornecedor": "AIR LIQUIDE BRASIL LTDA",
@@ -1154,6 +1279,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
       "categoria": "MATERIAL DESTINADO À ASSISTÊNCIA SOCIAL",
       "ficha": "266",
+      "fonte_recurso": "01 - TESOURO (ASSISTÊNCIA SOCIAL-GERAL)",
       "valor_anual": 95000.0,
       "valor_mensal": 7916.67,
       "cronograma": [
@@ -1172,6 +1298,32 @@
       ]
     },
     {
+      "empenho": "211",
+      "contrato": "0206/21",
+      "fornecedor": "FVA - SERVICOS DE ASSESSORIA LTDA",
+      "historico": "EMPENHO POR ESTIMATIVA REFERENTE AO CONTRATO DE PRESTAÇ]AO DE SERVIÇOS ESPECIALIZADA DE ASSESSORIA TECNICA DESTINADA A GESTÃO DE CONVENIOS E PRESTAÇÃO DE CONTAS DE INSTRUMENTOS CELEBRADOS PELO MUNICIPIO, DURANTE O EXERCICIO DE 2026. até o mês 11/2026",
+      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
+      "categoria": "SERVIÇO DE APOIO ADMINISTRATIVO, TÉCNICO E OPERACIONAL",
+      "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 93500.0,
+      "valor_mensal": 7791.67,
+      "cronograma": [
+        0.0,
+        8500.0,
+        8500.0,
+        8500.0,
+        8500.0,
+        8500.0,
+        8500.0,
+        8500.0,
+        8500.0,
+        8500.0,
+        8500.0,
+        8500.0
+      ]
+    },
+    {
       "empenho": "884",
       "contrato": "Empenho 884",
       "fornecedor": "ESTAGIARIOS - CENTRO MÉDICO",
@@ -1179,6 +1331,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
       "categoria": "ESTAGIÁRIOS",
       "ficha": "159",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
       "valor_anual": 88400.0,
       "valor_mensal": 7366.67,
       "cronograma": [
@@ -1204,6 +1357,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
       "categoria": "TERMO DE COLABORAÇÃO",
       "ficha": "265",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 85000.0,
       "valor_mensal": 7083.33,
       "cronograma": [
@@ -1222,56 +1376,6 @@
       ]
     },
     {
-      "empenho": "150",
-      "contrato": "0092/22",
-      "fornecedor": "TEC SYSTEM CONSULTORIA E INFORMATICA S/S LTDA",
-      "historico": "EMPENHO ESTIMATIVO REFERENTE AO CONTRATO DE EMPRESA PARA PRESTAÇÃO DE SERVIÇOS TÉCNICOSESPECIALIZADOS NAS AREAS ECONOMICA E FINANCEIRA PARA GERENCIAMENTO E IMPLENATAÇÃO DO PROGRAMA GESTÃO TRIBUTARIA DO MUNICIPIO, TERMO ADITIVO VÁLIDO **ATE Mês 07/2026",
-      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
-      "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
-      "ficha": "24",
-      "valor_anual": 84000.0,
-      "valor_mensal": 7000.0,
-      "cronograma": [
-        12000.0,
-        12000.0,
-        12000.0,
-        12000.0,
-        12000.0,
-        12000.0,
-        12000.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ]
-    },
-    {
-      "empenho": "262",
-      "contrato": "0034/25",
-      "fornecedor": "AUTO POSTO MONTE SERENO EIRELI",
-      "historico": "EMPENHAMENTO ESTIMATIVO DO FORNECIMENTO DO COMBUSTÍVEL DIESEL REFERENTE AO ABASTECIMENTO DO ANO PARA O SETOR: SAÚDE",
-      "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
-      "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
-      "ficha": "150",
-      "valor_anual": 80000.0,
-      "valor_mensal": 6666.67,
-      "cronograma": [
-        7272.73,
-        7272.73,
-        7272.73,
-        7272.73,
-        7272.73,
-        7272.73,
-        7272.73,
-        7272.73,
-        7272.73,
-        7272.73,
-        7272.7,
-        0.0
-      ]
-    },
-    {
       "empenho": "222",
       "contrato": "0166/22",
       "fornecedor": "CONTROLE ANALITICO ANALISES TECNICAS LTDA",
@@ -1279,6 +1383,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "277",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 78000.0,
       "valor_mensal": 6500.0,
       "cronograma": [
@@ -1304,6 +1409,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
       "categoria": "TERMO DE COLABORAÇÃO",
       "ficha": "265",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 75000.0,
       "valor_mensal": 6250.0,
       "cronograma": [
@@ -1322,31 +1428,6 @@
       ]
     },
     {
-      "empenho": "265",
-      "contrato": "0034/25",
-      "fornecedor": "AUTO POSTO MONTE SERENO EIRELI",
-      "historico": "EMPENHAMENTO ESTIMATIVO DO FORNECIMENTO DO COMBUSTÍVEL DIESEL REFERENTE AO ABASTECIMENTO DO ANO PARA O SETOR: LIMPEZA PUBLICA",
-      "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
-      "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
-      "ficha": "270",
-      "valor_anual": 71820.0,
-      "valor_mensal": 5985.0,
-      "cronograma": [
-        6529.09,
-        6529.09,
-        6529.09,
-        6529.09,
-        6529.09,
-        6529.09,
-        6529.09,
-        6529.09,
-        6529.09,
-        6529.09,
-        6529.1,
-        0.0
-      ]
-    },
-    {
       "empenho": "1189",
       "contrato": "Empenho 1189",
       "fornecedor": "ASSOCIACAO DE ASSISTENCIA E DESENVOLVIMENTO PROFIS",
@@ -1354,6 +1435,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "71",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 68544.0,
       "valor_mensal": 5712.0,
       "cronograma": [
@@ -1372,31 +1454,6 @@
       ]
     },
     {
-      "empenho": "2681",
-      "contrato": "Empenho 2681",
-      "fornecedor": "APAE-ASS. PAIS E AMIGOS DOS EXC DE RIBEIRÃO PRETO",
-      "historico": "TERMO DE COLABORAÇÃO COM A ENTIDADE QUE RECEBE TODOS OS EXCEPCIONAIS OU PORTADORES DE NECESSIDADES ESPECIAIS DO MUNICIPIO.",
-      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
-      "categoria": "TERMO DE COLABORAÇÃO",
-      "ficha": "63",
-      "valor_anual": 60000.0,
-      "valor_mensal": 5000.0,
-      "cronograma": [
-        6666.67,
-        6666.67,
-        6666.67,
-        6666.67,
-        6666.67,
-        6666.67,
-        6666.67,
-        6666.67,
-        6666.64,
-        0.0,
-        0.0,
-        0.0
-      ]
-    },
-    {
       "empenho": "29",
       "contrato": "Empenho 29",
       "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
@@ -1404,6 +1461,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "277",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 60000.0,
       "valor_mensal": 5000.0,
       "cronograma": [
@@ -1422,6 +1480,84 @@
       ]
     },
     {
+      "empenho": "2681",
+      "contrato": "Empenho 2681",
+      "fornecedor": "APAE-ASS. PAIS E AMIGOS DOS EXC DE RIBEIRÃO PRETO",
+      "historico": "TERMO DE COLABORAÇÃO COM A ENTIDADE QUE RECEBE TODOS OS EXCEPCIONAIS OU PORTADORES DE NECESSIDADES ESPECIAIS DO MUNICIPIO.",
+      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
+      "categoria": "TERMO DE COLABORAÇÃO",
+      "ficha": "63",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
+      "valor_anual": 60000.0,
+      "valor_mensal": 5000.0,
+      "cronograma": [
+        6666.67,
+        6666.67,
+        6666.67,
+        6666.67,
+        6666.67,
+        6666.67,
+        6666.67,
+        6666.67,
+        6666.64,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "empenho": "187",
+      "contrato": "0005/25",
+      "fornecedor": "ALEX BENEDITO COLLETTI",
+      "historico": "EMPENHO POR ESTIMATIVA REFERENTE A PRESTAÇÃO DE SERVIÇO DE TRANSPORTE DOS ALUNOS DO ENSINO FUNDAMENTAL E MÉDIO DA ZONA RURAL PARA AS UNIDADES ESCOLARES DO MUNICIPIO DURANTE O EXERCICIO DE 2026, CONFORME CONTRATO.",
+      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
+      "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
+      "ficha": "71",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
+      "valor_anual": 59764.25,
+      "valor_mensal": 4980.35,
+      "cronograma": [
+        22809.15,
+        18477.55,
+        18477.55,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "empenho": "266",
+      "contrato": "0034/25",
+      "fornecedor": "AUTO POSTO MONTE SERENO EIRELI",
+      "historico": "EMPENHAMENTO ESTIMATIVO DO FORNECIMENTO DO COMBUSTÍVEL DIESEL REFERENTE AO ABASTECIMENTO DO ANO PARA O SETOR: EDUCACAO",
+      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
+      "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
+      "ficha": "65",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
+      "valor_anual": 57924.28,
+      "valor_mensal": 4827.02,
+      "cronograma": [
+        19677.08,
+        1727.27,
+        2327.27,
+        2327.27,
+        7801.74,
+        11827.27,
+        2327.27,
+        2327.27,
+        2327.27,
+        2327.27,
+        2327.3,
+        600.0
+      ]
+    },
+    {
       "empenho": "188",
       "contrato": "0006/25",
       "fornecedor": "LUIZ CARLOS DE MENDONÇA-ME",
@@ -1429,6 +1565,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
       "ficha": "71",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 56928.4,
       "valor_mensal": 4744.03,
       "cronograma": [
@@ -1454,6 +1591,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ESPORTES E LAZER",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "141",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 56086.08,
       "valor_mensal": 4673.84,
       "cronograma": [
@@ -1472,31 +1610,6 @@
       ]
     },
     {
-      "empenho": "187",
-      "contrato": "0005/25",
-      "fornecedor": "ALEX BENEDITO COLLETTI",
-      "historico": "EMPENHO POR ESTIMATIVA REFERENTE A PRESTAÇÃO DE SERVIÇO DE TRANSPORTE DOS ALUNOS DO ENSINO FUNDAMENTAL E MÉDIO DA ZONA RURAL PARA AS UNIDADES ESCOLARES DO MUNICIPIO DURANTE O EXERCICIO DE 2026, CONFORME CONTRATO.",
-      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
-      "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
-      "ficha": "71",
-      "valor_anual": 55432.65,
-      "valor_mensal": 4619.39,
-      "cronograma": [
-        18477.55,
-        18477.55,
-        18477.55,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ]
-    },
-    {
       "empenho": "17",
       "contrato": "Empenho 17",
       "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
@@ -1504,6 +1617,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "71",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 50350.0,
       "valor_mensal": 4195.83,
       "cronograma": [
@@ -1522,31 +1636,6 @@
       ]
     },
     {
-      "empenho": "2668",
-      "contrato": "Empenho 2668",
-      "fornecedor": "ASSOCIACAO CASA DA CRIANCA DE GUARIBA",
-      "historico": "TERMO DE COLABORAÇÃO QUE VISA ACOLHER E PROPORCIONAR CUIDADOS ESPECIAS AS CRIANÇAS QUE RECEBEM ALTA HOSPITALAR E NÃO TEM CONDIÇÕES DE SE RECUPERAR EM SUA CASA, FUNCIONANDO COMO CASA DE ABRIGO",
-      "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
-      "categoria": "TERMO DE COLABORAÇÃO",
-      "ficha": "265",
-      "valor_anual": 50000.0,
-      "valor_mensal": 4166.67,
-      "cronograma": [
-        5555.56,
-        5555.56,
-        5555.56,
-        5555.56,
-        5555.56,
-        5555.56,
-        5555.56,
-        5555.56,
-        5555.52,
-        0.0,
-        0.0,
-        0.0
-      ]
-    },
-    {
       "empenho": "35",
       "contrato": "Empenho 35",
       "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
@@ -1554,6 +1643,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "277",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 50000.0,
       "valor_mensal": 4166.67,
       "cronograma": [
@@ -1572,6 +1662,32 @@
       ]
     },
     {
+      "empenho": "2668",
+      "contrato": "Empenho 2668",
+      "fornecedor": "ASSOCIACAO CASA DA CRIANCA DE GUARIBA",
+      "historico": "TERMO DE COLABORAÇÃO QUE VISA ACOLHER E PROPORCIONAR CUIDADOS ESPECIAS AS CRIANÇAS QUE RECEBEM ALTA HOSPITALAR E NÃO TEM CONDIÇÕES DE SE RECUPERAR EM SUA CASA, FUNCIONANDO COMO CASA DE ABRIGO",
+      "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
+      "categoria": "TERMO DE COLABORAÇÃO",
+      "ficha": "265",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 50000.0,
+      "valor_mensal": 4166.67,
+      "cronograma": [
+        5555.56,
+        5555.56,
+        5555.56,
+        5555.56,
+        5555.56,
+        5555.56,
+        5555.56,
+        5555.56,
+        5555.52,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
       "empenho": "875",
       "contrato": "Empenho 875",
       "fornecedor": "ESTAGIARIOS - ESPORTE E LAZER",
@@ -1579,6 +1695,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ESPORTES E LAZER",
       "categoria": "ESTAGIÁRIOS",
       "ficha": "129",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 49000.0,
       "valor_mensal": 4083.33,
       "cronograma": [
@@ -1597,31 +1714,6 @@
       ]
     },
     {
-      "empenho": "267",
-      "contrato": "0034/25",
-      "fornecedor": "AUTO POSTO MONTE SERENO EIRELI",
-      "historico": "EMPENHAMENTO ESTIMATIVO DO FORNECIMENTO DO COMBUSTÍVEL DIESEL REFERENTE AO ABASTECIMENTO DO ANO PARA O SETOR: OBRAS ENGENHARIA",
-      "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
-      "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
-      "ficha": "270",
-      "valor_anual": 48400.0,
-      "valor_mensal": 4033.33,
-      "cronograma": [
-        4033.33,
-        4033.33,
-        4033.33,
-        4033.33,
-        4033.33,
-        4033.33,
-        4033.33,
-        4033.33,
-        4033.33,
-        4033.33,
-        4033.33,
-        4033.37
-      ]
-    },
-    {
       "empenho": "3479",
       "contrato": "0060/22",
       "fornecedor": "HELIO RINALDI JUNIOR COMERCIO E SERVICOS EIRELI",
@@ -1629,6 +1721,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "277",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 47619.2,
       "valor_mensal": 3968.27,
       "cronograma": [
@@ -1654,6 +1747,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 47000.0,
       "valor_mensal": 3916.67,
       "cronograma": [
@@ -1679,6 +1773,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "PEDÁGIOS",
       "ficha": "22",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 46000.0,
       "valor_mensal": 3833.33,
       "cronograma": [
@@ -1704,6 +1799,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
       "categoria": "ESTAGIÁRIOS",
       "ficha": "234",
+      "fonte_recurso": "01 - TESOURO (ASSISTÊNCIA SOCIAL-GERAL)",
       "valor_anual": 40000.0,
       "valor_mensal": 3333.33,
       "cronograma": [
@@ -1729,6 +1825,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE TRANSPORTES E TRÂNSITO",
       "categoria": "ESTAGIÁRIOS",
       "ficha": "286",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 40000.0,
       "valor_mensal": 3333.33,
       "cronograma": [
@@ -1754,6 +1851,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "95",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 39000.0,
       "valor_mensal": 3250.0,
       "cronograma": [
@@ -1772,6 +1870,58 @@
       ]
     },
     {
+      "empenho": "183",
+      "contrato": "0009/25",
+      "fornecedor": "PAULO SERGIO PONTES",
+      "historico": "EMPENHO POR ESTIMATIVA REFERENTE A SERVIÇOS DE TRANSPORTE DE ALUNOS DO ENSINO FUNDAMENTAL E MÉDIO DA ZONA RURAL E URBANA DE PRADÓPOLIS DURANTE O EXERCICIO DE 2026, CONFORME CONTRATO.",
+      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
+      "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
+      "ficha": "69",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
+      "valor_anual": 38297.89,
+      "valor_mensal": 3191.49,
+      "cronograma": [
+        4381.22,
+        3083.33,
+        3083.33,
+        3083.33,
+        3083.33,
+        3083.33,
+        3083.33,
+        3083.33,
+        3083.33,
+        3083.33,
+        3083.33,
+        3083.33
+      ]
+    },
+    {
+      "empenho": "964",
+      "contrato": "0035/25",
+      "fornecedor": "AGRO CAMPO AUTO POSTO LTDA",
+      "historico": "EMPENHAMENTO ESTIMATIVO DO FORNECIMENTO DO COMBUSTÍVEL GASOLINA REFERENTE AO ABASTECIMENTO DO ANO PARA O SETOR: SAÚDE",
+      "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
+      "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
+      "ficha": "150",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
+      "valor_anual": 37860.99,
+      "valor_mensal": 3155.08,
+      "cronograma": [
+        0.0,
+        2509.09,
+        2509.09,
+        2509.09,
+        3041.71,
+        9041.71,
+        3041.71,
+        3041.71,
+        3041.71,
+        3041.71,
+        3041.71,
+        3041.75
+      ]
+    },
+    {
       "empenho": "2079",
       "contrato": "2022/21",
       "fornecedor": "GUSTAVO PEREIRA PUPULIN E OUTRO",
@@ -1779,6 +1929,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "LOCAÇÃO DE IMÓVEIS",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 37500.0,
       "valor_mensal": 3125.0,
       "cronograma": [
@@ -1804,6 +1955,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "ESTAGIÁRIOS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 36595.46,
       "valor_mensal": 3049.62,
       "cronograma": [
@@ -1822,6 +1974,58 @@
       ]
     },
     {
+      "empenho": "3476",
+      "contrato": "Empenho 3476",
+      "fornecedor": "MC INTERNET FIBRA LTDA",
+      "historico": "Contratação de empresa especializada para",
+      "setor": "OUTROS SETORES",
+      "categoria": "SERVIÇOS GERAIS",
+      "ficha": "",
+      "fonte_recurso": "00 - TESOURO",
+      "valor_anual": 36400.0,
+      "valor_mensal": 3033.33,
+      "cronograma": [
+        3033.33,
+        3033.33,
+        3033.33,
+        3033.33,
+        3033.33,
+        3033.33,
+        3033.33,
+        3033.33,
+        3033.33,
+        3033.33,
+        3033.33,
+        3033.33
+      ]
+    },
+    {
+      "empenho": "150",
+      "contrato": "0092/22",
+      "fornecedor": "TEC SYSTEM CONSULTORIA E INFORMATICA S/S LTDA",
+      "historico": "EMPENHO ESTIMATIVO REFERENTE AO CONTRATO DE EMPRESA PARA PRESTAÇÃO DE SERVIÇOS TÉCNICOSESPECIALIZADOS NAS AREAS ECONOMICA E FINANCEIRA PARA GERENCIAMENTO E IMPLENATAÇÃO DO PROGRAMA GESTÃO TRIBUTARIA DO MUNICIPIO, TERMO ADITIVO VÁLIDO **ATE Mês 07/2026",
+      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
+      "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
+      "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 36000.0,
+      "valor_mensal": 3000.0,
+      "cronograma": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        12000.0,
+        12000.0,
+        12000.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
       "empenho": "3697",
       "contrato": "0092/22",
       "fornecedor": "TEC SYSTEM CONSULTORIA E INFORMATICA S/S LTDA",
@@ -1829,6 +2033,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 36000.0,
       "valor_mensal": 3000.0,
       "cronograma": [
@@ -1854,6 +2059,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE AGRICULTURA E MEIO AMBIENTE",
       "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
       "ficha": "310",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 35000.0,
       "valor_mensal": 2916.67,
       "cronograma": [
@@ -1872,31 +2078,6 @@
       ]
     },
     {
-      "empenho": "878",
-      "contrato": "Empenho 878",
-      "fornecedor": "ESTAGIARIOS - INFORMATICA",
-      "historico": "EMPENHO ESTIMATIVO REFERENTE AO PAGAMENTO DE ESTAGIARIOS DO SETOR DA DIRETORIA TECNICA DE INFORMATICA PELO ANO DE 2026.",
-      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
-      "categoria": "ESTAGIÁRIOS",
-      "ficha": "23",
-      "valor_anual": 34666.67,
-      "valor_mensal": 2888.89,
-      "cronograma": [
-        2666.67,
-        2909.09,
-        2909.09,
-        2909.09,
-        2909.09,
-        2909.09,
-        2909.09,
-        2909.09,
-        2909.09,
-        2909.09,
-        2909.09,
-        2909.1
-      ]
-    },
-    {
       "empenho": "2081",
       "contrato": "2022/21",
       "fornecedor": "GUSTAVO PEREIRA PUPULIN E OUTRO",
@@ -1904,6 +2085,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "LOCAÇÃO DE IMÓVEIS",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 34065.0,
       "valor_mensal": 2838.75,
       "cronograma": [
@@ -1929,6 +2111,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "277",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 32000.0,
       "valor_mensal": 2666.67,
       "cronograma": [
@@ -1947,6 +2130,58 @@
       ]
     },
     {
+      "empenho": "878",
+      "contrato": "Empenho 878",
+      "fornecedor": "ESTAGIARIOS - INFORMATICA",
+      "historico": "EMPENHO ESTIMATIVO REFERENTE AO PAGAMENTO DE ESTAGIARIOS DO SETOR DA DIRETORIA TECNICA DE INFORMATICA PELO ANO DE 2026.",
+      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
+      "categoria": "ESTAGIÁRIOS",
+      "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 32000.0,
+      "valor_mensal": 2666.67,
+      "cronograma": [
+        2666.67,
+        2666.67,
+        2666.67,
+        2666.67,
+        2666.67,
+        2666.67,
+        2666.67,
+        2666.67,
+        2666.67,
+        2666.67,
+        2666.67,
+        2666.63
+      ]
+    },
+    {
+      "empenho": "153",
+      "contrato": "0019/25",
+      "fornecedor": "ALGAR TELECOM S/A",
+      "historico": "EMPENHO ESTIMATIVO CONTRATAÇÃO DE EMPRESA ESPECIALIZADA EM SERVIÇOS DE TELEFONIA FIXA E LINK DEDICADO DE INTERNET, COM FULCRO NO ART. 75,II, DA LEI 14.133/21 CONTRATO VALIDO ATE JUNHO **(06/2026)",
+      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
+      "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
+      "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 31618.0,
+      "valor_mensal": 2634.83,
+      "cronograma": [
+        4603.0,
+        4603.0,
+        4603.0,
+        4603.0,
+        4603.0,
+        8603.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
       "empenho": "11",
       "contrato": "Empenho 11",
       "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
@@ -1954,6 +2189,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "95",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 30000.0,
       "valor_mensal": 2500.0,
       "cronograma": [
@@ -1979,6 +2215,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "335",
+      "fonte_recurso": "01 - TESOURO (REC. PROPRIO 25%)",
       "valor_anual": 30000.0,
       "valor_mensal": 2500.0,
       "cronograma": [
@@ -2004,6 +2241,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE CULTURA E TURISMO",
       "categoria": "CONTRATO DE GESTÃO",
       "ficha": "122",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 30000.0,
       "valor_mensal": 2500.0,
       "cronograma": [
@@ -2022,53 +2260,29 @@
       ]
     },
     {
-      "empenho": "153",
-      "contrato": "0019/25",
-      "fornecedor": "ALGAR TELECOM S/A",
-      "historico": "EMPENHO ESTIMATIVO CONTRATAÇÃO DE EMPRESA ESPECIALIZADA EM SERVIÇOS DE TELEFONIA FIXA E LINK DEDICADO DE INTERNET, COM FULCRO NO ART. 75,II, DA LEI 14.133/21 CONTRATO VALIDO ATE JUNHO **(06/2026)",
-      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
-      "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
-      "ficha": "24",
-      "valor_anual": 27618.0,
-      "valor_mensal": 2301.5,
-      "cronograma": [
-        4603.0,
-        4603.0,
-        4603.0,
-        4603.0,
-        4603.0,
-        4603.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ]
-    },
-    {
-      "empenho": "964",
-      "contrato": "0035/25",
-      "fornecedor": "AGRO CAMPO AUTO POSTO LTDA",
-      "historico": "EMPENHAMENTO ESTIMATIVO DO FORNECIMENTO DO COMBUSTÍVEL GASOLINA REFERENTE AO ABASTECIMENTO DO ANO PARA O SETOR: SAÚDE",
-      "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
+      "empenho": "263",
+      "contrato": "0034/25",
+      "fornecedor": "AUTO POSTO MONTE SERENO EIRELI",
+      "historico": "EMPENHAMENTO ESTIMATIVO DO FORNECIMENTO DO COMBUSTÍVEL DIESEL REFERENTE AO ABASTECIMENTO DO ANO PARA O SETOR: MEIO AMBIENTE",
+      "setor": "DEPARTAMENTO MUNICIPAL DE AGRICULTURA E MEIO AMBIENTE",
       "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
-      "ficha": "150",
-      "valor_anual": 27600.0,
-      "valor_mensal": 2300.0,
+      "ficha": "310",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 28200.0,
+      "valor_mensal": 2350.0,
       "cronograma": [
-        0.0,
-        2509.09,
-        2509.09,
-        2509.09,
-        2509.09,
-        2509.09,
-        2509.09,
-        2509.09,
-        2509.09,
-        2509.09,
-        2509.09,
-        2509.1
+        6500.0,
+        6500.0,
+        1500.0,
+        1500.0,
+        1500.0,
+        3700.0,
+        1500.0,
+        1500.0,
+        1500.0,
+        1500.0,
+        1000.0,
+        0.0
       ]
     },
     {
@@ -2079,6 +2293,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
       "ficha": "18",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 27321.29,
       "valor_mensal": 2276.77,
       "cronograma": [
@@ -2097,6 +2312,32 @@
       ]
     },
     {
+      "empenho": "4475",
+      "contrato": "Empenho 4475",
+      "fornecedor": "ABE3 TECNOLOGIA & DESENVOLVIMENTO DE SOFTWARE LTDA",
+      "historico": "CONTRATAÇÃO DE SISTEMA DE CONTROLE DE FROTA E COMBUSTIVEL - CONTRATO 02/2026 (ABE3) CONSTITUI OBJETO DO PRESENTE INSTRUMENTO A AQUISIÇÃO DE LICENÇA DE USO DE SOLUÇÃO INTEGRADA DE GESTÃO DE MANUTENÇÃO, ATIVOS E ALMOXARIFADO (CMMS/EAM/WMS) EM NUVEM, COM IMPLANTAÇÃO E SUPORTE, COM FULCRO NO ART. 75, INCISO II, DA LEI FEDERAL Nº 14.133/2021",
+      "setor": "DEPARTAMENTO MUNICIPAL DE TRANSPORTES E TRÂNSITO",
+      "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
+      "ficha": "287",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 26600.0,
+      "valor_mensal": 2216.67,
+      "cronograma": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3800.0,
+        3800.0,
+        3800.0,
+        3800.0,
+        3800.0,
+        3800.0,
+        3800.0
+      ]
+    },
+    {
       "empenho": "227",
       "contrato": "Empenho 227",
       "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
@@ -2104,6 +2345,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ESPORTES E LAZER",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "130",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 26592.0,
       "valor_mensal": 2216.0,
       "cronograma": [
@@ -2129,6 +2371,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "95",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 26500.0,
       "valor_mensal": 2208.33,
       "cronograma": [
@@ -2154,6 +2397,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "71",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 26000.0,
       "valor_mensal": 2166.67,
       "cronograma": [
@@ -2179,6 +2423,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "71",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 25000.0,
       "valor_mensal": 2083.33,
       "cronograma": [
@@ -2204,6 +2449,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 24400.0,
       "valor_mensal": 2033.33,
       "cronograma": [
@@ -2229,6 +2475,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE TRANSPORTES E TRÂNSITO",
       "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
       "ficha": "283",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 22000.0,
       "valor_mensal": 1833.33,
       "cronograma": [
@@ -2254,6 +2501,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "ASSINATURAS DE PERIÓDICOS E ANUIDADES",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 20289.6,
       "valor_mensal": 1690.8,
       "cronograma": [
@@ -2279,6 +2527,33 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "335",
+      "fonte_recurso": "01 - TESOURO (REC. PROPRIO 25%)",
+      "valor_anual": 20000.0,
+      "valor_mensal": 1666.67,
+      "cronograma": [
+        1666.67,
+        1666.67,
+        1666.67,
+        1666.67,
+        1666.67,
+        1666.67,
+        1666.67,
+        1666.67,
+        1666.67,
+        1666.67,
+        1666.67,
+        1666.63
+      ]
+    },
+    {
+      "empenho": "33",
+      "contrato": "Empenho 33",
+      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
+      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 4001199684 RESERV. BOMBA DE AGUA JARDIM DAS OLIVEIRAS",
+      "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
+      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
+      "ficha": "277",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 20000.0,
       "valor_mensal": 1666.67,
       "cronograma": [
@@ -2304,6 +2579,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
       "categoria": "TERMO DE COLABORAÇÃO",
       "ficha": "265",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 20000.0,
       "valor_mensal": 1666.67,
       "cronograma": [
@@ -2329,6 +2605,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
       "categoria": "TERMO DE COLABORAÇÃO",
       "ficha": "265",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 20000.0,
       "valor_mensal": 1666.67,
       "cronograma": [
@@ -2347,31 +2624,6 @@
       ]
     },
     {
-      "empenho": "33",
-      "contrato": "Empenho 33",
-      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
-      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 4001199684 RESERV. BOMBA DE AGUA JARDIM DAS OLIVEIRAS",
-      "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
-      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
-      "ficha": "277",
-      "valor_anual": 20000.0,
-      "valor_mensal": 1666.67,
-      "cronograma": [
-        1666.67,
-        1666.67,
-        1666.67,
-        1666.67,
-        1666.67,
-        1666.67,
-        1666.67,
-        1666.67,
-        1666.67,
-        1666.67,
-        1666.67,
-        1666.63
-      ]
-    },
-    {
       "empenho": "3689",
       "contrato": "0006/26",
       "fornecedor": "E. ZANOL ESPORTES",
@@ -2379,6 +2631,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "71",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 20000.0,
       "valor_mensal": 1666.67,
       "cronograma": [
@@ -2397,56 +2650,6 @@
       ]
     },
     {
-      "empenho": "860",
-      "contrato": "0027/25",
-      "fornecedor": "CARINA RENATA DOS SANTOS MAZIERI 30478279825",
-      "historico": "CONTRATAÇÃO DE EMPRESA PARA MANUTENÇÃO PREVENTIVA E CORRETIVA DE IMPRESSORAS E FORNECIMENTO DE INSUMOS - CONFORME CONTRATO 27/25 DESPENSA ELETRONICA 31/25 **CONTRATO LIQUIDAÇÃO PARTE SAUDE",
-      "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
-      "categoria": "MANUTENÇÃO E CONSERVAÇÃO DE MÁQUINAS E EQUIPAMENTOS",
-      "ficha": "162",
-      "valor_anual": 19833.6,
-      "valor_mensal": 1652.8,
-      "cronograma": [
-        1652.8,
-        1652.8,
-        1652.8,
-        1652.8,
-        1652.8,
-        1652.8,
-        1652.8,
-        1652.8,
-        1652.8,
-        1652.8,
-        1652.8,
-        1652.8
-      ]
-    },
-    {
-      "empenho": "266",
-      "contrato": "0034/25",
-      "fornecedor": "AUTO POSTO MONTE SERENO EIRELI",
-      "historico": "EMPENHAMENTO ESTIMATIVO DO FORNECIMENTO DO COMBUSTÍVEL DIESEL REFERENTE AO ABASTECIMENTO DO ANO PARA O SETOR: EDUCACAO",
-      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
-      "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
-      "ficha": "65",
-      "valor_anual": 19600.0,
-      "valor_mensal": 1633.33,
-      "cronograma": [
-        1727.27,
-        1727.27,
-        1727.27,
-        1727.27,
-        1727.27,
-        1727.27,
-        1727.27,
-        1727.27,
-        1727.27,
-        1727.27,
-        1727.3,
-        600.0
-      ]
-    },
-    {
       "empenho": "968",
       "contrato": "0035/25",
       "fornecedor": "AGRO CAMPO AUTO POSTO LTDA",
@@ -2454,6 +2657,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
       "ficha": "270",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 19200.0,
       "valor_mensal": 1600.0,
       "cronograma": [
@@ -2479,6 +2683,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "335",
+      "fonte_recurso": "01 - TESOURO (REC. PROPRIO 25%)",
       "valor_anual": 18190.08,
       "valor_mensal": 1515.84,
       "cronograma": [
@@ -2504,6 +2709,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 18000.0,
       "valor_mensal": 1500.0,
       "cronograma": [
@@ -2529,6 +2735,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
       "ficha": "18",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 18000.0,
       "valor_mensal": 1500.0,
       "cronograma": [
@@ -2547,6 +2754,32 @@
       ]
     },
     {
+      "empenho": "197",
+      "contrato": "0060/22",
+      "fornecedor": "HELIO RINALDI JUNIOR COMERCIO E SERVICOS EIRELI",
+      "historico": "EMPENHO ESTIMATIVO CONTRATAÇÃO DE EMPRESA PARA SERVIÇOS DE LEITURA DE CONSUMO, EMISSÃO E ENTREGAS DE FATURA DE AGUA DURANTE O EXERCICIO, CONFORME CONTRATO. **CONTRATO VALIDO ATE 05/2026",
+      "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
+      "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
+      "ficha": "277",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 17843.4,
+      "valor_mensal": 1486.95,
+      "cronograma": [
+        -9421.57,
+        2478.63,
+        2478.63,
+        2478.63,
+        2478.63,
+        2478.63,
+        2478.63,
+        2478.63,
+        2478.63,
+        2478.63,
+        2478.63,
+        2478.63
+      ]
+    },
+    {
       "empenho": "904",
       "contrato": "0028/23",
       "fornecedor": "NOVA ESTRE LTDA. - EM RECUPERACAO JUDICIAL EM RECU",
@@ -2554,6 +2787,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "162",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
       "valor_anual": 17000.0,
       "valor_mensal": 1416.67,
       "cronograma": [
@@ -2579,6 +2813,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "ASSINATURAS DE PERIÓDICOS E ANUIDADES",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 16700.0,
       "valor_mensal": 1391.67,
       "cronograma": [
@@ -2604,6 +2839,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 16530.0,
       "valor_mensal": 1377.5,
       "cronograma": [
@@ -2622,31 +2858,6 @@
       ]
     },
     {
-      "empenho": "200",
-      "contrato": "0039/24",
-      "fornecedor": "CONSISTRANS-CONS. E SISTEMAS PARA O TRANSITO EIREL",
-      "historico": "EMPENHO POR ESTIMATIVA REFERENTE AO CONTRATO 39/2024 PARA CONTRATAÇÃO DE PRESTAÇÃO DE SERVIÇOS DE GESTÃO E GERENCIAMENTO DO PROCESSAMENTO DE MULTAS, COM OBJETIVO DE ATENDER A LEI FEDERAL N. 9.503/1997 - CÓDIGO DE TRANSITO BRASILEIRO, DURANTE O EXERCICIO DE 2026 .",
-      "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
-      "categoria": "SERVIÇO DE APOIO ADMINISTRATIVO, TÉCNICO E OPERACIONAL",
-      "ficha": "271",
-      "valor_anual": 16440.0,
-      "valor_mensal": 1370.0,
-      "cronograma": [
-        1370.0,
-        1370.0,
-        1370.0,
-        1370.0,
-        1370.0,
-        1370.0,
-        1370.0,
-        1370.0,
-        1370.0,
-        1370.0,
-        1370.0,
-        1370.0
-      ]
-    },
-    {
       "empenho": "130",
       "contrato": "Empenho 130",
       "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
@@ -2654,6 +2865,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 16000.0,
       "valor_mensal": 1333.33,
       "cronograma": [
@@ -2679,6 +2891,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
       "ficha": "18",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 15958.25,
       "valor_mensal": 1329.85,
       "cronograma": [
@@ -2704,6 +2917,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "ESTAGIÁRIOS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 15683.8,
       "valor_mensal": 1306.98,
       "cronograma": [
@@ -2729,6 +2943,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 15500.0,
       "valor_mensal": 1291.67,
       "cronograma": [
@@ -2754,6 +2969,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
       "categoria": "LIMPEZA E CONSERVAÇÃO",
       "ficha": "162",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
       "valor_anual": 15400.0,
       "valor_mensal": 1283.33,
       "cronograma": [
@@ -2779,31 +2995,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "335",
-      "valor_anual": 15000.0,
-      "valor_mensal": 1250.0,
-      "cronograma": [
-        1250.0,
-        1250.0,
-        1250.0,
-        1250.0,
-        1250.0,
-        1250.0,
-        1250.0,
-        1250.0,
-        1250.0,
-        1250.0,
-        1250.0,
-        1250.0
-      ]
-    },
-    {
-      "empenho": "151",
-      "contrato": "0032/23",
-      "fornecedor": "SUPERARMED EQUIPAMENTOS MEDICOS HOSPITALARES LTDA",
-      "historico": "EMPENHO ESTIMATIVO DE SERVIÇO DE FORNECIMENTO DE EQUIPAMENTO DE RESPIRAÇÃO PELO PERIODO CONFORME CONTRATO. **SETEMBRO/2025 ATÉ JULHO/2026",
-      "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
-      "categoria": "MATERIAL DESTINADO À ASSISTÊNCIA SOCIAL",
-      "ficha": "266",
+      "fonte_recurso": "01 - TESOURO (REC. PROPRIO 25%)",
       "valor_anual": 15000.0,
       "valor_mensal": 1250.0,
       "cronograma": [
@@ -2829,6 +3021,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "162",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
       "valor_anual": 15000.0,
       "valor_mensal": 1250.0,
       "cronograma": [
@@ -2844,31 +3037,6 @@
         1250.0,
         1250.0,
         1250.0
-      ]
-    },
-    {
-      "empenho": "2675",
-      "contrato": "Empenho 2675",
-      "fornecedor": "ASSOCIAÇÃO CULTURAL JOVENS PESQUISADORES",
-      "historico": "TERMO DE COLABORAÇÃO COM INTUITO DE PROMOVER OFICINAS CULTURAIS, AÇÕES E PROJETOS QUE CONTRIBUAM PARA O AVANÇO E DEBATE DAS PAUTAS SOCIAIS EMERGENTES, PROPONDO SOLUÇÕES A PARTIR DA REFLEXÃO E DO OLHAR CRITICO PARA A REALIDADE DO ENTORNO, INCENTIVAR, PROMOVER E GERIR PROJETOS AÇÕES DE ARTE, CULTURA E EDUCAÇÃO NO MUNICIPIO. (VALOR TOTAL DO TERMO DE COLABORAÇÃO R$ 25.000,00 - Saldo Remanescente de R$ 10.000,00 será suplementado)",
-      "setor": "DEPARTAMENTO MUNICIPAL DE CULTURA E TURISMO",
-      "categoria": "TERMO DE COLABORAÇÃO",
-      "ficha": "121",
-      "valor_anual": 15000.0,
-      "valor_mensal": 1250.0,
-      "cronograma": [
-        3000.0,
-        3000.0,
-        3000.0,
-        3000.0,
-        3000.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
       ]
     },
     {
@@ -2879,6 +3047,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 15000.0,
       "valor_mensal": 1250.0,
       "cronograma": [
@@ -2897,28 +3066,29 @@
       ]
     },
     {
-      "empenho": "746",
+      "empenho": "151",
       "contrato": "0032/23",
       "fornecedor": "SUPERARMED EQUIPAMENTOS MEDICOS HOSPITALARES LTDA",
-      "historico": "EMPENHO ESTIMATIVO DE SERIVÇO DE FORNECIMENTO DE EQUIPAMENTO DE RESPIRAÇÃO PELO PERIODO CONFORME CONTRATO. **SETEMBRO/2025 ATE JULHO/2026,",
+      "historico": "EMPENHO ESTIMATIVO DE SERVIÇO DE FORNECIMENTO DE EQUIPAMENTO DE RESPIRAÇÃO PELO PERIODO CONFORME CONTRATO. **SETEMBRO/2025 ATÉ JULHO/2026",
       "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
       "categoria": "MATERIAL DESTINADO À ASSISTÊNCIA SOCIAL",
       "ficha": "266",
+      "fonte_recurso": "01 - TESOURO (ASSISTÊNCIA SOCIAL-GERAL)",
       "valor_anual": 15000.0,
       "valor_mensal": 1250.0,
       "cronograma": [
-        2142.86,
-        2142.86,
-        2142.86,
-        2142.86,
-        2142.86,
-        2142.86,
-        2142.84,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0
       ]
     },
     {
@@ -2929,6 +3099,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
       "categoria": "ESTAGIÁRIOS",
       "ficha": "159",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
       "valor_anual": 15000.0,
       "valor_mensal": 1250.0,
       "cronograma": [
@@ -2954,6 +3125,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
       "categoria": "ESTAGIÁRIOS",
       "ficha": "159",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
       "valor_anual": 15000.0,
       "valor_mensal": 1250.0,
       "cronograma": [
@@ -2972,6 +3144,32 @@
       ]
     },
     {
+      "empenho": "2675",
+      "contrato": "Empenho 2675",
+      "fornecedor": "ASSOCIAÇÃO CULTURAL JOVENS PESQUISADORES",
+      "historico": "TERMO DE COLABORAÇÃO COM INTUITO DE PROMOVER OFICINAS CULTURAIS, AÇÕES E PROJETOS QUE CONTRIBUAM PARA O AVANÇO E DEBATE DAS PAUTAS SOCIAIS EMERGENTES, PROPONDO SOLUÇÕES A PARTIR DA REFLEXÃO E DO OLHAR CRITICO PARA A REALIDADE DO ENTORNO, INCENTIVAR, PROMOVER E GERIR PROJETOS AÇÕES DE ARTE, CULTURA E EDUCAÇÃO NO MUNICIPIO. (VALOR TOTAL DO TERMO DE COLABORAÇÃO R$ 25.000,00 - Saldo Remanescente de R$ 10.000,00 será suplementado)",
+      "setor": "DEPARTAMENTO MUNICIPAL DE CULTURA E TURISMO",
+      "categoria": "TERMO DE COLABORAÇÃO",
+      "ficha": "121",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 15000.0,
+      "valor_mensal": 1250.0,
+      "cronograma": [
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
       "empenho": "112",
       "contrato": "Empenho 112",
       "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
@@ -2979,6 +3177,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 14000.0,
       "valor_mensal": 1166.67,
       "cronograma": [
@@ -3004,6 +3203,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "162",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
       "valor_anual": 13500.0,
       "valor_mensal": 1125.0,
       "cronograma": [
@@ -3022,6 +3222,58 @@
       ]
     },
     {
+      "empenho": "860",
+      "contrato": "0027/25",
+      "fornecedor": "CARINA RENATA DOS SANTOS MAZIERI 30478279825",
+      "historico": "CONTRATAÇÃO DE EMPRESA PARA MANUTENÇÃO PREVENTIVA E CORRETIVA DE IMPRESSORAS E FORNECIMENTO DE INSUMOS - CONFORME CONTRATO 27/25 DESPENSA ELETRONICA 31/25 **CONTRATO LIQUIDAÇÃO PARTE SAUDE",
+      "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
+      "categoria": "MANUTENÇÃO E CONSERVAÇÃO DE MÁQUINAS E EQUIPAMENTOS",
+      "ficha": "162",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
+      "valor_anual": 13222.4,
+      "valor_mensal": 1101.87,
+      "cronograma": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1652.8,
+        1652.8,
+        1652.8,
+        1652.8,
+        1652.8,
+        1652.8,
+        1652.8,
+        1652.8
+      ]
+    },
+    {
+      "empenho": "629",
+      "contrato": "Empenho 629",
+      "fornecedor": "CAMPANHA E CONTROLE CONTRA A DENGUE",
+      "historico": "CUSTEIO DE ETAPAS NO VALOR DE R$ 100,00 CADA MEMBRO DA EQUIPE QUE TRABALHOU NO ARRASTÃO DE VISTORIAS DOMICILIARES PARA ELIMINAÇÃO DE CRIADOUROS DO MOSQUITO AEDES AEGYPTI AOS SABADOS - JANEIRO A MAIO",
+      "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
+      "categoria": "OUTROS SERVIÇOS DE PESSOA FÍSICA",
+      "ficha": "349",
+      "fonte_recurso": "05 - TRANSF. FEDERAL (AÇÕES DE VIG. SANITARIA)",
+      "valor_anual": 13100.0,
+      "valor_mensal": 1091.67,
+      "cronograma": [
+        5500.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        475.0,
+        2375.0,
+        2375.0,
+        2375.0
+      ]
+    },
+    {
       "empenho": "1778",
       "contrato": "0036/24",
       "fornecedor": "ADPRH - ASSESSORIA, TECNOLOGIA E SERVIÇOS LTDA.",
@@ -3029,6 +3281,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 13050.0,
       "valor_mensal": 1087.5,
       "cronograma": [
@@ -3054,6 +3307,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "277",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 13000.0,
       "valor_mensal": 1083.33,
       "cronograma": [
@@ -3072,6 +3326,84 @@
       ]
     },
     {
+      "empenho": "4485",
+      "contrato": "Empenho 4485",
+      "fornecedor": "ASSOCIAÇÃO CULTURAL JOVENS PESQUISADORES",
+      "historico": "TERMO DE FOMENTO COM A ENTIDADE PARA EXECUÇÃO DE SERVIÇOS DE CONVIVêNCIA E FORTALECIMENTO DE VINCULOS",
+      "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
+      "categoria": "TERMO DE FOMENTO",
+      "ficha": "252",
+      "fonte_recurso": "02 - TRANSF. ESTADUAL (ASSISTÊNCIA SOCIAL-Convênios/entidades/f)",
+      "valor_anual": 12000.0,
+      "valor_mensal": 1000.0,
+      "cronograma": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1714.29,
+        1714.29,
+        1714.29,
+        1714.29,
+        1714.29,
+        1714.29,
+        1714.26
+      ]
+    },
+    {
+      "empenho": "4486",
+      "contrato": "Empenho 4486",
+      "fornecedor": "ASSOCIACAO DE ASSISTENCIA E DESENVOLVIMENTO PROFIS",
+      "historico": "TERMO DE FOMENTO COM A ENTIDADE PARA EXECUÇÃO DE SERVIÇOS DE CONVIVêNCIA E FORTALECIMENTO DE VINCULOS",
+      "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
+      "categoria": "TERMO DE FOMENTO",
+      "ficha": "252",
+      "fonte_recurso": "02 - TRANSF. ESTADUAL (ASSISTÊNCIA SOCIAL-Convênios/entidades/f)",
+      "valor_anual": 12000.0,
+      "valor_mensal": 1000.0,
+      "cronograma": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1714.29,
+        1714.29,
+        1714.29,
+        1714.29,
+        1714.29,
+        1714.29,
+        1714.26
+      ]
+    },
+    {
+      "empenho": "133",
+      "contrato": "Empenho 133",
+      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
+      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 17979242 PREDIO DO ALMOXARIFADO",
+      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
+      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
+      "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 11000.0,
+      "valor_mensal": 916.67,
+      "cronograma": [
+        916.67,
+        916.67,
+        916.67,
+        916.67,
+        916.67,
+        916.67,
+        916.67,
+        916.67,
+        916.67,
+        916.67,
+        916.67,
+        916.63
+      ]
+    },
+    {
       "empenho": "198",
       "contrato": "0022/25",
       "fornecedor": "WEBNETS SOLUCOES LTDA",
@@ -3079,10 +3411,11 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "24",
-      "valor_anual": 12600.0,
-      "valor_mensal": 1050.0,
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 10800.0,
+      "valor_mensal": 900.0,
       "cronograma": [
-        1800.0,
+        0.0,
         1800.0,
         1800.0,
         1800.0,
@@ -3104,96 +3437,22 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "ESTAGIÁRIOS",
       "ficha": "276",
-      "valor_anual": 11375.0,
-      "valor_mensal": 947.92,
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 10500.0,
+      "valor_mensal": 875.0,
       "cronograma": [
         875.0,
-        954.55,
-        954.55,
-        954.55,
-        954.55,
-        954.55,
-        954.55,
-        954.55,
-        954.55,
-        954.55,
-        954.55,
-        954.5
-      ]
-    },
-    {
-      "empenho": "133",
-      "contrato": "Empenho 133",
-      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
-      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 17979242 PREDIO DO ALMOXARIFADO",
-      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
-      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
-      "ficha": "24",
-      "valor_anual": 11000.0,
-      "valor_mensal": 916.67,
-      "cronograma": [
-        916.67,
-        916.67,
-        916.67,
-        916.67,
-        916.67,
-        916.67,
-        916.67,
-        916.67,
-        916.67,
-        916.67,
-        916.67,
-        916.63
-      ]
-    },
-    {
-      "empenho": "263",
-      "contrato": "0034/25",
-      "fornecedor": "AUTO POSTO MONTE SERENO EIRELI",
-      "historico": "EMPENHAMENTO ESTIMATIVO DO FORNECIMENTO DO COMBUSTÍVEL DIESEL REFERENTE AO ABASTECIMENTO DO ANO PARA O SETOR: MEIO AMBIENTE",
-      "setor": "DEPARTAMENTO MUNICIPAL DE AGRICULTURA E MEIO AMBIENTE",
-      "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
-      "ficha": "310",
-      "valor_anual": 11000.0,
-      "valor_mensal": 916.67,
-      "cronograma": [
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        0.0
-      ]
-    },
-    {
-      "empenho": "866",
-      "contrato": "0027/25",
-      "fornecedor": "CARINA RENATA DOS SANTOS MAZIERI 30478279825",
-      "historico": "CONTRATAÇÃO DE EMPRESA PARA MANUTENÇÃO PREVENTIVA E CORRETIVA DE IMPRESSORAS E FORNECIMENTO DE INSUMOS - CONFORME CONTRATO 27/25 DESPENSA ELETRONICA 31/25 **CONTRATO LIQUIDAÇÃO PARTE EDUCAÇÃO",
-      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
-      "categoria": "MANUTENÇÃO E CONSERVAÇÃO DE MÁQUINAS E EQUIPAMENTOS",
-      "ficha": "71",
-      "valor_anual": 10536.6,
-      "valor_mensal": 878.05,
-      "cronograma": [
-        878.05,
-        878.05,
-        878.05,
-        878.05,
-        878.05,
-        878.05,
-        878.05,
-        878.05,
-        878.05,
-        878.05,
-        878.05,
-        878.05
+        875.0,
+        875.0,
+        875.0,
+        875.0,
+        875.0,
+        875.0,
+        875.0,
+        875.0,
+        875.0,
+        875.0,
+        875.0
       ]
     },
     {
@@ -3204,6 +3463,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "ESTAGIÁRIOS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 10500.0,
       "valor_mensal": 875.0,
       "cronograma": [
@@ -3229,6 +3489,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ASSUNTOS JURÍDICOS",
       "categoria": "ESTAGIÁRIOS",
       "ficha": "320",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 10500.0,
       "valor_mensal": 875.0,
       "cronograma": [
@@ -3247,31 +3508,6 @@
       ]
     },
     {
-      "empenho": "3711",
-      "contrato": "0039/24",
-      "fornecedor": "CONSISTRANS-CONS. E SISTEMAS PARA O TRANSITO EIREL",
-      "historico": "EMPENHO POR ESTIMATIVA REFERENTE AO CONTRATO 39/2024 PARA CONTRATAÇÃO DE PRESTAÇÃO DE SERVIÇOS DE GESTÃO E GERENCIAMENTO DO PROCESSAMENTO DE MULTAS, COM OBJETIVO DE ATENDER A LEI FEDERAL N. 9.503/1997 - CÓDIGO DE TRANSITO BRASILEIRO, DURANTE O EXERCICIO DE 2026",
-      "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
-      "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
-      "ficha": "271",
-      "valor_anual": 10000.0,
-      "valor_mensal": 833.33,
-      "cronograma": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        1250.0,
-        1250.0,
-        1250.0,
-        1250.0,
-        1250.0,
-        1250.0,
-        1250.0,
-        1250.0
-      ]
-    },
-    {
       "empenho": "973",
       "contrato": "0035/25",
       "fornecedor": "AGRO CAMPO AUTO POSTO LTDA",
@@ -3279,6 +3515,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE TRANSPORTES E TRÂNSITO",
       "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
       "ficha": "283",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 10000.0,
       "valor_mensal": 833.33,
       "cronograma": [
@@ -3297,6 +3534,32 @@
       ]
     },
     {
+      "empenho": "3711",
+      "contrato": "0039/24",
+      "fornecedor": "CONSISTRANS-CONS. E SISTEMAS PARA O TRANSITO EIREL",
+      "historico": "EMPENHO POR ESTIMATIVA REFERENTE AO CONTRATO 39/2024 PARA CONTRATAÇÃO DE PRESTAÇÃO DE SERVIÇOS DE GESTÃO E GERENCIAMENTO DO PROCESSAMENTO DE MULTAS, COM OBJETIVO DE ATENDER A LEI FEDERAL N. 9.503/1997 - CÓDIGO DE TRANSITO BRASILEIRO, DURANTE O EXERCICIO DE 2026",
+      "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
+      "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
+      "ficha": "271",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 10000.0,
+      "valor_mensal": 833.33,
+      "cronograma": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0,
+        1250.0
+      ]
+    },
+    {
       "empenho": "2641",
       "contrato": "Empenho 2641",
       "fornecedor": "ASSOCIAÇÃO DE PAIS E AMIGOS DE SURDOS - APASL",
@@ -3304,6 +3567,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
       "categoria": "TERMO DE COLABORAÇÃO",
       "ficha": "265",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 9999.99,
       "valor_mensal": 833.33,
       "cronograma": [
@@ -3329,6 +3593,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
       "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
       "ficha": "240",
+      "fonte_recurso": "01 - TESOURO (ASSISTÊNCIA SOCIAL-GERAL)",
       "valor_anual": 9960.0,
       "valor_mensal": 830.0,
       "cronograma": [
@@ -3354,6 +3619,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "LOCAÇÃO DE IMÓVEIS",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 9172.2,
       "valor_mensal": 764.35,
       "cronograma": [
@@ -3379,6 +3645,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "162",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
       "valor_anual": 8804.16,
       "valor_mensal": 733.68,
       "cronograma": [
@@ -3404,6 +3671,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ESPORTES E LAZER",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "130",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 8568.0,
       "valor_mensal": 714.0,
       "cronograma": [
@@ -3429,6 +3697,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
       "ficha": "18",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 8210.57,
       "valor_mensal": 684.21,
       "cronograma": [
@@ -3447,31 +3716,6 @@
       ]
     },
     {
-      "empenho": "124",
-      "contrato": "Empenho 124",
-      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
-      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 17972213 CEMA DORIVAL ROSSI",
-      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
-      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
-      "ficha": "71",
-      "valor_anual": 8000.0,
-      "valor_mensal": 666.67,
-      "cronograma": [
-        666.67,
-        666.67,
-        666.67,
-        666.67,
-        666.67,
-        666.67,
-        666.67,
-        666.67,
-        666.67,
-        666.67,
-        666.67,
-        666.63
-      ]
-    },
-    {
       "empenho": "31",
       "contrato": "Empenho 31",
       "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
@@ -3479,6 +3723,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "277",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 8000.0,
       "valor_mensal": 666.67,
       "cronograma": [
@@ -3497,28 +3742,81 @@
       ]
     },
     {
-      "empenho": "3485",
-      "contrato": "0010/26",
-      "fornecedor": "ALINE OLIVEIRA SILVA 37135159802",
-      "historico": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA PRESTAÇÃO DE SERVIÇOS DE AULAS DE DANÇA PARA ATENDER AO DEPARTAMENTO MUNICIPAL DA PESSOA IDOSA.",
-      "setor": "DEPARTAMENTO MUNICIPAL DA PESSOA IDOSA",
-      "categoria": "SERVIÇOS TÉCNICOS PROFISSIONAIS",
-      "ficha": "331",
-      "valor_anual": 7000.0,
-      "valor_mensal": 583.33,
+      "empenho": "124",
+      "contrato": "Empenho 124",
+      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
+      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 17972213 CEMA DORIVAL ROSSI",
+      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
+      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
+      "ficha": "71",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
+      "valor_anual": 8000.0,
+      "valor_mensal": 666.67,
+      "cronograma": [
+        666.67,
+        666.67,
+        666.67,
+        666.67,
+        666.67,
+        666.67,
+        666.67,
+        666.67,
+        666.67,
+        666.67,
+        666.67,
+        666.63
+      ]
+    },
+    {
+      "empenho": "866",
+      "contrato": "0027/25",
+      "fornecedor": "CARINA RENATA DOS SANTOS MAZIERI 30478279825",
+      "historico": "CONTRATAÇÃO DE EMPRESA PARA MANUTENÇÃO PREVENTIVA E CORRETIVA DE IMPRESSORAS E FORNECIMENTO DE INSUMOS - CONFORME CONTRATO 27/25 DESPENSA ELETRONICA 31/25 **CONTRATO LIQUIDAÇÃO PARTE EDUCAÇÃO",
+      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
+      "categoria": "MANUTENÇÃO E CONSERVAÇÃO DE MÁQUINAS E EQUIPAMENTOS",
+      "ficha": "71",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
+      "valor_anual": 7024.4,
+      "valor_mensal": 585.37,
       "cronograma": [
         0.0,
         0.0,
         0.0,
         0.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        1000.0,
-        0.0
+        878.05,
+        878.05,
+        878.05,
+        878.05,
+        878.05,
+        878.05,
+        878.05,
+        878.05
+      ]
+    },
+    {
+      "empenho": "21",
+      "contrato": "Empenho 21",
+      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
+      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 17972175 FISIOTERAPIA",
+      "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
+      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
+      "ficha": "162",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
+      "valor_anual": 7000.0,
+      "valor_mensal": 583.33,
+      "cronograma": [
+        375.0,
+        375.0,
+        375.0,
+        375.0,
+        375.0,
+        2875.0,
+        375.0,
+        375.0,
+        375.0,
+        375.0,
+        375.0,
+        375.0
       ]
     },
     {
@@ -3529,6 +3827,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
       "categoria": "ESTAGIÁRIOS",
       "ficha": "159",
+      "fonte_recurso": "01 - TESOURO (SAÚDE–GERAL)",
       "valor_anual": 7000.0,
       "valor_mensal": 583.33,
       "cronograma": [
@@ -3547,6 +3846,32 @@
       ]
     },
     {
+      "empenho": "3485",
+      "contrato": "0010/26",
+      "fornecedor": "ALINE OLIVEIRA SILVA 37135159802",
+      "historico": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA PRESTAÇÃO DE SERVIÇOS DE AULAS DE DANÇA PARA ATENDER AO DEPARTAMENTO MUNICIPAL DA PESSOA IDOSA.",
+      "setor": "DEPARTAMENTO MUNICIPAL DA PESSOA IDOSA",
+      "categoria": "SERVIÇOS TÉCNICOS PROFISSIONAIS",
+      "ficha": "331",
+      "fonte_recurso": "01 - TESOURO (ASSISTÊNCIA SOCIAL-GERAL)",
+      "valor_anual": 7000.0,
+      "valor_mensal": 583.33,
+      "cronograma": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        0.0
+      ]
+    },
+    {
       "empenho": "234",
       "contrato": "Empenho 234",
       "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
@@ -3554,6 +3879,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6960.0,
       "valor_mensal": 580.0,
       "cronograma": [
@@ -3579,6 +3905,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
       "ficha": "270",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6600.0,
       "valor_mensal": 550.0,
       "cronograma": [
@@ -3604,6 +3931,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6300.0,
       "valor_mensal": 525.0,
       "cronograma": [
@@ -3629,6 +3957,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "ESTAGIÁRIOS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6012.05,
       "valor_mensal": 501.0,
       "cronograma": [
@@ -3654,6 +3983,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -3679,6 +4009,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -3704,6 +4035,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -3729,6 +4061,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -3754,6 +4087,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -3779,6 +4113,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -3804,6 +4139,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -3829,6 +4165,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -3854,6 +4191,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -3879,6 +4217,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -3904,6 +4243,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -3929,6 +4269,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -3954,6 +4295,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -3979,6 +4321,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -4004,6 +4347,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -4029,6 +4373,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -4054,6 +4399,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
       "ficha": "65",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 6000.0,
       "valor_mensal": 500.0,
       "cronograma": [
@@ -4072,6 +4418,32 @@
       ]
     },
     {
+      "empenho": "200",
+      "contrato": "0039/24",
+      "fornecedor": "CONSISTRANS-CONS. E SISTEMAS PARA O TRANSITO EIREL",
+      "historico": "EMPENHO POR ESTIMATIVA REFERENTE AO CONTRATO 39/2024 PARA CONTRATAÇÃO DE PRESTAÇÃO DE SERVIÇOS DE GESTÃO E GERENCIAMENTO DO PROCESSAMENTO DE MULTAS, COM OBJETIVO DE ATENDER A LEI FEDERAL N. 9.503/1997 - CÓDIGO DE TRANSITO BRASILEIRO, DURANTE O EXERCICIO DE 2026 .",
+      "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
+      "categoria": "SERVIÇO DE APOIO ADMINISTRATIVO, TÉCNICO E OPERACIONAL",
+      "ficha": "271",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 5711.6,
+      "valor_mensal": 475.97,
+      "cronograma": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        231.6,
+        1370.0,
+        1370.0,
+        1370.0,
+        1370.0
+      ]
+    },
+    {
       "empenho": "104",
       "contrato": "Empenho 104",
       "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
@@ -4079,6 +4451,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 5500.0,
       "valor_mensal": 458.33,
       "cronograma": [
@@ -4104,31 +4477,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
-      "valor_anual": 5500.0,
-      "valor_mensal": 458.33,
-      "cronograma": [
-        458.33,
-        458.33,
-        458.33,
-        458.33,
-        458.33,
-        458.33,
-        458.33,
-        458.33,
-        458.33,
-        458.33,
-        458.33,
-        458.37
-      ]
-    },
-    {
-      "empenho": "110",
-      "contrato": "Empenho 110",
-      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
-      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 40561704 PRAÇA MARIA RAMOS",
-      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
-      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
-      "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 5500.0,
       "valor_mensal": 458.33,
       "cronograma": [
@@ -4154,6 +4503,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 5500.0,
       "valor_mensal": 458.33,
       "cronograma": [
@@ -4179,6 +4529,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE CULTURA E TURISMO",
       "categoria": "ESTAGIÁRIOS",
       "ficha": "117",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 5500.0,
       "valor_mensal": 458.33,
       "cronograma": [
@@ -4204,6 +4555,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "ESTAGIÁRIOS",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 5500.0,
       "valor_mensal": 458.33,
       "cronograma": [
@@ -4229,6 +4581,7 @@
       "setor": "DEPARTAMENTO DE SERVIÇOS PÚBLICOS",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "300",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 5280.0,
       "valor_mensal": 440.0,
       "cronograma": [
@@ -4254,6 +4607,7 @@
       "setor": "DEPARTAMENTO DE SERVIÇOS PÚBLICOS",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "300",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 5280.0,
       "valor_mensal": 440.0,
       "cronograma": [
@@ -4279,6 +4633,7 @@
       "setor": "DEPARTAMENTO DE SERVIÇOS PÚBLICOS",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "300",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 5280.0,
       "valor_mensal": 440.0,
       "cronograma": [
@@ -4304,6 +4659,7 @@
       "setor": "DEPARTAMENTO DE SERVIÇOS PÚBLICOS",
       "categoria": "PRÓ-LABORE A CONSULTORES EVENTUAIS",
       "ficha": "300",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 5280.0,
       "valor_mensal": 440.0,
       "cronograma": [
@@ -4329,6 +4685,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 5000.0,
       "valor_mensal": 416.67,
       "cronograma": [
@@ -4347,31 +4704,6 @@
       ]
     },
     {
-      "empenho": "21",
-      "contrato": "Empenho 21",
-      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
-      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 17972175 FISIOTERAPIA",
-      "setor": "DEPARTAMENTO MUNICIPAL DE SAÚDE",
-      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
-      "ficha": "162",
-      "valor_anual": 4500.0,
-      "valor_mensal": 375.0,
-      "cronograma": [
-        375.0,
-        375.0,
-        375.0,
-        375.0,
-        375.0,
-        375.0,
-        375.0,
-        375.0,
-        375.0,
-        375.0,
-        375.0,
-        375.0
-      ]
-    },
-    {
       "empenho": "3482",
       "contrato": "Empenho 3482",
       "fornecedor": "ELTER ALVES PINHEIRO",
@@ -4379,6 +4711,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "OUTROS SERVIÇOS DE PESSOA FÍSICA",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 4500.0,
       "valor_mensal": 375.0,
       "cronograma": [
@@ -4404,6 +4737,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "OUTROS SERVIÇOS DE PESSOA FÍSICA",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 4500.0,
       "valor_mensal": 375.0,
       "cronograma": [
@@ -4429,6 +4763,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 4200.0,
       "valor_mensal": 350.0,
       "cronograma": [
@@ -4447,6 +4782,32 @@
       ]
     },
     {
+      "empenho": "43",
+      "contrato": "Empenho 43",
+      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
+      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 37035690 CONSELHO TUTELAR",
+      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
+      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
+      "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 4000.0,
+      "valor_mensal": 333.33,
+      "cronograma": [
+        333.33,
+        333.33,
+        333.33,
+        333.33,
+        333.33,
+        333.33,
+        333.33,
+        333.33,
+        333.33,
+        333.33,
+        333.33,
+        333.37
+      ]
+    },
+    {
       "empenho": "102",
       "contrato": "Empenho 102",
       "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
@@ -4454,6 +4815,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 4000.0,
       "valor_mensal": 333.33,
       "cronograma": [
@@ -4479,6 +4841,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 4000.0,
       "valor_mensal": 333.33,
       "cronograma": [
@@ -4504,6 +4867,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "OUTROS SERVIÇOS DE PESSOA FÍSICA",
       "ficha": "23",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 4000.0,
       "valor_mensal": 333.33,
       "cronograma": [
@@ -4522,56 +4886,6 @@
       ]
     },
     {
-      "empenho": "43",
-      "contrato": "Empenho 43",
-      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
-      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 37035690 CONSELHO TUTELAR",
-      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
-      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
-      "ficha": "24",
-      "valor_anual": 4000.0,
-      "valor_mensal": 333.33,
-      "cronograma": [
-        333.33,
-        333.33,
-        333.33,
-        333.33,
-        333.33,
-        333.33,
-        333.33,
-        333.33,
-        333.33,
-        333.33,
-        333.33,
-        333.37
-      ]
-    },
-    {
-      "empenho": "862",
-      "contrato": "0027/25",
-      "fornecedor": "CARINA RENATA DOS SANTOS MAZIERI 30478279825",
-      "historico": "CONTRATAÇÃO DE EMPRESA PARA MANUTENÇÃO PREVENTIVA E CORRETIVA DE IMPRESSORAS E FORNECIMENTO DE INSUMOS - CONFORME CONTRATO 27/25 DESPENSA ELETRONICA 31/25 **CONTRATO LIQUIDAÇÃO PARTE ASSISTENCIA SOCIAL",
-      "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
-      "categoria": "MANUTENÇÃO E CONSERVAÇÃO DE MÁQUINAS E EQUIPAMENTOS",
-      "ficha": "243",
-      "valor_anual": 3718.8,
-      "valor_mensal": 309.9,
-      "cronograma": [
-        309.9,
-        309.9,
-        309.9,
-        309.9,
-        309.9,
-        309.9,
-        309.9,
-        309.9,
-        309.9,
-        309.9,
-        309.9,
-        309.9
-      ]
-    },
-    {
       "empenho": "1176",
       "contrato": "Empenho 1176",
       "fornecedor": "ASSOCIACAO DE ASSISTENCIA E DESENVOLVIMENTO PROFIS",
@@ -4579,6 +4893,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE TECNOLOGIA DA INFORMAÇÃO",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "325",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 3672.0,
       "valor_mensal": 306.0,
       "cronograma": [
@@ -4604,6 +4919,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 3500.0,
       "valor_mensal": 291.67,
       "cronograma": [
@@ -4622,6 +4938,58 @@
       ]
     },
     {
+      "empenho": "113",
+      "contrato": "Empenho 113",
+      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
+      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 39320111 / 39336425 SEMAFORO SANTOS DUMONT SÃO MARTINHO",
+      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
+      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
+      "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 3380.0,
+      "valor_mensal": 281.67,
+      "cronograma": [
+        281.67,
+        281.67,
+        281.67,
+        281.67,
+        281.67,
+        281.67,
+        281.67,
+        281.67,
+        281.67,
+        281.67,
+        281.67,
+        281.63
+      ]
+    },
+    {
+      "empenho": "4643",
+      "contrato": "Empenho 4643",
+      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
+      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 4004414421 RUA TIRADENTES - MEDIDOR NOVO LAGO",
+      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
+      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
+      "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 3100.0,
+      "valor_mensal": 258.33,
+      "cronograma": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        442.86,
+        442.86,
+        442.86,
+        442.86,
+        442.86,
+        442.86,
+        442.84
+      ]
+    },
+    {
       "empenho": "108",
       "contrato": "Empenho 108",
       "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
@@ -4629,6 +4997,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 3000.0,
       "valor_mensal": 250.0,
       "cronograma": [
@@ -4654,6 +5023,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 3000.0,
       "valor_mensal": 250.0,
       "cronograma": [
@@ -4679,6 +5049,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ESPORTES E LAZER",
       "categoria": "COMBUSTÍVEIS E LUBRIFICANTES AUTOMOTIVOS",
       "ficha": "126",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 3000.0,
       "valor_mensal": 250.0,
       "cronograma": [
@@ -4704,6 +5075,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 2956.08,
       "valor_mensal": 246.34,
       "cronograma": [
@@ -4729,6 +5101,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 2500.0,
       "valor_mensal": 208.33,
       "cronograma": [
@@ -4747,6 +5120,32 @@
       ]
     },
     {
+      "empenho": "862",
+      "contrato": "0027/25",
+      "fornecedor": "CARINA RENATA DOS SANTOS MAZIERI 30478279825",
+      "historico": "CONTRATAÇÃO DE EMPRESA PARA MANUTENÇÃO PREVENTIVA E CORRETIVA DE IMPRESSORAS E FORNECIMENTO DE INSUMOS - CONFORME CONTRATO 27/25 DESPENSA ELETRONICA 31/25 **CONTRATO LIQUIDAÇÃO PARTE ASSISTENCIA SOCIAL",
+      "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
+      "categoria": "MANUTENÇÃO E CONSERVAÇÃO DE MÁQUINAS E EQUIPAMENTOS",
+      "ficha": "243",
+      "fonte_recurso": "01 - TESOURO (ASSISTÊNCIA SOCIAL-GERAL)",
+      "valor_anual": 2479.2,
+      "valor_mensal": 206.6,
+      "cronograma": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        309.9,
+        309.9,
+        309.9,
+        309.9,
+        309.9,
+        309.9,
+        309.9,
+        309.9
+      ]
+    },
+    {
       "empenho": "127",
       "contrato": "Empenho 127",
       "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
@@ -4754,6 +5153,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 2300.0,
       "valor_mensal": 191.67,
       "cronograma": [
@@ -4779,6 +5179,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 2200.0,
       "valor_mensal": 183.33,
       "cronograma": [
@@ -4797,31 +5198,6 @@
       ]
     },
     {
-      "empenho": "113",
-      "contrato": "Empenho 113",
-      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
-      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 39320111 / 39336425 SEMAFORO SANTOS DUMONT SÃO MARTINHO",
-      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
-      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
-      "ficha": "24",
-      "valor_anual": 2180.0,
-      "valor_mensal": 181.67,
-      "cronograma": [
-        181.67,
-        181.67,
-        181.67,
-        181.67,
-        181.67,
-        181.67,
-        181.67,
-        181.67,
-        181.67,
-        181.67,
-        181.67,
-        181.63
-      ]
-    },
-    {
       "empenho": "196",
       "contrato": "Empenho 196",
       "fornecedor": "ASSOCIAÇÃO COMERCIAL E EMPRESARIAL DE PRADÓPOLIS",
@@ -4829,6 +5205,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇO DE APOIO ADMINISTRATIVO, TÉCNICO E OPERACIONAL",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 1920.0,
       "valor_mensal": 160.0,
       "cronograma": [
@@ -4854,6 +5231,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ESPORTES E LAZER",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "130",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 1584.0,
       "valor_mensal": 132.0,
       "cronograma": [
@@ -4872,6 +5250,32 @@
       ]
     },
     {
+      "empenho": "42",
+      "contrato": "Empenho 42",
+      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
+      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 33718245 CEMITERIO MUNICIPAL",
+      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
+      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
+      "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
+      "valor_anual": 1350.0,
+      "valor_mensal": 112.5,
+      "cronograma": [
+        845.83,
+        45.83,
+        45.83,
+        45.83,
+        45.83,
+        45.83,
+        45.83,
+        45.83,
+        45.83,
+        45.83,
+        45.83,
+        45.87
+      ]
+    },
+    {
       "empenho": "232",
       "contrato": "Empenho 232",
       "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
@@ -4879,6 +5283,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 1270.0,
       "valor_mensal": 105.83,
       "cronograma": [
@@ -4904,6 +5309,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE CULTURA E TURISMO",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "118",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 1224.0,
       "valor_mensal": 102.0,
       "cronograma": [
@@ -4929,6 +5335,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "271",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 1224.0,
       "valor_mensal": 102.0,
       "cronograma": [
@@ -4954,6 +5361,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ASSUNTOS JURÍDICOS",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "321",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 1224.0,
       "valor_mensal": 102.0,
       "cronograma": [
@@ -4979,6 +5387,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ESPORTES E LAZER",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "130",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 1180.0,
       "valor_mensal": 98.33,
       "cronograma": [
@@ -5004,6 +5413,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 1105.0,
       "valor_mensal": 92.08,
       "cronograma": [
@@ -5029,6 +5439,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 1100.0,
       "valor_mensal": 91.67,
       "cronograma": [
@@ -5054,6 +5465,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 1100.0,
       "valor_mensal": 91.67,
       "cronograma": [
@@ -5079,6 +5491,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE ASSISTÊNCIA E PROMOÇÃO SOCIAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "243",
+      "fonte_recurso": "01 - TESOURO (ASSISTÊNCIA SOCIAL-GERAL)",
       "valor_anual": 1100.0,
       "valor_mensal": 91.67,
       "cronograma": [
@@ -5104,6 +5517,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE AGRICULTURA E MEIO AMBIENTE",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "311",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 1000.0,
       "valor_mensal": 83.33,
       "cronograma": [
@@ -5129,6 +5543,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 1000.0,
       "valor_mensal": 83.33,
       "cronograma": [
@@ -5154,6 +5569,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "OUTROS SERVIÇOS DE TERCEIROS - PESSOA JURÍDICA",
       "ficha": "71",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 1000.0,
       "valor_mensal": 83.33,
       "cronograma": [
@@ -5179,6 +5595,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 900.0,
       "valor_mensal": 75.0,
       "cronograma": [
@@ -5204,6 +5621,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "277",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 880.0,
       "valor_mensal": 73.33,
       "cronograma": [
@@ -5229,6 +5647,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 550.0,
       "valor_mensal": 45.83,
       "cronograma": [
@@ -5254,6 +5673,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 550.0,
       "valor_mensal": 45.83,
       "cronograma": [
@@ -5279,31 +5699,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "277",
-      "valor_anual": 550.0,
-      "valor_mensal": 45.83,
-      "cronograma": [
-        45.83,
-        45.83,
-        45.83,
-        45.83,
-        45.83,
-        45.83,
-        45.83,
-        45.83,
-        45.83,
-        45.83,
-        45.83,
-        45.87
-      ]
-    },
-    {
-      "empenho": "42",
-      "contrato": "Empenho 42",
-      "fornecedor": "CPFL-CIA.PAULISTA FORÇA E LUZ",
-      "historico": "EMPENHO POR ESTIMATIVA DO MEDIDOR CÓDIGO: 33718245 CEMITERIO MUNICIPAL",
-      "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
-      "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
-      "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 550.0,
       "valor_mensal": 45.83,
       "cronograma": [
@@ -5329,6 +5725,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 520.0,
       "valor_mensal": 43.33,
       "cronograma": [
@@ -5354,6 +5751,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 500.0,
       "valor_mensal": 41.67,
       "cronograma": [
@@ -5379,6 +5777,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 300.0,
       "valor_mensal": 25.0,
       "cronograma": [
@@ -5404,6 +5803,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "71",
+      "fonte_recurso": "01 - TESOURO (EDUCACAO 25%)",
       "valor_anual": 270.0,
       "valor_mensal": 22.5,
       "cronograma": [
@@ -5429,6 +5829,7 @@
       "setor": "DEPARTAMENTO DE ADMINISTRAÇÃO GERAL",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "24",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 200.0,
       "valor_mensal": 16.67,
       "cronograma": [
@@ -5454,6 +5855,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "277",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 10.0,
       "valor_mensal": 0.83,
       "cronograma": [
@@ -5479,6 +5881,7 @@
       "setor": "DEPARTAMENTO MUNICIPAL DE PLANEJAMENTO URBANO, OBRAS, SANEAM",
       "categoria": "SERVIÇOS DE ENERGIA ELÉTRICA",
       "ficha": "277",
+      "fonte_recurso": "01 - TESOURO (GERAL)",
       "valor_anual": 10.0,
       "valor_mensal": 0.83,
       "cronograma": [
@@ -5494,56 +5897,6 @@
         0.83,
         0.83,
         0.87
-      ]
-    },
-    {
-      "empenho": "182",
-      "contrato": "0183/22",
-      "fornecedor": "VIACAO RIO GRANDE LTDA",
-      "historico": "EMPENHO ESTIMATIVO TRANSPORTE DE AUNOS DO ENSINO SUPERIOR E PROFISSIONALIZANTE DA CIDADE DE PRADÓPOLIS/SP PARA A CIDADE DE RIBEIRÃO PRETO/SP, PERIODO DIURNO E NOTURNO. ** ATÉ O Mês (10/2026)",
-      "setor": "DEPARTAMENTO MUNICIPAL DE TRANSPORTES E TRÂNSITO",
-      "categoria": "FRETES E TRANSPORTES DE ENCOMENDAS",
-      "ficha": "296",
-      "valor_anual": 1.0,
-      "valor_mensal": 0.08,
-      "cronograma": [
-        0.08,
-        0.08,
-        0.08,
-        0.08,
-        0.08,
-        0.08,
-        0.08,
-        0.08,
-        0.08,
-        0.08,
-        0.08,
-        0.12
-      ]
-    },
-    {
-      "empenho": "3499",
-      "contrato": "0006/26",
-      "fornecedor": "E. ZANOL ESPORTES",
-      "historico": "CONTRATAÇÃO DE SERVIÇOS TÉCNICO-PEDAGOGICOS ESPECIALIZADOS PARA IMPLEMENTAÇÃO DA METODOLOGIA BRANCO ZANOL DE ENSINO DE JUDO PARA O PUBLICO INFANTIL, VISANDO AO DESENVOLVIMENTO FISICO, MENTAL E ESPIRITUAL DOS ALUNOS EM CONFORMIDADE COM AS DIRETRIZES, MATERIAIS E PRATICAS DESCRITAS NO CADERNO DE ATIVIDADES INICIAÇÃO INFANTIL.",
-      "setor": "DEPARTAMENTO MUNICIPAL DE EDUCAÇÃO",
-      "categoria": "SERVIÇOS TÉCNICOS PROFISSIONAIS",
-      "ficha": "71",
-      "valor_anual": 1.0,
-      "valor_mensal": 0.08,
-      "cronograma": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.13,
-        0.13,
-        0.13,
-        0.13,
-        0.13,
-        0.13,
-        0.13,
-        0.09
       ]
     }
   ]

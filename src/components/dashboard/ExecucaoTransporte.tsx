@@ -117,6 +117,7 @@ interface Contrato {
   setor: string;
   categoria: string;
   ficha: string;
+  fonte_recurso?: string;
   valor_anual: number;
   valor_mensal: number;
   cronograma: number[];
@@ -286,7 +287,8 @@ export function ExecucaoTransporte() {
         c.fornecedor.toLowerCase().includes(q) ||
         c.historico.toLowerCase().includes(q) ||
         c.categoria.toLowerCase().includes(q) ||
-        c.empenho.toLowerCase().includes(q),
+        c.empenho.toLowerCase().includes(q) ||
+        (c.fonte_recurso && c.fonte_recurso.toLowerCase().includes(q)),
     );
   }, [transporteContracts, contractSearch]);
 
@@ -1205,6 +1207,7 @@ export function ExecucaoTransporte() {
                   <th className="py-3 px-4">Empenho</th>
                   <th className="py-3 px-4">Fornecedor / Objeto</th>
                   <th className="py-3 px-4">Tipo de Despesa</th>
+                  <th className="py-3 px-4">Fonte de Recurso</th>
                   <th className="py-3 px-4 text-right">Valor Mensal</th>
                   <th className="py-3 px-4 text-right">Valor Anual</th>
                 </tr>
@@ -1229,6 +1232,11 @@ export function ExecucaoTransporte() {
                       <td className="py-3 px-4">
                         <span className="text-[11px] font-semibold text-ink-2 uppercase tracking-[0.06em]">{c.categoria}</span>
                       </td>
+                      <td className="py-3 px-4">
+                        <span className="text-xs font-medium text-ink-2 line-clamp-1">
+                          {c.fonte_recurso || "—"}
+                        </span>
+                      </td>
                       <td className="py-3 px-4 text-right font-mono tabular font-medium text-sm text-ink">{formatBRL(c.valor_mensal)}</td>
                       <td className="py-3 px-4 text-right font-mono tabular font-semibold text-sm text-ink">{formatBRL(c.valor_anual)}</td>
                     </tr>
@@ -1236,7 +1244,7 @@ export function ExecucaoTransporte() {
                 })}
                 {filteredContracts.length === 0 && (
                   <tr>
-                    <td colSpan={5} className="py-12 text-center text-muted font-medium text-sm">
+                    <td colSpan={6} className="py-12 text-center text-muted font-medium text-sm">
                       Nenhum contrato encontrado.
                     </td>
                   </tr>
@@ -1245,7 +1253,7 @@ export function ExecucaoTransporte() {
               {filteredContracts.length > 0 && (
                 <tfoot>
                   <tr className="bg-surface-2 border-t-2 border-line-strong font-semibold text-ink">
-                    <td colSpan={3} className="py-3 px-4 text-[11px] font-bold uppercase text-ink-2 tracking-[0.08em]">
+                    <td colSpan={4} className="py-3 px-4 text-[11px] font-bold uppercase text-ink-2 tracking-[0.08em]">
                       Total ({filteredContracts.length})
                     </td>
                     <td className="py-3 px-4 text-right font-mono tabular text-sm">{formatBRL(contractTotals.mensal)}</td>

@@ -80,32 +80,83 @@ def parse_orcamento_consolidado():
     }
 
 def process_budget_data():
-    csv_path = os.path.join('data', 'contratos2026.csv')
+    csv_path = os.path.join('data', 'contratos2026novo.csv')
     if not os.path.exists(csv_path):
         print(f"Error: {csv_path} not found!")
         return
 
-    # 1. Carregamento e Limpeza dos Contratos (Código do Usuário)
-    df = pd.read_csv(csv_path, sep=';', encoding='utf-8-sig', decimal=',', thousands='.')
-    if 'Unnamed: 37' in df.columns:
-        df = df.drop(columns=['Unnamed: 37'])
-    
-    # Filtro da Anomalia
-    df = df[df['FORNECEDOR'] != 'ADMINISTRAÇÃO ORGANIZADA, EFICIENTE E TECNOLOGICA']
-    
-    # Correção de Duplicidades
-    df_parcelas = df.drop_duplicates(subset=['EMPENHO', 'MES_CRONOGRAMA'])
-    
-    # Totalizador Mensal Previsto (Contratos)
-    previsao_mensal = df_parcelas.groupby('MES_CRONOGRAMA')['VALOR_MES'].sum().reset_index()
-    previsao_mensal.columns = ['Mes', 'Valor']
-    previsao_mensal = previsao_mensal.sort_values(by='Mes')
-    
-    # Mapeamento dos valores de contratos por mês (mes_cronograma 1 a 12)
-    contratos_mensal = {int(row['Mes']): float(row['Valor']) for _, row in previsao_mensal.iterrows() if row['Mes'] > 0}
-    
+    # 1. Contratos — totais mensais de desembolso.
+    # MESMA lógica de process_despesas_fixas.py (fonte da verdade): chave única é
+    # PKEMP, valor por PKEMP é VALOR_EMPENHO, e o cronograma é reconciliado a essa
+    # série. NÃO somar VALOR_MES bruto (o export duplica cronogramas revisados,
+    # inflando os valores). Linhas malformadas (FORNECEDOR = um PROGRAMA_NOME
+    # deslocado) são descartadas.
+    df = pd.read_csv(csv_path, sep=';', encoding='utf-8-sig', dtype=str).fillna('')
+    df = df[df['FORNECEDOR'].str.strip() != 'ADMINISTRAÇÃO ORGANIZADA, EFICIENTE E TECNOLOGICA']
+
+    def _val(v):
+        s = str(v).replace('R$', '').replace(' ', '').strip()
+        if s in ('', '-'):
+            return 0.0
+        neg = s.startswith('-')
+        s = s.lstrip('-').replace('.', '').replace(',', '.')
+        try:
+            x = float(s)
+        except Exception:
+            return 0.0
+        return -x if neg else x
+
+    def _reconcile(pk_rows, ve):
+        by_m = {}
+        for r in pk_rows:
+            m = int(_val(r['MES_CRONOGRAMA']))
+            if 1 <= m <= 12:
+                by_m.setdefault(m, []).append(_val(r['VALOR_MES']))
+        if not by_m:
+            return [ve / 12.0] * 12
+        mx = [max(by_m[m]) if m in by_m else 0.0 for m in range(1, 13)]
+        mn = [min(by_m[m]) if m in by_m else 0.0 for m in range(1, 13)]
+        if abs(sum(mx) - ve) < 0.10:
+            return mx
+        if abs(sum(mn) - ve) < 0.10:
+            return mn
+        s = sum(mx)
+        return [x * ve / s for x in mx] if abs(s) > 0.001 else [ve / 12.0] * 12
+
+    by_emp = {}
+    for r in df.to_dict('records'):
+        e = str(r.get('EMPENHO', '')).strip()
+        if e:
+            by_emp.setdefault(e, []).append(r)
+
+    contratos_mensal = {m: 0.0 for m in range(1, 13)}
+    for emp, group in by_emp.items():
+        # Filtra apenas contratos financiados por Recursos Próprios (Tesouro)
+        primary = max(group, key=lambda r: _val(r.get('VALOR_EMPENHO')))
+        fon_grupo = str(primary.get('FONGRUPO', '')).strip()
+        if fon_grupo in ('02', '05'):
+            continue
+
+        by_pk = {}
+        for r in group:
+            by_pk.setdefault(str(r.get('PKEMP', '')).strip(), []).append(r)
+        anual = 0.0
+        crono = [0.0] * 12
+        for pk, pk_rows in by_pk.items():
+            ve = _val(pk_rows[0].get('VALOR_EMPENHO'))
+            if abs(ve) < 0.005:
+                continue
+            ser = _reconcile(pk_rows, ve)
+            anual += ve
+            for i in range(12):
+                crono[i] += ser[i]
+        if anual <= 0.0:  # descarta anulados/vazios (líquido <= 0)
+            continue
+        for i in range(12):
+            contratos_mensal[i + 1] += crono[i]
+
     # Média de desembolso fixo dos contratos
-    media_parcela = previsao_mensal[previsao_mensal['Mes'] > 0]['Valor'].mean()
+    media_parcela = sum(contratos_mensal.values()) / 12.0
     
     # 2. Dados de Arrecadação
     # Os dados informados anteriormente pelo usuário representam o ano de 2025
