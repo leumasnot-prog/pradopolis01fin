@@ -100,12 +100,19 @@ export function DashboardOverview({ onNavigate, user }: { onNavigate?: (tab: str
   const currentSaldo = viewMode === "real" ? ytdSaldo : saldoAjustado;
 
   // Monthly Chart Data Prep
-  const monthlyData = yearData?.mensal.map((d: any) => ({
-    name: d.mes_nome.substring(0, 3),
-    Arrecadacao: d.receita * (1 + receitaAjuste / 100),
-    GastoFixo: d.despesa * (1 - despesaAjuste / 100),
-    isEstimativa: activeYear === "2026" && d.mes_num >= 6,
-  })) || [];
+  const monthlyData = yearData?.mensal.map((d: any) => {
+    const isClosed = d.mes_num <= lastClosedMonth;
+    return {
+      name: d.mes_nome.substring(0, 3),
+      Arrecadacao: viewMode === "real" && isClosed
+        ? d.receita
+        : d.receita * (1 + receitaAjuste / 100),
+      GastoFixo: viewMode === "real" && isClosed
+        ? d.despesa
+        : d.despesa * (1 - despesaAjuste / 100),
+      isEstimativa: activeYear === "2026" && d.mes_num >= 6,
+    };
+  }) || [];
 
   // Composicao Chart Data Prep (Tesouro)
   const composicaoData = yearData?.receitas_por_categoria.map((d: any) => ({
