@@ -41,6 +41,7 @@ import despesasFixasDataRaw from "@/data/despesas_fixas_data.json";
 import { formatBRL, formatPercent } from "@/lib/format";
 import { StatCard, SectionHeader, Card, StatusBadge, AnimatedNumber } from "@/components/ui/primitives";
 import { BudgetFunnelCard } from "@/components/ui/BudgetFunnelCard";
+import { FichasSetorTable } from "@/components/ui/FichasSetorTable";
 
 // ── Tipos do payload da API ────────────────────────────────────────────────
 interface MetricSet {
@@ -870,6 +871,11 @@ export function ExecucaoSocial() {
             </div>
           )}
         </Card>
+      </motion.div>
+
+      {/* Fichas Orçamentárias da Assistência Social */}
+      <motion.div variants={itemVariants}>
+        <FichasSetorTable funcaoLabel="Assistência Social" />
       </motion.div>
     </motion.div>
   );

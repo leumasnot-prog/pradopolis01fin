@@ -41,6 +41,7 @@ import despesasFixasDataRaw from "@/data/despesas_fixas_data.json";
 import { formatBRL, formatPercent } from "@/lib/format";
 import { StatCard, SectionHeader, Card, StatusBadge, AnimatedNumber } from "@/components/ui/primitives";
 import { BudgetFunnelCard } from "@/components/ui/BudgetFunnelCard";
+import { FichasSetorTable, FUNCAO_COD_TO_LABEL } from "@/components/ui/FichasSetorTable";
 import type { SetorConfig } from "./setoresConfig";
 
 // ── Tipos do payload da API ────────────────────────────────────────────────
@@ -946,6 +947,13 @@ export function ExecucaoSetor({ config }: { config: SetorConfig }) {
               </div>
             )}
           </Card>
+        </motion.div>
+      )}
+
+      {/* Fichas Orçamentárias do setor */}
+      {FUNCAO_COD_TO_LABEL[config.funcao] && (
+        <motion.div variants={itemVariants}>
+          <FichasSetorTable funcaoLabel={FUNCAO_COD_TO_LABEL[config.funcao]} />
         </motion.div>
       )}
     </motion.div>

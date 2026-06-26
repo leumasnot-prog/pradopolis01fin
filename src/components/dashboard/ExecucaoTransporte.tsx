@@ -56,6 +56,7 @@ import despesasFixasDataRaw from "@/data/despesas_fixas_data.json";
 import { formatBRL, formatPercent } from "@/lib/format";
 import { StatCard, SectionHeader, Card, StatusBadge, AnimatedNumber } from "@/components/ui/primitives";
 import { BudgetFunnelCard } from "@/components/ui/BudgetFunnelCard";
+import { FichasSetorTable } from "@/components/ui/FichasSetorTable";
 
 // ── Tipos do payload da API ────────────────────────────────────────────────
 interface MetricSet {
@@ -1281,6 +1282,11 @@ export function ExecucaoTransporte() {
             </div>
           )}
         </Card>
+      </motion.div>
+
+      {/* Fichas Orçamentárias do Transporte */}
+      <motion.div variants={itemVariants}>
+        <FichasSetorTable funcaoLabel="Transporte" />
       </motion.div>
     </motion.div>
   );
