@@ -1286,7 +1286,7 @@ export function ExecucaoTransporte() {
 
       {/* Fichas Orçamentárias do Transporte */}
       <motion.div variants={itemVariants}>
-        <FichasSetorTable funcaoLabel="Transporte" />
+        <FichasSetorTable funcao="26" />
       </motion.div>
     </motion.div>
   );

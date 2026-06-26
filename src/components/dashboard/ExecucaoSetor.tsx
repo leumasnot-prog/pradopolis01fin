@@ -953,7 +953,7 @@ export function ExecucaoSetor({ config }: { config: SetorConfig }) {
       {/* Fichas Orçamentárias do setor */}
       {FUNCAO_COD_TO_LABEL[config.funcao] && (
         <motion.div variants={itemVariants}>
-          <FichasSetorTable funcaoLabel={FUNCAO_COD_TO_LABEL[config.funcao]} />
+          <FichasSetorTable funcao={config.funcao} />
         </motion.div>
       )}
     </motion.div>

@@ -871,7 +871,7 @@ export function ExecucaoUrban() {
 
       {/* Fichas Orçamentárias de Urbanismo */}
       <motion.div variants={itemVariants}>
-        <FichasSetorTable funcaoLabel="Urbanismo" />
+        <FichasSetorTable funcao="15" />
       </motion.div>
     </motion.div>
   );

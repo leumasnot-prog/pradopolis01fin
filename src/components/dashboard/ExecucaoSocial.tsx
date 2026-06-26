@@ -875,7 +875,7 @@ export function ExecucaoSocial() {
 
       {/* Fichas Orçamentárias da Assistência Social */}
       <motion.div variants={itemVariants}>
-        <FichasSetorTable funcaoLabel="Assistência Social" />
+        <FichasSetorTable funcao="08" />
       </motion.div>
     </motion.div>
   );

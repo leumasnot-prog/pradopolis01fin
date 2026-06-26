@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import {
   Search,
   XCircle,
@@ -10,32 +10,28 @@ import {
   ChevronDown,
   ArrowUpDown,
   Inbox,
+  Loader2,
+  AlertTriangle,
 } from "lucide-react";
 import { Card, StatusBadge } from "@/components/ui/primitives";
 import { formatBRL, formatPercent } from "@/lib/format";
-import orcamentoDataRaw from "@/data/orcamento_data.json";
 
-const orcamentoData = orcamentoDataRaw as {
-  fichas: Array<{
-    ficha: string;
-    categoria: string;
-    setor: string;
-    funcao: string;
-    subfuncao: string;
-    catecficha: string;
-    especificacao: string;
-    dotacao: number;
-    empenhado: number;
-    liquidado: number;
-    pago: number;
-    apagar: number;
-    saldo: number;
-    percentual_consumido: number;
-    status: "normal" | "warning" | "critical";
-  }>;
-};
+interface FichaRow {
+  ficha: string;
+  especificacao: string;
+  subfuncao: string;
+  catecficha: string;
+  dotacao: number;
+  empenhado: number;
+  liquidado: number;
+  pago: number;
+  apagar: number;
+  saldo: number;
+  percentual: number;
+  status: "normal" | "warning" | "critical";
+}
 
-/** Mapeia código de função (zero-padded 2 dígitos) → label em orcamento_data.json */
+/** Mapeia código de função (zero-padded 2 dígitos) → label legível. */
 export const FUNCAO_COD_TO_LABEL: Record<string, string> = {
   "10": "Saúde",
   "08": "Assistência Social",
@@ -53,38 +49,105 @@ export const FUNCAO_COD_TO_LABEL: Record<string, string> = {
 };
 
 interface Props {
-  /** Label da funcao como aparece em orcamento_data.json (ex: "Saúde", "Educação"). */
-  funcaoLabel: string;
+  /** Código da função de governo (ex.: "10" para Saúde). */
+  funcao: string;
   className?: string;
 }
 
-type SortKey = "ficha" | "dotacao" | "empenhado" | "liquidado" | "saldo" | "percentual_consumido";
+type SortKey = "ficha" | "dotacao" | "empenhado" | "liquidado" | "saldo" | "percentual";
 
 const ITEMS_PER_PAGE = 10;
 
-export function FichasSetorTable({ funcaoLabel, className }: Props) {
-  const fichas = useMemo(
-    () => orcamentoData.fichas.filter((f) => f.funcao === funcaoLabel),
-    [funcaoLabel],
-  );
+// Grupos de categoria para os chips de filtro rápido.
+const CAT_GROUPS: { label: string; match: (esp: string) => boolean }[] = [
+  {
+    label: "Pessoal / Folha",
+    match: (e) =>
+      /pessoal civil|patronal|aposentadori|pensões|auxílio aliment|outras despesas variáveis|decorrentes de contratos de terce/i.test(e),
+  },
+  {
+    label: "Material",
+    match: (e) => /material de consumo|material, bem ou serviço para distribuição/i.test(e),
+  },
+  {
+    label: "Serviços PJ",
+    match: (e) => /pessoa jurídica/i.test(e),
+  },
+  {
+    label: "Serviços PF",
+    match: (e) => /pessoa física/i.test(e),
+  },
+  {
+    label: "Investimentos",
+    match: (e) => /equipamentos|obras e instalações|aquisição de imóveis/i.test(e),
+  },
+];
+
+function catGroupOf(esp: string): string {
+  for (const g of CAT_GROUPS) if (g.match(esp)) return g.label;
+  return "Outros";
+}
+
+export function FichasSetorTable({ funcao, className }: Props) {
+  const [fichas, setFichas] = useState<FichaRow[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const [search, setSearch] = useState("");
+  const [catFilter, setCatFilter] = useState("Todos");
   const [page, setPage] = useState(1);
   const [sort, setSort] = useState<{ key: SortKey; dir: "asc" | "desc" }>({
     key: "dotacao",
     dir: "desc",
   });
 
+  useEffect(() => {
+    let active = true;
+    setLoading(true);
+    setError(null);
+    fetch(`/api/setor/fichas?funcao=${encodeURIComponent(funcao)}`, { cache: "no-store" })
+      .then(async (res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then((data: { fichas?: FichaRow[] }) => {
+        if (!active) return;
+        setFichas(Array.isArray(data.fichas) ? data.fichas : []);
+        setPage(1);
+        setCatFilter("Todos");
+      })
+      .catch((err) => {
+        if (!active) return;
+        console.error("Falha ao carregar fichas do setor:", err);
+        setError("Não foi possível carregar as fichas ao vivo.");
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, [funcao]);
+
+  // chips disponíveis: apenas grupos que têm ao menos 1 ficha no conjunto atual
+  const availableGroups = useMemo(() => {
+    const present = new Set(fichas.map((f) => catGroupOf(f.especificacao)));
+    return ["Todos", ...CAT_GROUPS.map((g) => g.label).filter((l) => present.has(l)), ...(present.has("Outros") ? ["Outros"] : [])];
+  }, [fichas]);
+
   const filtered = useMemo(() => {
     const q = search.toLowerCase();
-    return fichas.filter(
-      (f) =>
+    return fichas.filter((f) => {
+      const matchCat = catFilter === "Todos" || catGroupOf(f.especificacao) === catFilter;
+      const matchSearch =
+        !q ||
         f.ficha.includes(q) ||
         f.especificacao.toLowerCase().includes(q) ||
         f.subfuncao.toLowerCase().includes(q) ||
-        f.catecficha.includes(q),
-    );
-  }, [fichas, search]);
+        f.catecficha.includes(q);
+      return matchCat && matchSearch;
+    });
+  }, [fichas, search, catFilter]);
 
   const sorted = useMemo(() => {
     const items = [...filtered];
@@ -157,6 +220,29 @@ export function FichasSetorTable({ funcaoLabel, className }: Props) {
     </th>
   );
 
+  // Carregando: skeleton dentro do card.
+  if (loading) {
+    return (
+      <Card className={`p-6 shadow-sm ${className ?? ""}`}>
+        <div className="flex items-center gap-3 text-ink-2">
+          <Loader2 className="w-5 h-5 animate-spin text-brand" />
+          <span className="text-sm font-semibold">Carregando fichas ao vivo…</span>
+        </div>
+      </Card>
+    );
+  }
+
+  if (error) {
+    return (
+      <Card className={`p-6 shadow-sm ${className ?? ""}`}>
+        <div className="flex items-center gap-3 text-neg">
+          <AlertTriangle className="w-5 h-5" />
+          <span className="text-sm font-semibold">{error}</span>
+        </div>
+      </Card>
+    );
+  }
+
   if (fichas.length === 0) return null;
 
   return (
@@ -167,7 +253,7 @@ export function FichasSetorTable({ funcaoLabel, className }: Props) {
             Fichas Orçamentárias
           </h4>
           <p className="text-xs font-medium text-ink-2 mt-0.5">
-            Dotações e execução por ficha · {" "}
+            Dotação e execução por ficha · ao vivo · {" "}
             <span className="font-mono tabular text-brand font-bold">{filtered.length}</span>{" "}
             {filtered.length !== fichas.length && (
               <span>de <span className="font-mono tabular">{fichas.length}</span> </span>
@@ -198,6 +284,28 @@ export function FichasSetorTable({ funcaoLabel, className }: Props) {
         </div>
       </div>
 
+      {/* Chips de categoria */}
+      <div className="flex flex-wrap gap-2 mb-4">
+        {availableGroups.map((g) => (
+          <button
+            key={g}
+            onClick={() => { setCatFilter(g); setPage(1); }}
+            className={`px-3 py-1 rounded-full text-xs font-semibold border transition-colors cursor-pointer ${
+              catFilter === g
+                ? "bg-brand text-white border-brand"
+                : "bg-surface-2 text-ink-2 border-line hover:border-brand hover:text-brand"
+            }`}
+          >
+            {g}
+            {g !== "Todos" && (
+              <span className="ml-1.5 font-mono tabular opacity-70">
+                {fichas.filter((f) => catGroupOf(f.especificacao) === g).length}
+              </span>
+            )}
+          </button>
+        ))}
+      </div>
+
       <div className="overflow-x-auto rounded-lg border border-line bg-surface shadow-sm">
         <table className="w-full text-left border-collapse min-w-[780px]">
           <thead>
@@ -210,7 +318,7 @@ export function FichasSetorTable({ funcaoLabel, className }: Props) {
               {th("Empenhado", "empenhado")}
               {th("Liquidado", "liquidado")}
               {th("Saldo", "saldo")}
-              {th("% Exec.", "percentual_consumido")}
+              {th("% Exec.", "percentual")}
               <th className="py-3 px-4 text-[11px] font-semibold text-ink-2 uppercase tracking-[0.06em] text-center">
                 Status
               </th>
@@ -248,7 +356,7 @@ export function FichasSetorTable({ funcaoLabel, className }: Props) {
                   <td className="py-3 px-4">
                     <div className="flex flex-col items-end gap-1">
                       <span className="font-mono tabular text-xs font-semibold text-ink">
-                        {formatPercent(f.percentual_consumido)}
+                        {formatPercent(f.percentual)}
                       </span>
                       <div className="w-20 h-1.5 rounded-full bg-line overflow-hidden">
                         <div
@@ -259,7 +367,7 @@ export function FichasSetorTable({ funcaoLabel, className }: Props) {
                                 ? "bg-warn"
                                 : "bg-brand"
                           }`}
-                          style={{ width: `${Math.min(f.percentual_consumido, 100)}%` }}
+                          style={{ width: `${Math.min(f.percentual, 100)}%` }}
                         />
                       </div>
                     </div>

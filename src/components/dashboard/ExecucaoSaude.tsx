@@ -897,7 +897,7 @@ export function ExecucaoSaude() {
 
       {/* Fichas Orçamentárias da Saúde */}
       <motion.div variants={itemVariants}>
-        <FichasSetorTable funcaoLabel="Saúde" />
+        <FichasSetorTable funcao="10" />
       </motion.div>
     </motion.div>
   );

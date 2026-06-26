@@ -95,3 +95,108 @@ export function getDotacaoByFuncao(funcaoCod: string, force = false): DotacaoFun
   const base = cacheTotal.get(cod) ?? { dotacaoAtual: 0, dotacaoFolha: 0, empenhado: 0, liquidado: 0, pago: 0 };
   return { ...base, dotacaoFolha: cacheFolha.get(cod) ?? 0 };
 }
+
+// ── Detalhamento POR FICHA ───────────────────────────────────────────────────
+// Mesmo CSV (export ao vivo do Fiorilli), agregado a nível de ficha em vez de
+// função. Substitui o snapshot estático orcamento_data.json na tabela setorial:
+// cada ficha pode aparecer em várias linhas (fontes/desdobros), por isso somamos.
+
+export interface FichaRow {
+  ficha: string;
+  especificacao: string; // CATECFICHANOME (ex.: "MATERIAL DE CONSUMO")
+  subfuncao: string; // SUBFUNCAONOME
+  catecficha: string; // código CATECFICHA (ex.: "3.3.90.30.00")
+  dotacao: number;
+  empenhado: number;
+  liquidado: number;
+  pago: number;
+  apagar: number;
+  saldo: number;
+  percentual: number; // empenhado / dotação * 100
+  status: "normal" | "warning" | "critical";
+}
+
+let cacheFichas: Map<string, FichaRow[]> | null = null;
+
+function loadFichas(): Map<string, FichaRow[]> {
+  const text = fs.readFileSync(path.join(DATA_DIR, "relatorio-dot-orc2026.csv"), "utf-8").replace(/^﻿/, "");
+  const lines = text.split(/\r?\n/).filter((l) => l.trim() !== "");
+  const header = lines[0].split(";");
+  const idx: Record<string, number> = {};
+  header.forEach((h, i) => (idx[h.trim()] = i));
+
+  const col = {
+    funcao: idx["FUNCAO"],
+    ficha: idx["FICHA"],
+    subfuncaoNome: idx["SUBFUNCAONOME"],
+    catecficha: idx["CATECFICHA"],
+    catecfichaNome: idx["CATECFICHANOME"],
+    dotacAtual: idx["DOTACATUAL"],
+    empAtual: idx["EMPATUAL"],
+    liqAtual: idx["LIQATUAL"],
+    pagAtual: idx["PAGOATUAL"],
+    saldo: idx["SALDO"],
+    apagar: idx["APAGAR"],
+  };
+
+  const byFuncao = new Map<string, Map<string, FichaRow>>();
+
+  for (let i = 1; i < lines.length; i++) {
+    const f = lines[i].split(";");
+    const cod = (f[col.funcao] || "").trim().padStart(2, "0");
+    if (!cod || cod === "00") continue;
+    const ficha = (f[col.ficha] || "").trim();
+    if (!ficha) continue;
+
+    let fichaMap = byFuncao.get(cod);
+    if (!fichaMap) {
+      fichaMap = new Map();
+      byFuncao.set(cod, fichaMap);
+    }
+
+    let row = fichaMap.get(ficha);
+    if (!row) {
+      row = {
+        ficha,
+        especificacao: (f[col.catecfichaNome] || "").trim() || "—",
+        subfuncao: (f[col.subfuncaoNome] || "").trim() || "—",
+        catecficha: (f[col.catecficha] || "").trim() || "—",
+        dotacao: 0,
+        empenhado: 0,
+        liquidado: 0,
+        pago: 0,
+        apagar: 0,
+        saldo: 0,
+        percentual: 0,
+        status: "normal",
+      };
+      fichaMap.set(ficha, row);
+    }
+
+    row.dotacao += parseBRL(f[col.dotacAtual]);
+    row.empenhado += parseBRL(f[col.empAtual]);
+    row.liquidado += parseBRL(f[col.liqAtual]);
+    row.pago += parseBRL(f[col.pagAtual]);
+    row.apagar += parseBRL(f[col.apagar]);
+    row.saldo += parseBRL(f[col.saldo]);
+  }
+
+  const out = new Map<string, FichaRow[]>();
+  byFuncao.forEach((fichaMap, cod) => {
+    const rows = Array.from(fichaMap.values());
+    for (const r of rows) {
+      r.percentual = r.dotacao > 0 ? (r.empenhado / r.dotacao) * 100 : 0;
+      r.status = r.percentual >= 85 ? "critical" : r.percentual >= 70 ? "warning" : "normal";
+    }
+    rows.sort((a, b) => b.dotacao - a.dotacao);
+    out.set(cod, rows);
+  });
+  return out;
+}
+
+/** Fichas orçamentárias de uma função (código zero-padded), com execução ao vivo. */
+export function getFichasByFuncao(funcaoCod: string, force = false): FichaRow[] {
+  if (!cacheFichas || force) cacheFichas = loadFichas();
+  const cod = String(funcaoCod).trim().padStart(2, "0");
+  return cacheFichas.get(cod) ?? [];
+}
