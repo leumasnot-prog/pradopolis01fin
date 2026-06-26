@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getTransporteExecucao } from "@/lib/transporteExecucao";
+import { getDotacaoByFuncao } from "@/lib/dotacaoOrc2026";
 
 // Execução orçamentária do Departamento de Transportes e Trânsito (comparativo
 // 2025 × 2026 até o mês fechado) + série histórica de manutenção da frota.
@@ -8,7 +9,8 @@ export async function GET(request: Request) {
   try {
     const force = new URL(request.url).searchParams.get("force") === "1";
     const data = getTransporteExecucao(force);
-    return NextResponse.json(data);
+    const dotacao = getDotacaoByFuncao("26", force);
+    return NextResponse.json({ ...data, dotacaoAtual: dotacao.dotacaoAtual, dotacaoFolha: dotacao.dotacaoFolha });
   } catch (err) {
     console.error("Erro ao processar execução dos Transportes:", err);
     return NextResponse.json(

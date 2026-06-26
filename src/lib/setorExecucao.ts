@@ -217,6 +217,8 @@ export interface SetorExecucaoData {
   geradoEm: string;
   funcao: string; // ex.: "12"
   funcaoNome: string; // ex.: "Educação"
+  dotacaoAtual: number;
+  dotacaoFolha: number;
   resumo: {
     a2025: MetricSet & { numEmpenhos: number };
     a2026: MetricSet & { numEmpenhos: number };
@@ -238,6 +240,8 @@ function variacao(base: number, atual: number): number | null {
   if (base === 0) return null;
   return ((atual - base) / Math.abs(base)) * 100;
 }
+
+import { getDotacaoByFuncao } from "@/lib/dotacaoOrc2026";
 
 // Caches em memória (módulo-level), espelhando o padrão do urbanExecucao.
 let cache2025: Map<string, FuncaoAgg> | null = null;
@@ -321,10 +325,14 @@ export function getSetorExecucao(funcaoCod: string, force = false): SetorExecuca
   const aplicadoTotal = a2026.total.liquidado;
   const percAplicado = empenhadoTotal > 0 ? (aplicadoTotal / empenhadoTotal) * 100 : 0;
 
+  const dotacao = getDotacaoByFuncao(cod, force);
+
   const data: SetorExecucaoData = {
     geradoEm: new Date().toISOString(),
     funcao: cod,
     funcaoNome,
+    dotacaoAtual: dotacao.dotacaoAtual,
+    dotacaoFolha: dotacao.dotacaoFolha,
     resumo: {
       a2025: { ...a2025.total, numEmpenhos: a2025.numEmpenhos },
       a2026: { ...a2026.total, numEmpenhos: a2026.numEmpenhos },

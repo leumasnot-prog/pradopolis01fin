@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getUrbanExecucao } from "@/lib/urbanExecucao";
+import { getDotacaoByFuncao } from "@/lib/dotacaoOrc2026";
 
 // Execução orçamentária de Serviços Urbanos (comparativo 2025 × 2026 até o mês fechado).
 // Os CSVs são lidos e agregados server-side, com cache em memória.
@@ -7,7 +8,8 @@ export async function GET(request: Request) {
   try {
     const force = new URL(request.url).searchParams.get("force") === "1";
     const data = getUrbanExecucao(force);
-    return NextResponse.json(data);
+    const dotacao = getDotacaoByFuncao("15", force);
+    return NextResponse.json({ ...data, dotacaoAtual: dotacao.dotacaoAtual, dotacaoFolha: dotacao.dotacaoFolha });
   } catch (err) {
     console.error("Erro ao processar execução de Serviços Urbanos:", err);
     return NextResponse.json(

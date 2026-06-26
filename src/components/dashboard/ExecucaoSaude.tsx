@@ -40,6 +40,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import despesasFixasDataRaw from "@/data/despesas_fixas_data.json";
 import { formatBRL, formatPercent } from "@/lib/format";
 import { StatCard, SectionHeader, Card, StatusBadge, AnimatedNumber } from "@/components/ui/primitives";
+import { BudgetFunnelCard } from "@/components/ui/BudgetFunnelCard";
 
 // ── Tipos do payload da API ────────────────────────────────────────────────
 interface MetricSet {
@@ -62,6 +63,8 @@ interface ComparativoFuncao {
   varLiquidado: number | null;
 }
 interface SaudeExecucaoData {
+  dotacaoAtual: number;
+  dotacaoFolha: number;
   resumo: {
     a2025: MetricSet & { numEmpenhos: number };
     a2026: MetricSet & { numEmpenhos: number };
@@ -315,7 +318,7 @@ export function ExecucaoSaude() {
     );
   }
 
-  const { resumo, limite } = data;
+  const { resumo, limite, dotacaoAtual, dotacaoFolha } = data;
   const variacaoLiquidadoGeral =
     resumo.a2025.liquidado > 0
       ? ((resumo.a2026.liquidado - resumo.a2025.liquidado) / resumo.a2025.liquidado) * 100
@@ -355,58 +358,45 @@ export function ExecucaoSaude() {
         </button>
       </motion.div>
 
-      {/* KPIs com contadores animados */}
-      <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-6">
-        <StatCard
-          title="Empenhado · 2026"
-          value={<AnimatedNumber value={resumo.a2026.empenhado} />}
-          subtitle={`${resumo.a2026.numEmpenhos.toLocaleString("pt-BR")} empenhos (até mai/05)`}
-          icon={TrendingUp}
-          iconBgClass="bg-warn-50/80 border border-warn-200/50 shadow-sm"
-          iconColorClass="text-warn font-semibold"
+      {/* Fita-Funil de Execução Orçamentária */}
+      <motion.div variants={itemVariants} className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+        <BudgetFunnelCard
+          dotacaoAtual={dotacaoAtual}
+          empenhado={resumo.a2026.empenhado}
+          liquidado={resumo.a2026.liquidado}
+          pago={resumo.a2026.pago}
+          numEmpenhos={resumo.a2026.numEmpenhos}
+          dotacaoFolha={dotacaoFolha}
+          className="xl:col-span-2"
         />
-        <StatCard
-          title="Liquidado · 2026"
-          value={<AnimatedNumber value={resumo.a2026.liquidado} />}
-          subtitle="Serviços prestados e atestados"
-          icon={CheckCircle2}
-          iconBgClass="bg-pos-50/80 border border-pos-200/50 shadow-sm"
-          iconColorClass="text-pos"
-        />
-        <StatCard
-          title="Pago · 2026"
-          value={<AnimatedNumber value={resumo.a2026.pago} />}
-          subtitle="Desembolso financeiro real"
-          icon={DollarSign}
-          iconBgClass="bg-brand-50/80 border border-brand-200/50 shadow-sm"
-          iconColorClass="text-brand"
-        />
-        <StatCard
-          title="Aplicação em Saúde"
-          value={<AnimatedNumber value={limite.percentualAplicado2026} type="percent" />}
-          subtitle={`Mínimo constitucional: ${formatPercent(limite.percentualMinimo)}`}
-          icon={ShieldCheck}
-          iconBgClass={limite.atingiu ? "bg-pos-50/80 border border-pos-200/50 shadow-sm" : "bg-neg-50/80 border border-neg-200/50 shadow-sm"}
-          iconColorClass={limite.atingiu ? "text-pos" : "text-neg"}
-          valueColorClass={limite.atingiu ? "text-pos" : "text-neg"}
-        />
-        <StatCard
-          title="Variação Liquidado"
-          value={
-            variacaoLiquidadoGeral == null ? (
-              "—"
-            ) : (
-              <span className={variacaoLiquidadoGeral >= 0 ? "text-pos" : "text-neg"}>
-                {variacaoLiquidadoGeral >= 0 ? "+" : ""}
-                <AnimatedNumber value={variacaoLiquidadoGeral} type="percent" />
-              </span>
-            )
-          }
-          subtitle="2026 vs 2025 (mesmo período)"
-          icon={variacaoLiquidadoGeral != null && variacaoLiquidadoGeral < 0 ? TrendingDown : TrendingUp}
-          iconBgClass="bg-surface-2 border border-line shadow-sm"
-          iconColorClass="text-ink-2"
-        />
+        <div className="grid grid-cols-2 gap-4 xl:grid-cols-1">
+          <StatCard
+            title="Aplicação em Saúde"
+            value={<AnimatedNumber value={limite.percentualAplicado2026} type="percent" />}
+            subtitle={`Mínimo constitucional: ${formatPercent(limite.percentualMinimo)}`}
+            icon={ShieldCheck}
+            iconBgClass={limite.atingiu ? "bg-pos-50/80 border border-pos-200/50 shadow-sm" : "bg-neg-50/80 border border-neg-200/50 shadow-sm"}
+            iconColorClass={limite.atingiu ? "text-pos" : "text-neg"}
+            valueColorClass={limite.atingiu ? "text-pos" : "text-neg"}
+          />
+          <StatCard
+            title="Variação Liquidado"
+            value={
+              variacaoLiquidadoGeral == null ? (
+                "—"
+              ) : (
+                <span className={variacaoLiquidadoGeral >= 0 ? "text-pos" : "text-neg"}>
+                  {variacaoLiquidadoGeral >= 0 ? "+" : ""}
+                  <AnimatedNumber value={variacaoLiquidadoGeral} type="percent" />
+                </span>
+              )
+            }
+            subtitle="2026 vs 2025 (mesmo período)"
+            icon={variacaoLiquidadoGeral != null && variacaoLiquidadoGeral < 0 ? TrendingDown : TrendingUp}
+            iconBgClass="bg-surface-2 border border-line shadow-sm"
+            iconColorClass="text-ink-2"
+          />
+        </div>
       </motion.div>
 
       {/* Charts grid com gradientes */}
